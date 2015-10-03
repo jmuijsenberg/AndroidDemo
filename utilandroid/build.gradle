@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "nl.jmuijsenberg.androiddemo"
         minSdkVersion 22
         targetSdkVersion 23
         versionCode 1
@@ -23,12 +22,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // Module dependencies
-    compile project(':application')
-    compile project(':repository')
-    compile project(':repositorysqlite')
-    compile project(':utilandroid')
     compile project(':utiljava')
-    compile project(':viewmodels')
-    compile project(':devices')
-    compile project(':devicesandroid')
 }
