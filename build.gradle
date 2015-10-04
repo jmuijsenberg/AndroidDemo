@@ -40,7 +40,7 @@ sonarRunner {
         property "sonar.jacoco.reportPath", "build/test-reports/jacoco.exec"
 
         // See http://docs.sonarqube.org/display/PLUG/Build+Stability+Plugin
-        //property "sonar.build-stability.url", "Jenkins:http://localhost:8080/job/Build%20AndroidDemo/"
+        property "sonar.build-stability.url", "Jenkins:http://localhost:8080/job/Build%20AndroidDemo/"
     }
 }
 
