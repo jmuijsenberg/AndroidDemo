@@ -1,1 +1,1 @@
-gradlew assemble test connectedAndroidTest --continue
+gradlew assemble test connectedAndroidTest jacocoTestReport sonarRunner --continue
