@@ -14,6 +14,36 @@ buildscript {
     }
 }
 
+// Avoid sonarRunner fails when any unit test fails
+// See https://discuss.gradle.org/t/sonarrunner-test-dependency/1876
+tasks.sonarRunner.dependsOn = []
+
+// https://docs.gradle.org/current/userguide/sonar_runner_plugin.html
+sonarRunner {
+    toolVersion = '2.3' // default
+
+    sonarProperties {
+        property "sonar.host.url", "http://localhost:9000/"
+        property "sonar.jdbc.url", "jdbc:mysql://localhost/sonar"
+        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+        property "sonar.jdbc.username", "sonar"
+        property "sonar.jdbc.password", "amina"
+
+        // See http://stackoverflow.com/questions/20117545/sonar-how-do-i-use-gradle-to-inspect-an-android-project
+        property "sonar.projectKey", "AndroidDemo"
+        property "sonar.projectName", "AndroidDemo"
+        property "sonar.projectVersion", "V1.0"
+
+        // See http://stackoverflow.com/questions/22174501/sonarqube-not-picking-up-unit-test-coverage
+        property "sonar.junit.reportsPath", "build/test-reports"
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.jacoco.reportPath", "build/test-reports/jacoco.exec"
+
+        // See http://docs.sonarqube.org/display/PLUG/Build+Stability+Plugin
+        //property "sonar.build-stability.url", "Jenkins:http://localhost:8080/job/Build%20AndroidDemo/"
+    }
+}
+
 allprojects {
     repositories {
         jcenter()

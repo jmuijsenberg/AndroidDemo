@@ -1,4 +1,22 @@
 apply plugin: 'java'
+apply plugin: "jacoco"
+
+project(":control") {
+    sonarRunner {
+        sonarProperties {
+            property "sonar.language", "java"
+            property "sonar.sources", "src/main"
+        }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

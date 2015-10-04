@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: "jacoco"
 
 android {
     compileSdkVersion 23
@@ -11,10 +12,61 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    // See http://tools.android.com/tech-docs/new-build-system/user-guide
+    lintOptions {
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, generate an XML report for use by for example Jenkins
+        xmlReport true
+    }
+}
+
+project(":devicesandroid") {
+    sonarRunner {
+        sonarProperties {
+            property "sonar.language", "java"
+
+            // https://gist.github.com/hal9002/004946a4ca10965648bc
+            property "sonar.sources", project.android.sourceSets.main.java.srcDirs
+            property "sonar.java.libraries", project.android.libraryVariants.toList().first().javaCompile.classpath
+            property "sonar.java.binaries", "$project.buildDir/intermediates/classes/debug"
+
+            property "sonar.tests", project.android.libraryVariants.testVariant.javaCompile.source[0]
+            property "sonar.junit.reportsPath", "build/outputs/androidTest-results/connected"
+            property 'sonar.jacoco.reportPath', "build/outputs/code-coverage/connected/coverage.ec"
+        }
+    }
+}
+
+// See https://plus.google.com/+OleksandrKucherenko/posts/6vNWkkLed3b
+task jacocoTestReport(type: JacocoReport, dependsOn: ['test']) {
+    description = "Generates Jacoco coverage reports: XML and HTML"
+    group = "Reporting"
+
+    // use hidden configuration, for details look into JacocoPlugin.groovy
+    jacocoClasspath = project.configurations['androidJacocoAnt']
+
+    classDirectories = files(fileTree(dir: 'build/intermediates/classes/debug', excludes: [
+            '*/R.class', '*/R$.class', '*/BuildConfig.', '*/Manifest*.*']))
+
+    sourceDirectories = files(['src/main/java'])
+    executionData = fileTree(dir: rootProject.rootDir, includes: ['**/*.exec', '**/*.ec'])
+
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
     }
 }
 
