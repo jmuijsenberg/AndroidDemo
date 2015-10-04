@@ -1,1 +1,1 @@
-include ':app', ':utilandroid', ':utiljava', ':application', ':viewmodels', ':repository', ':repositorysqlite', ':devices', ':devicesandroid'
+include ':app', ':utilandroid', ':utiljava', ':application', ':viewmodels', ':repository', ':repositorysqlite', ':devices', ':devicesandroid', ':control'

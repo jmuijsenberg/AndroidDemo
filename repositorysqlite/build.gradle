@@ -25,4 +25,7 @@ dependencies {
     compile project(':repository')
     compile project(':utilandroid')
     compile project(':utiljava')
+
+    // RxJava support
+    compile 'io.reactivex:rxjava:1.0.12'
 }

@@ -21,9 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
     // Module dependencies
-    compile project(':application')
     compile project(':repository')
     compile project(':repositorysqlite')
     compile project(':utilandroid')
@@ -31,4 +29,8 @@ dependencies {
     compile project(':viewmodels')
     compile project(':devices')
     compile project(':devicesandroid')
+    compile project(':control')
+
+    // RxJava support
+    compile 'io.reactivex:rxjava:1.0.12'
 }

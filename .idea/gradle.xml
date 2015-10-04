@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/application" />
+            <option value="$PROJECT_DIR$/control" />
             <option value="$PROJECT_DIR$/devices" />
             <option value="$PROJECT_DIR$/devicesandroid" />
             <option value="$PROJECT_DIR$/repository" />

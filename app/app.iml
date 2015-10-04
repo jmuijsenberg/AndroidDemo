@@ -88,13 +88,14 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="rxjava-1.0.12" level="project" />
     <orderEntry type="module" module-name="utilandroid" exported="" />
     <orderEntry type="module" module-name="devices" exported="" />
+    <orderEntry type="module" module-name="control" exported="" />
     <orderEntry type="module" module-name="repository" exported="" />
     <orderEntry type="module" module-name="viewmodels" exported="" />
     <orderEntry type="module" module-name="devicesandroid" exported="" />
     <orderEntry type="module" module-name="utiljava" exported="" />
-    <orderEntry type="module" module-name="application" exported="" />
     <orderEntry type="module" module-name="repositorysqlite" exported="" />
   </component>
 </module>
