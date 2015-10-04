@@ -101,9 +101,9 @@ Required for Continuous Inspection
     *	sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
 8.	Run C:\SonarQube\bin\windows-x86-64\StartNTService.bat to start the service.
 9.	Wait some time for the sonar server to have initialized the first time and go to http://localhost:9000/
-10.	Install plugins:
+10.	Install plugins via System - Update Center - Available Plugins
     *	Android plugin
-    *	Issue plugin
+    *	Issue Assign plugin
     *	SCM stats plugin
     *	XML plugin
     *	Widget lab plugin
