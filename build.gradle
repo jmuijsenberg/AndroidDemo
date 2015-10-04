@@ -37,7 +37,7 @@ sonarRunner {
         // See http://stackoverflow.com/questions/22174501/sonarqube-not-picking-up-unit-test-coverage
         property "sonar.junit.reportsPath", "build/test-reports"
         property "sonar.java.coveragePlugin", "jacoco"
-        property "sonar.jacoco.reportPath", "build/test-reports/jacoco.exec"
+        property "sonar.jacoco.reportPath", "build/jacoco/test.exec"
 
         // See http://docs.sonarqube.org/display/PLUG/Build+Stability+Plugin
         property "sonar.build-stability.url", "Jenkins:http://localhost:8080/job/Build%20AndroidDemo/"
