@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.control.MainController;
 import nl.jmuijsenberg.androiddemo.devices.android.NativeDevice;
@@ -18,7 +16,6 @@ import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 public class MainActivity extends Activity {
     public MainViewModel mMainViewModel;
 
-    @Bind(R.id.textView)
     public TextView mTextView;
 
     @Override
@@ -26,12 +23,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
-
         mMainViewModel = new MainViewModel();
         mMainViewModel.mMainController = new MainController();
         mMainViewModel.mMainController.mRepositiory = new RepositorySqlite();
         mMainViewModel.mMainController.mDevice = new NativeDevice();
+
+        mTextView = (TextView) findViewById(R.id.textView);
 
         mTextView.setText("Programmaticllay set text");
     }
