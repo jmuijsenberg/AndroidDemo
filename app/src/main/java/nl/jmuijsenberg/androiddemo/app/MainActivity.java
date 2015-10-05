@@ -2,6 +2,7 @@ package nl.jmuijsenberg.androiddemo.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ public class MainActivity extends Activity {
     public MainViewModel mMainViewModel;
 
     public TextView mTextView;
+    public ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends Activity {
         mMainViewModel.mMainController.mDevice = new NativeDevice();
 
         mTextView = (TextView) findViewById(R.id.textView);
+        mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
         mTextView.setText("Programmaticllay set text");
     }

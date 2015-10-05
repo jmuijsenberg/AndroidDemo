@@ -88,8 +88,15 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['test']) {
     }
 }
 
+ext {
+    supportLibrary = '22.2.0'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // ViewPager support see https://developer.android.com/tools/support-library/features.html
+    compile "com.android.support:support-v4:${supportLibrary}"
 
     // Module dependencies
     compile project(':repository')
