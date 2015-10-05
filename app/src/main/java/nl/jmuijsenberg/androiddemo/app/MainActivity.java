@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.control.MainController;
 import nl.jmuijsenberg.androiddemo.devices.android.NativeDevice;
@@ -15,15 +18,22 @@ import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 public class MainActivity extends Activity {
     public MainViewModel mMainViewModel;
 
+    @Bind(R.id.textView)
+    public TextView mTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
+
         mMainViewModel = new MainViewModel();
         mMainViewModel.mMainController = new MainController();
         mMainViewModel.mMainController.mRepositiory = new RepositorySqlite();
         mMainViewModel.mMainController.mDevice = new NativeDevice();
+
+        mTextView.setText("Programmaticllay set text");
     }
 
     @Override
