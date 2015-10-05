@@ -99,4 +99,8 @@ dependencies {
 
     // RxJava support
     compile 'io.reactivex:rxjava:1.0.12'
+
+    // Facebook Stetho support
+    // Use chrome://inspect to inspect via chrome browser
+    compile 'com.facebook.stetho:stetho:1.1.1'
 }
