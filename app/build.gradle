@@ -39,6 +39,9 @@ android {
 
     packagingOptions {
         exclude 'LICENSE.txt'
+
+        // Required to avoid failure jacocoTestReport task after integrating Butterknife
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
 }
 
