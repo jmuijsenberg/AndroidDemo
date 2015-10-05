@@ -100,7 +100,11 @@ dependencies {
     // RxJava support
     compile 'io.reactivex:rxjava:1.0.12'
 
-    // Facebook Stetho support
+    // Facebook Stetho support see http://facebook.github.io/stetho/
     // Use chrome://inspect to inspect via chrome browser
     compile 'com.facebook.stetho:stetho:1.1.1'
+
+    // LeakCanary suppor see https://github.com/square/leakcanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
 }
