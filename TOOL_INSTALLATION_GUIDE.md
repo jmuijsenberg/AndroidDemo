@@ -72,7 +72,10 @@ Required in you testing with a Samsung device
 ### Set Environment Variables
 
 1. ANDROID_HOME d:\Android\Sdk
+2. JAVA_HOME C:\Program Files\Java\jdk1.7.0_25
+3. PATH D:\Android\Sdk;D:\Android\Sdk\tools;D:\Android\Sdk\tools\Lib;D:\Android\Sdk\platform-tools;C:\Program Files\Java\jdk1.7.0_25\bin
 
+If these aer not set correct appliction may not build or test coverage data is not obtained. Test coverage data may require a rooted device or emulator.
 ### Create Build task
 
 ## Install MySQL
