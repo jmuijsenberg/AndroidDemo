@@ -1,8 +1,5 @@
 package nl.jmuijsenberg.androiddemo.app;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -10,10 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.control.MainController;
 import nl.jmuijsenberg.androiddemo.devices.android.NativeDevice;
-import nl.jmuijsenberg.androiddemo.repository.Repository;
 import nl.jmuijsenberg.androiddemo.repository.sqlite.RepositorySqlite;
 import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 
@@ -22,7 +20,7 @@ public class MainActivity extends Activity {
 
     @Bind(R.id.textView)
     public TextView mTextView;
-    
+
     @Bind(R.id.viewPager)
     public ViewPager mViewPager;
 
