@@ -18,8 +18,11 @@ import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 public class MainActivity extends Activity {
     public MainViewModel mMainViewModel;
 
-    @Bind(R.id.textView)
-    public TextView mTextView;
+    @Bind(R.id.textView1)
+    public TextView mTextView1;
+
+    @Bind(R.id.textView2)
+    public TextView mTextView2;
 
     @Bind(R.id.viewPager)
     public ViewPager mViewPager;
@@ -36,7 +39,8 @@ public class MainActivity extends Activity {
         mMainViewModel.mMainController.mRepositiory = new RepositorySqlite();
         mMainViewModel.mMainController.mDevice = new NativeDevice();
 
-        mTextView.setText("Programmaticllay set text");
+        mTextView1.setText(getResources().getQuantityString(R.plurals.item, 1, 1));
+        mTextView2.setText(getResources().getQuantityString(R.plurals.item, 2, 2));
     }
 
     @Override

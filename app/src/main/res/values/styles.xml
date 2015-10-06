@@ -1,8 +1,11 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="RedTheme">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="RedYellowTheme" parent="RedTheme">
+        <item name="android:background">@color/yellow</item>
     </style>
 
 </resources>
