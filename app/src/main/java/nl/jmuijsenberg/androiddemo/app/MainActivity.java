@@ -1,5 +1,8 @@
 package nl.jmuijsenberg.androiddemo.app;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -17,7 +20,10 @@ import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 public class MainActivity extends Activity {
     public MainViewModel mMainViewModel;
 
+    @Bind(R.id.textView)
     public TextView mTextView;
+    
+    @Bind(R.id.viewPager)
     public ViewPager mViewPager;
 
     @Override
@@ -25,13 +31,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
+
         mMainViewModel = new MainViewModel();
         mMainViewModel.mMainController = new MainController();
         mMainViewModel.mMainController.mRepositiory = new RepositorySqlite();
         mMainViewModel.mMainController.mDevice = new NativeDevice();
-
-        mTextView = (TextView) findViewById(R.id.textView);
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
         mTextView.setText("Programmaticllay set text");
     }

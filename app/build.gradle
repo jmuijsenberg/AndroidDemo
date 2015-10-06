@@ -67,25 +67,26 @@ project(":app") {
     }
 }
 
-// See https://plus.google.com/+OleksandrKucherenko/posts/6vNWkkLed3b
+// Test coverage with Jacoco on Android gradle project with injection frameworks like Butterknife
+// see https://gist.github.com/josomers/9f90b017e321c54bb918
 task jacocoTestReport(type: JacocoReport, dependsOn: ['test']) {
-    description = "Generates Jacoco coverage reports: XML and HTML"
-    group = "Reporting"
-
-    // use hidden configuration, for details look into JacocoPlugin.groovy
-    jacocoClasspath = project.configurations['androidJacocoAnt']
-
-    classDirectories = files(fileTree(dir: 'build/intermediates/classes/debug', excludes: [
-            '*/R.class', '*/R$.class', '*/BuildConfig.', '*/Manifest*.*']))
-
-    sourceDirectories = files(['src/main/java'])
-    executionData = fileTree(dir: rootProject.rootDir, includes: ['**/*.exec', '**/*.ec'])
-
     reports {
         xml.enabled false
         csv.enabled false
         html.destination "${buildDir}/jacocoHtml"
     }
+
+    classDirectories = fileTree(
+            dir: 'build/intermediates/classes/debug',
+            exclude: [
+              '**/R*.class',
+              '**/BuildConfig*',
+              '**/*$*.class',
+              '**/*$*.java']
+    )
+
+    sourceDirectories = files(['src/main/java'])
+    executionData = fileTree(dir: rootProject.rootDir, includes: ['**/*.exec', '**/*.ec'])
 }
 
 ext {
@@ -114,6 +115,9 @@ dependencies {
     // Facebook Stetho support see http://facebook.github.io/stetho/
     // Use chrome://inspect to inspect via chrome browser
     compile 'com.facebook.stetho:stetho:1.1.1'
+
+    // ButterKnife view injection support see http://jakewharton.github.io/butterknife/
+    compile 'com.jakewharton:butterknife:7.0.1'
 
     // LeakCanary suppor see https://github.com/square/leakcanary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
