@@ -1,8 +1,9 @@
 package nl.jmuijsenberg.androiddemo.app;
 
-import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -10,12 +11,15 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.app.adapters.PageAdapter;
+import nl.jmuijsenberg.androiddemo.app.fragments.Fragment1;
+import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
 import nl.jmuijsenberg.androiddemo.control.MainController;
 import nl.jmuijsenberg.androiddemo.devices.android.NativeDevice;
 import nl.jmuijsenberg.androiddemo.repository.sqlite.RepositorySqlite;
 import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, Fragment1.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener {
     public MainViewModel mMainViewModel;
 
     @Bind(R.id.textView1)
@@ -41,6 +45,8 @@ public class MainActivity extends Activity {
 
         mTextView1.setText(getResources().getQuantityString(R.plurals.item, 1, 1));
         mTextView2.setText(getResources().getQuantityString(R.plurals.item, 2, 2));
+
+        mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager()));
     }
 
     @Override
@@ -63,5 +69,25 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        mViewPager.setCurrentItem(position, true);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        
     }
 }

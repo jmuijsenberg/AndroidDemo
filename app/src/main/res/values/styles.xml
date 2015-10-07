@@ -1,5 +1,4 @@
 <resources>
-
     <style name="RedTheme">
         <item name="android:textColor">@color/red</item>
     </style>

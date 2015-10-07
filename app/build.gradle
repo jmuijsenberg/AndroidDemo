@@ -98,6 +98,7 @@ dependencies {
 
     // ViewPager support see https://developer.android.com/tools/support-library/features.html
     compile "com.android.support:support-v4:${supportLibrary}"
+    compile "com.android.support:appcompat-v7:${supportLibrary}"
 
     // Module dependencies
     compile project(':repository')
