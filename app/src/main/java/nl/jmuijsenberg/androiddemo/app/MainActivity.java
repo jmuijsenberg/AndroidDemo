@@ -2,6 +2,7 @@ package nl.jmuijsenberg.androiddemo.app;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Bind(R.id.viewPager)
     public ViewPager mViewPager;
 
+    @Bind(R.id.pagerTabStrip)
+    public PagerTabStrip mPagerTabStrip;
+
     private ActionBar mActionBar;
 
     @Override
@@ -45,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
 
         //setSupportActionBar(); When using new ToolBar class
+
+        mPagerTabStrip.setTextSpacing(10);
+        mPagerTabStrip.setDrawFullUnderline(false);
 
         mMainViewModel = new MainViewModel();
         mMainViewModel.mMainController = new MainController();
