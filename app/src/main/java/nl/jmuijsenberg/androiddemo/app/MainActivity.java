@@ -3,10 +3,10 @@ package nl.jmuijsenberg.androiddemo.app;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,14 +22,10 @@ import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, Fragment1.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener {
     public MainViewModel mMainViewModel;
 
-    @Bind(R.id.textView1)
-    public TextView mTextView1;
-
-    @Bind(R.id.textView2)
-    public TextView mTextView2;
-
     @Bind(R.id.viewPager)
     public ViewPager mViewPager;
+
+    private ActionBar mActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +34,25 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         ButterKnife.bind(this);
 
+        mActionBar = getSupportActionBar();
+        if( mActionBar != null) {
+            mActionBar.setLogo(R.drawable.ic_3d_rotation_24dp);
+            mActionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO |
+                                         ActionBar.DISPLAY_SHOW_HOME |
+                                         ActionBar.DISPLAY_HOME_AS_UP |
+                                         ActionBar.DISPLAY_SHOW_TITLE |
+                                         ActionBar.DISPLAY_SHOW_CUSTOM);
+        }
+
+        //setSupportActionBar(); When using new ToolBar class
+
         mMainViewModel = new MainViewModel();
         mMainViewModel.mMainController = new MainController();
         mMainViewModel.mMainController.mRepositiory = new RepositorySqlite();
         mMainViewModel.mMainController.mDevice = new NativeDevice();
 
-        mTextView1.setText(getResources().getQuantityString(R.plurals.item, 1, 1));
-        mTextView2.setText(getResources().getQuantityString(R.plurals.item, 2, 2));
-
         mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager()));
+
     }
 
     @Override
@@ -88,6 +94,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-        
+
     }
 }

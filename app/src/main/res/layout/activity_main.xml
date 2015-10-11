@@ -4,28 +4,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:windowNoTitle="true"
+    android:windowActionBar="true"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        style="@style/RedTheme"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        style="@style/RedYellowTheme"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pager_title_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#33b5e5"
+            android:textColor="#fff"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
+    </android.support.v4.view.ViewPager>
 
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_3d_rotation_24dp"
-        style="@style/RedYellowTheme"/>
 </LinearLayout>

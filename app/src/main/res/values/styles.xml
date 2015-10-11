@@ -1,10 +1,6 @@
 <resources>
-    <style name="RedTheme">
-        <item name="android:textColor">@color/red</item>
+    <!-- your theme inherits from the material theme -->
+    <style name="AppTheme" parent="android:Theme.Material">
+        <!-- theme customizations -->
     </style>
-
-    <style name="RedYellowTheme" parent="RedTheme">
-        <item name="android:background">@color/yellow</item>
-    </style>
-
 </resources>
