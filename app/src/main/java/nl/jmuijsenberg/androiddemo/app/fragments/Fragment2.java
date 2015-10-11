@@ -7,10 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 
 public class Fragment2 extends Fragment {
+    @Bind(R.id.textView1)
+    TextView textView1;
+    @Bind(R.id.textView2)
+    TextView textView2;
     private OnFragmentInteractionListener mListener;
 
     public static Fragment2 newInstance() {
@@ -29,7 +36,12 @@ public class Fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_fragment2, container, false);
+        View view = inflater.inflate(R.layout.fragment_fragment2, container, false);
+        ButterKnife.bind(this, view);
+
+        textView1.setText("fragment 2 text view 1 text");
+        textView2.setText("fragment 2 text view 2 text");
+        return view;
     }
 
     @Override
@@ -47,6 +59,12 @@ public class Fragment2 extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     public interface OnFragmentInteractionListener {
