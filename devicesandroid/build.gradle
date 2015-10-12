@@ -77,4 +77,10 @@ dependencies {
     compile project(':devices')
     compile project(':utilandroid')
     compile project(':utiljava')
+
+    // RxJava support
+    compile "io.reactivex:rxjava:${rxjavaVersion}"
+
+    // Mockito support
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
 }

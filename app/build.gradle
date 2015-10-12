@@ -11,7 +11,12 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        // See https://github.com/mdzyuba/cucumber-jvm/tree/add_android_studio_example/examples/android/android-studio/Cukeulator
+        testApplicationId "nl.jmuijsenberg.androiddemo.app"
+        testInstrumentationRunner "nl.jmuijsenberg.androiddemo.app.runner"
     }
+
     buildTypes {
         debug {
             testCoverageEnabled true
@@ -89,16 +94,10 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['test']) {
     executionData = fileTree(dir: rootProject.rootDir, includes: ['**/*.exec', '**/*.ec'])
 }
 
-ext {
-    supportLibrary = '22.2.0'
-}
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    // ViewPager support see https://developer.android.com/tools/support-library/features.html
-    compile "com.android.support:support-v4:${supportLibrary}"
-    compile "com.android.support:appcompat-v7:${supportLibrary}"
 
     // Module dependencies
     compile project(':repository')
@@ -110,17 +109,35 @@ dependencies {
     compile project(':devicesandroid')
     compile project(':control')
 
+    // ViewPager support see https://developer.android.com/tools/support-library/features.html
+    compile "com.android.support:support-v4:${supportLibraryVersion}"
+    compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+
     // RxJava support
-    compile 'io.reactivex:rxjava:1.0.12'
+    compile "io.reactivex:rxjava:${rxjavaVersion}"
 
-    // Facebook Stetho support see http://facebook.github.io/stetho/
-    // Use chrome://inspect to inspect via chrome browser
-    compile 'com.facebook.stetho:stetho:1.1.1'
+    // Stetho support see http://facebook.github.io/stetho/
+    compile "com.facebook.stetho:stetho:${stethoVersion}"
 
-    // ButterKnife view injection support see http://jakewharton.github.io/butterknife/
-    compile 'com.jakewharton:butterknife:7.0.1'
+    // ButterKnife support see http://jakewharton.github.io/butterknife/
+    compile "com.jakewharton:butterknife:${butterknifeVersion}"
 
     // LeakCanary suppor see https://github.com/square/leakcanary
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+    debugCompile "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}"
+
+    // Cucumber support
+    androidTestCompile "com.google.dexmaker:dexmaker:${dexMakerVersion}"
+    androidTestCompile "com.google.dexmaker:dexmaker-mockito:${dexMakerVersion}"
+
+    androidTestCompile "info.cukes:cucumber-android:${cucumberVersion}"
+    androidTestCompile "info.cukes:cucumber-picocontainer:${cucumberVersion}"
+
+    androidTestCompile "com.android.support.test:runner:${androidTestVersion}"
+    androidTestCompile "com.android.support.test:rules:${androidTestVersion}"
+
+    androidTestCompile "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:${espressoVersion}") {
+        exclude module: 'recyclerview-v7'
+    }
 }

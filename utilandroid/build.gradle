@@ -77,5 +77,8 @@ dependencies {
     compile project(':utiljava')
 
     // RxJava support
-    compile 'io.reactivex:rxjava:1.0.12'
+    compile "io.reactivex:rxjava:${rxjavaVersion}"
+
+    // Mockito support
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
 }
