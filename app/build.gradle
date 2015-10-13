@@ -12,15 +12,18 @@ android {
         versionCode 1
         versionName "1.0"
 
-        // See https://github.com/mdzyuba/cucumber-jvm/tree/add_android_studio_example/examples/android/android-studio/Cukeulator
+        // test application determines path to find cucumber options
         testApplicationId "nl.jmuijsenberg.androiddemo.app"
-        testInstrumentationRunner "nl.jmuijsenberg.androiddemo.app.runner"
+
+        // test runner used by cucumber
+        testInstrumentationRunner "nl.jmuijsenberg.androiddemo.app.runner.CucumberTestRunner"
     }
 
     buildTypes {
         debug {
             testCoverageEnabled true
             minifyEnabled false
+            buildConfigField "String", "TEST_TAGS", "\"${getTestTags()}\""
         }
 
         release {
@@ -45,6 +48,11 @@ android {
     packagingOptions {
         exclude 'LICENSE.txt'
     }
+}
+
+// Read Cucumber tags from command line like: ./gradlew connectedAndroidTest -Dtags="@login-scenarios,@kitkat"
+def getTestTags() {
+    return project.hasProperty("tags") ? project.getProperties().get("tags") : ""
 }
 
 // https://docs.gradle.org/current/userguide/sonar_runner_plugin.html
@@ -126,7 +134,7 @@ dependencies {
     debugCompile "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}"
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}"
 
-    // Cucumber support
+    // Cucumber support see https://github.com/neoranga55/CleanGUITestArchitecture
     androidTestCompile "com.google.dexmaker:dexmaker:${dexMakerVersion}"
     androidTestCompile "com.google.dexmaker:dexmaker-mockito:${dexMakerVersion}"
 
