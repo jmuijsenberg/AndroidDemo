@@ -4,6 +4,16 @@
     android:orientation="vertical"
     tools:context="nl.jmuijsenberg.androiddemo.app.fragments.Fragment1">
 
+    <include
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        layout="@layout/person_list" />
+
+    <include
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        layout="@layout/person_details" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
