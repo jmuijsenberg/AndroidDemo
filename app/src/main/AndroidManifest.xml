@@ -3,14 +3,15 @@
     package="nl.jmuijsenberg.androiddemo" >
 
     <application
+        android:name=".app.ExtendedApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".app.ExtendedApplication"
         android:theme="@style/Theme.AppCompat.Light" >
         <activity
             android:name=".app.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
