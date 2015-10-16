@@ -35,8 +35,23 @@
     </TableRow>
 
     <TableRow>
+        <TextView
+            android:id="@+id/personDateOfBirthLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:text="Last name" />
+        <TextView
+            android:id="@+id/personDateOfBirthValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:text="20 Jan 2001" />
+    </TableRow>
+
+    <TableRow>
         <View>
-            
+
         </View>
         <Button
             android:id="@+id/applyButton"

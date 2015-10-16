@@ -4,4 +4,9 @@
     <color name="yellow">#ffff00</color>
     <color name="green">#33cc00</color>
     <color name="blue">#00cc88</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="orange">#ffaaaa</color>
 </resources>

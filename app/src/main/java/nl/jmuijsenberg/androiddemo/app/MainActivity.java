@@ -8,11 +8,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.adapters.PageAdapter;
+import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment1;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
 import nl.jmuijsenberg.androiddemo.control.MainController;
@@ -102,5 +105,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @OnClick(R.id.updateDateButton)
+    public void updateDate(ImageButton button) {
+        android.support.v4.app.DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 }

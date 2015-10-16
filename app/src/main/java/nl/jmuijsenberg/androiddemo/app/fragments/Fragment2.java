@@ -7,11 +7,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerFragment;
 
 public class Fragment2 extends Fragment {
     @Bind(R.id.textView1)
@@ -65,6 +69,18 @@ public class Fragment2 extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @OnClick(R.id.updateDateButton)
+    public void updateDate(ImageButton button) {
+        android.support.v4.app.DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
+    }
+
+    @OnClick(R.id.updateTimeButton)
+    public void updateTime(ImageButton button) {
+        TimePickerFragment dialog = new TimePickerFragment();
+        dialog.show(getActivity().getSupportFragmentManager(), "timePicker");
     }
 
     public interface OnFragmentInteractionListener {

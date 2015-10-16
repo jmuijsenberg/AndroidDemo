@@ -1,6 +1,18 @@
 <resources>
-    <!-- your theme inherits from the material theme -->
-    <style name="AppTheme" parent="android:Theme.Material">
-        <!-- theme customizations -->
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/yellow</item>
+        <item name="colorAccent">@color/blue</item>
+
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+    </style>
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <!-- see   http://stackoverflow.com/questions/28738089/change-datepicker-dialog-color-for-android-5-0-->
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/red</item>
     </style>
 </resources>
