@@ -4,9 +4,12 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.ContextThemeWrapper;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+
+import nl.jmuijsenberg.androiddemo.R;
 
 // See http://stackoverflow.com/questions/28738089/change-datepicker-dialog-color-for-android-5-0
 public class TimePickerFragment extends android.support.v4.app.DialogFragment
@@ -20,7 +23,7 @@ public class TimePickerFragment extends android.support.v4.app.DialogFragment
         int minute = c.get(Calendar.MINUTE);
 
         // Create a new instance of TimePickerDialog and return it
-        return new TimePickerDialog(getActivity(), this, hour, minute,
+        return new TimePickerDialog(new ContextThemeWrapper(getActivity(), R.style.AppTheme), this, hour, minute,
                 DateFormat.is24HourFormat(getActivity()));
     }
 
