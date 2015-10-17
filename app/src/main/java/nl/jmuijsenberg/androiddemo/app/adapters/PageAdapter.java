@@ -1,7 +1,7 @@
 package nl.jmuijsenberg.androiddemo.app.adapters;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment1;

@@ -1,6 +1,7 @@
 package nl.jmuijsenberg.androiddemo.app.dialogs;
 
 import android.app.DatePickerDialog;
+import android.support.v4.app.DialogFragment;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
@@ -12,8 +13,10 @@ import java.util.Date;
 import nl.jmuijsenberg.androiddemo.R;
 
 // See http://stackoverflow.com/questions/28738089/change-datepicker-dialog-color-for-android-5-0
-public class DatePickerFragment extends android.support.v4.app.DialogFragment
+public class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
+
+    private DatePickerDialog.OnDateSetListener mListener;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -31,7 +34,14 @@ public class DatePickerFragment extends android.support.v4.app.DialogFragment
         return dialog;
     }
 
+    public void setOnDateSetListener(DatePickerDialog.OnDateSetListener listener)
+    {
+        mListener = listener;
+    }
+
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Do something with the date chosen by the user
+        if (mListener != null) {
+            mListener.onDateSet(view, year, month,day);
+        }
     }
 }

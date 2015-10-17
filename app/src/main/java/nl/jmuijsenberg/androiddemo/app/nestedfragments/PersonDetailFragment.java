@@ -1,35 +1,39 @@
-package nl.jmuijsenberg.androiddemo.app.fragments;
+package nl.jmuijsenberg.androiddemo.app.nestedfragments;
 
-import android.support.v4.app.Fragment;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
-import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerFragment;
+import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 
-public class Fragment2 extends Fragment {
-    @Bind(R.id.textView1)
-    TextView textView1;
-    @Bind(R.id.textView2)
-    TextView textView2;
+public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
     private OnFragmentInteractionListener mListener;
 
-    public static Fragment2 newInstance() {
-        return new Fragment2();
-    }
+    @Bind(R.id.personFirstNameValue)
+    EditText mFirstNameText;
+    @Bind(R.id.personLastNameValue)
+    EditText mLastNameText;
+    @Bind(R.id.personDateOfBirthValue)
+    TextView mDateOfBirthText;
+    @Bind(R.id.applyButton)
+    Button mApplyButton;
 
-    public Fragment2() {
-        // Required empty public constructor
+    public PersonDetailFragment() {
     }
 
     @Override
@@ -40,11 +44,8 @@ public class Fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment2, container, false);
+        View view = inflater.inflate(R.layout.fragment_person_detail, container, false);
         ButterKnife.bind(this, view);
-
-        textView1.setText("fragment 2 text view 1 text");
-        textView2.setText("fragment 2 text view 2 text");
         return view;
     }
 
@@ -52,7 +53,7 @@ public class Fragment2 extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnFragmentInteractionListener) context;
+            mListener = (OnFragmentInteractionListener) getParentFragment ();
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -65,27 +66,27 @@ public class Fragment2 extends Fragment {
         mListener = null;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
+    @OnClick(R.id.applyButton)
+    public void onApply(Button button) {
+        Toast.makeText(getActivity(), "Applied", Toast.LENGTH_SHORT).show();
+        button.setText("Done");
     }
 
-    @OnClick(R.id.updateDateButton)
-    public void updateDate(ImageButton button) {
+    @OnClick(R.id.personDateOfBirthValue)
+    public void onDateOfBirthSelect(TextView textView) {
         DatePickerFragment datePicker = new DatePickerFragment();
         datePicker.show(getActivity().getSupportFragmentManager(), "datePicker");
+        datePicker.setOnDateSetListener(this);
     }
 
-    @OnClick(R.id.updateTimeButton)
-    public void updateTime(ImageButton button) {
-        TimePickerFragment timePicker = new TimePickerFragment();
-        timePicker.show(getActivity().getSupportFragmentManager(), "timePicker");
+    @Override
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+        mDateOfBirthText.setText(DateTime.formatDate(year, monthOfYear, dayOfMonth));
     }
+
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
-
 }

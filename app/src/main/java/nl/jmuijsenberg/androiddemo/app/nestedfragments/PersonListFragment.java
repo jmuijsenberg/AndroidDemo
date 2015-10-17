@@ -1,30 +1,25 @@
-package nl.jmuijsenberg.androiddemo.app.fragments;
+package nl.jmuijsenberg.androiddemo.app.nestedfragments;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonDetailFragment;
-import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonListFragment;
 
-public class Fragment1 extends Fragment implements PersonListFragment.OnFragmentInteractionListener, PersonDetailFragment.OnFragmentInteractionListener {
-
+public class PersonListFragment extends Fragment {
+    @Bind(R.id.personList)
+    RecyclerView mPersonList;
 
     private OnFragmentInteractionListener mListener;
 
-    public static Fragment1 newInstance() {
-        return new Fragment1();
-    }
-
-    public Fragment1() {
-        // Required empty public constructor
+    public PersonListFragment() {
     }
 
     @Override
@@ -35,19 +30,13 @@ public class Fragment1 extends Fragment implements PersonListFragment.OnFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment1, container, false);
+        View view = inflater.inflate(R.layout.fragment_person_list, container, false);
         ButterKnife.bind(this, view);
-
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.add(R.id.personListFrame, new PersonListFragment(), "tag1");
-        transaction.add(R.id.personDetailFrame, new PersonDetailFragment(), "tag2");
-        transaction.commit();
         return view;
     }
 
     @Override
     public void onAttach(Context context) {
-
         super.onAttach(context);
         try {
             mListener = (OnFragmentInteractionListener) getParentFragment ();
@@ -63,22 +52,8 @@ public class Fragment1 extends Fragment implements PersonListFragment.OnFragment
         mListener = null;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
-
-
-
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
-
 }

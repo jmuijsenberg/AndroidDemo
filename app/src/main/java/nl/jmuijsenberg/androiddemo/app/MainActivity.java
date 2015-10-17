@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity  implements ViewPager.OnPage
 
     @OnClick(R.id.fab)
     public void updateDate(FloatingActionButton button) {
-        android.support.v4.app.DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
+        DatePickerFragment datePicker = new DatePickerFragment();
+        datePicker.show(getSupportFragmentManager(), "datePicker");
     }
 
     @Override
