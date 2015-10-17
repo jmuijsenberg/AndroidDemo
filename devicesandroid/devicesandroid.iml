@@ -90,6 +90,7 @@
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="rxjava-1.0.14" level="project" />
+    <orderEntry type="library" exported="" name="rxandroid-0.23.0" level="project" />
     <orderEntry type="module" module-name="utilandroid" exported="" />
     <orderEntry type="module" module-name="devices" exported="" />
     <orderEntry type="module" module-name="utiljava" exported="" />

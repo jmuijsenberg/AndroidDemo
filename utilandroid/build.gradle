@@ -79,6 +79,8 @@ dependencies {
     // RxJava support
     compile "io.reactivex:rxjava:${rxjavaVersion}"
 
+    compile "io.reactivex:rxandroid:${rxandroidVersion}"
+
     // Mockito support
     testCompile "org.mockito:mockito-core:${mockitoVersion}"
 }
