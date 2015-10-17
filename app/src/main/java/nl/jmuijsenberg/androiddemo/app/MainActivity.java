@@ -1,5 +1,6 @@
 package nl.jmuijsenberg.androiddemo.app;
 
+import android.app.DatePickerDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,7 @@ import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.DatePicker;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,7 +23,7 @@ import nl.jmuijsenberg.androiddemo.devices.android.NativeDevice;
 import nl.jmuijsenberg.androiddemo.repository.sqlite.RepositorySqlite;
 import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 
-public class MainActivity extends AppCompatActivity  implements ViewPager.OnPageChangeListener, Fragment1.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity  implements ViewPager.OnPageChangeListener, Fragment1.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener, DatePickerDialog.OnDateSetListener{
     public MainViewModel mMainViewModel;
 
     @Bind(R.id.fab)
@@ -79,6 +81,11 @@ public class MainActivity extends AppCompatActivity  implements ViewPager.OnPage
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
     }
 }
