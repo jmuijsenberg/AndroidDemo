@@ -75,8 +75,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     @OnClick(R.id.personDateOfBirthValue)
     public void onDateOfBirthSelect(TextView textView) {
         DatePickerFragment datePicker = new DatePickerFragment();
-        datePicker.show(getActivity().getSupportFragmentManager(), "datePicker");
-        datePicker.setOnDateSetListener(this);
+        datePicker.show(getChildFragmentManager(), "datePicker");
     }
 
     @Override

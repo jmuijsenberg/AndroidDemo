@@ -1,14 +1,18 @@
 package nl.jmuijsenberg.androiddemo.app.fragments;
 
-import android.support.v4.app.Fragment;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -17,7 +21,7 @@ import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerFragment;
 
-public class Fragment2 extends Fragment {
+public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
     @Bind(R.id.textView1)
     TextView textView1;
     @Bind(R.id.textView2)
@@ -74,13 +78,23 @@ public class Fragment2 extends Fragment {
     @OnClick(R.id.updateDateButton)
     public void updateDate(ImageButton button) {
         DatePickerFragment datePicker = new DatePickerFragment();
-        datePicker.show(getActivity().getSupportFragmentManager(), "datePicker");
+        datePicker.show(getChildFragmentManager(), "datePicker");
     }
 
     @OnClick(R.id.updateTimeButton)
     public void updateTime(ImageButton button) {
         TimePickerFragment timePicker = new TimePickerFragment();
-        timePicker.show(getActivity().getSupportFragmentManager(), "timePicker");
+        timePicker.show(getChildFragmentManager(), "timePicker");
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+    }
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
     }
 
     public interface OnFragmentInteractionListener {
