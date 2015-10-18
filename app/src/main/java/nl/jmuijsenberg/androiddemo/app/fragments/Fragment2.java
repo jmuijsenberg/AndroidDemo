@@ -31,12 +31,12 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
     TextView textView2;
     private OnFragmentInteractionListener mListener;
 
-    public static Fragment2 newInstance() {
-        return new Fragment2();
-    }
-
     public Fragment2() {
         // Required empty public constructor
+    }
+
+    public static Fragment2 newInstance() {
+        return new Fragment2();
     }
 
     @Override

@@ -20,12 +20,12 @@ public class PersonFragment extends Fragment implements PersonListFragment.OnFra
 
     private OnFragmentInteractionListener mListener;
 
-    public static PersonFragment newInstance() {
-        return new PersonFragment();
-    }
-
     public PersonFragment() {
         // Required empty public constructor
+    }
+
+    public static PersonFragment newInstance() {
+        return new PersonFragment();
     }
 
     @Override

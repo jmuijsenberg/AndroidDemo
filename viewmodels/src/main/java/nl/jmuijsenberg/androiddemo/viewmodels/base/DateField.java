@@ -23,16 +23,16 @@ public class DateField extends PropertyField<Calendar> {
         mMaximum = maximum;
     }
 
+    public DateField(Calendar minimum, Calendar maximum, Calendar value)
+    {
+        super(value);
+    }
+
     public void set(long dateInMilliSeconds)
     {
         Calendar date = Calendar.getInstance();
         date.setTimeInMillis(dateInMilliSeconds);
         set(date);
-    }
-
-    public DateField(Calendar minimum, Calendar maximum, Calendar value)
-    {
-        super(value);
     }
 
     public Calendar getMinimum()

@@ -98,6 +98,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/base/DateField.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/base/PropertyField.java">
           <value>
             <set />
