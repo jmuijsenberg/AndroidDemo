@@ -13,17 +13,18 @@ import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonDetailFragment;
 import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonListFragment;
+import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
-public class Fragment1 extends Fragment implements PersonListFragment.OnFragmentInteractionListener, PersonDetailFragment.OnFragmentInteractionListener {
-
+public class PersonFragment extends Fragment implements PersonListFragment.OnFragmentInteractionListener, PersonDetailFragment.OnFragmentInteractionListener {
+    private static String TAG = "PersonFragment";
 
     private OnFragmentInteractionListener mListener;
 
-    public static Fragment1 newInstance() {
-        return new Fragment1();
+    public static PersonFragment newInstance() {
+        return new PersonFragment();
     }
 
-    public Fragment1() {
+    public PersonFragment() {
         // Required empty public constructor
     }
 
@@ -52,8 +53,8 @@ public class Fragment1 extends Fragment implements PersonListFragment.OnFragment
         try {
             mListener = (OnFragmentInteractionListener) getParentFragment ();
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+            throw new Error(e);
         }
     }
 

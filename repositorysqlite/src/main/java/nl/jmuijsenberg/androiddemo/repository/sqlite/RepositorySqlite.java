@@ -20,23 +20,27 @@ public class RepositorySqlite implements Repository {
         mSchedulers = schedulers;
     }
 
+    @Override
     public Observable<List<Person>> getPersons() {
         return Observable.just(persons)
                 .observeOn(mSchedulers.io());
     }
 
+    @Override
     public Observable<Boolean> addPerson(Person person) {
         persons.add(person);
         return Observable.just(true)
                 .observeOn(mSchedulers.io());
     }
 
+    @Override
     public Observable<Boolean> deletePeson(Person person) {
         persons.remove(person);
         return Observable.just(true)
                 .observeOn(mSchedulers.io());
     }
 
+    @Override
     public Observable<Boolean> updatePerson(Person person) {
         return Observable.just(false)
                 .observeOn(mSchedulers.io());

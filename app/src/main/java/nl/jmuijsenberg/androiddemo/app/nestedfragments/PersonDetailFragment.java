@@ -20,8 +20,11 @@ import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
+import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
 public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
+    private static String TAG = "PersonDetailFragment";
+
     private OnFragmentInteractionListener mListener;
 
     @Bind(R.id.personFirstNameValue)
@@ -56,8 +59,8 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         try {
             mListener = (OnFragmentInteractionListener) getParentFragment ();
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+            throw new Error(e);
         }
     }
 

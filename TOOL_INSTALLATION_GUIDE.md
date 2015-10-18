@@ -55,7 +55,8 @@ Required in you testing with a Samsung device
 1. Markdown
 2. PlantUML
 3. Cucumber (non standard)
-4. SonarQube Communinity Plugin
+4. SonarQube Communinity Plugin (see https://github.com/sonar-intellij-plugin/sonar-intellij-plugin for configuration)
+   (set sonarrunner in path)
 
 ## Install Jenkins
 1.	Download Jenkins Windows Installer from https://jenkins-ci.org/

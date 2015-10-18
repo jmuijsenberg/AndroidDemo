@@ -16,10 +16,10 @@ import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.adapters.PageAdapter;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
-import nl.jmuijsenberg.androiddemo.app.fragments.Fragment1;
+import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
 
-public class MainActivity extends AppCompatActivity  implements ViewPager.OnPageChangeListener, Fragment1.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener, DatePickerDialog.OnDateSetListener{
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, PersonFragment.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener, DatePickerDialog.OnDateSetListener {
     @Bind(R.id.fab)
     public FloatingActionButton mFloatingActionButton;
 

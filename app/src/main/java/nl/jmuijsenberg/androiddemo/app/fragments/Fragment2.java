@@ -20,8 +20,11 @@ import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerFragment;
+import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
 public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
+    private static String TAG = "Fragment2";
+
     @Bind(R.id.textView1)
     TextView textView1;
     @Bind(R.id.textView2)
@@ -58,8 +61,8 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
         try {
             mListener = (OnFragmentInteractionListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+            throw new Error(e);
         }
     }
 

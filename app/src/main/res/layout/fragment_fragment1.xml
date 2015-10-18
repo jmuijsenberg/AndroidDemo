@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="nl.jmuijsenberg.androiddemo.app.fragments.Fragment1">
+    tools:context="nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment">
 
     <!--    You cannot inflate a layout into a fragment when that layout includes a fragment.
             Nested fragments are only supported when added to a fragment dynamically.

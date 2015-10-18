@@ -12,8 +12,11 @@ import android.view.ViewGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
 public class PersonListFragment extends Fragment {
+    private static String TAG = "PersonListFragment";
+
     @Bind(R.id.personList)
     RecyclerView mPersonList;
 
@@ -41,8 +44,8 @@ public class PersonListFragment extends Fragment {
         try {
             mListener = (OnFragmentInteractionListener) getParentFragment ();
         } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+            throw new Error(e);
         }
     }
 

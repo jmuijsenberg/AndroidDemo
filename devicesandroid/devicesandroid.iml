@@ -98,4 +98,8 @@
     <orderEntry type="module" module-name="devices" exported="" />
     <orderEntry type="module" module-name="utiljava" exported="" />
   </component>
+  <component name="sonarModuleSettings">
+    <option name="localAnalysisScripName" value="&lt;PROJECT&gt;" />
+    <option name="serverName" value="&lt;PROJECT&gt;" />
+  </component>
 </module>

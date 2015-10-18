@@ -2,9 +2,9 @@ package nl.jmuijsenberg.androiddemo.util.android.logging;
 
 import android.util.Log;
 
-import nl.jmuijsenberg.androiddemo.util.java.logging.LogListener;
+import nl.jmuijsenberg.androiddemo.util.java.logging.LoggerListener;
 
-public class LogcatLog implements LogListener {
+public class AndroidLogger implements LoggerListener {
     @Override
     public void d(String tag, String... msg) {
         Log.d(tag, format(msg));
