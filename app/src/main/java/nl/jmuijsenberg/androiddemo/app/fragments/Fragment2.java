@@ -18,8 +18,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
-import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.ConfirmationDialogFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
 public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
@@ -82,24 +83,26 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
 
     @OnClick(R.id.updateDateButton)
     public void updateDate(ImageButton button) {
-        DatePickerFragment datePicker = new DatePickerFragment();
-        datePicker.show(getChildFragmentManager(), "datePicker");
+        DatePickerDialogFragment dialog = new DatePickerDialogFragment();
+        dialog.show(getChildFragmentManager(), "datePicker");
     }
 
     @OnClick(R.id.updateTimeButton)
     public void updateTime(ImageButton button) {
-        TimePickerFragment timePicker = new TimePickerFragment();
-        timePicker.show(getChildFragmentManager(), "timePicker");
+        TimePickerDialogFragment dialog = new TimePickerDialogFragment();
+        dialog.show(getChildFragmentManager(), "timePicker");
     }
 
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
+        ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.date_changed, R.string.date_confirm, R.drawable.calendar_24p);
+        dialog.show(getChildFragmentManager(), "confirm");
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-
+        ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.time_changed, R.string.time_confirm, R.drawable.clock_24dp);
+        dialog.show(getChildFragmentManager(), "confirm");
     }
 
     public interface OnFragmentInteractionListener {

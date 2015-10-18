@@ -11,7 +11,7 @@ import java.util.Calendar;
 
 import nl.jmuijsenberg.androiddemo.R;
 
-public class TimePickerFragment extends DialogFragment
+public class TimePickerDialogFragment extends DialogFragment
 {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

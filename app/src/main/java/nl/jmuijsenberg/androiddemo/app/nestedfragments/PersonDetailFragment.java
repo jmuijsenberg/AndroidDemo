@@ -18,7 +18,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
@@ -79,8 +79,8 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
 
     @OnClick(R.id.personDateOfBirthValue)
     public void onDateOfBirthSelect(TextView textView) {
-        DatePickerFragment datePicker = new DatePickerFragment();
-        datePicker.show(getChildFragmentManager(), "datePicker");
+        DatePickerDialogFragment dialog = new DatePickerDialogFragment();
+        dialog.show(getChildFragmentManager(), "datePicker");
     }
 
     @Override
