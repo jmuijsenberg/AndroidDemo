@@ -26,8 +26,8 @@ sonarRunner {
         property "sonar.host.url", "http://localhost:9000/"
         property "sonar.jdbc.url", "jdbc:mysql://localhost/sonar"
         property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
-        property "sonar.jdbc.username", "sonar"
-        property "sonar.jdbc.password", "amina"
+        property "sonar.jdbc.username", System.getenv('SONAR_USERNAME')
+        property "sonar.jdbc.password", System.getenv('SONAR_PASSWORD')
 
         // See http://stackoverflow.com/questions/20117545/sonar-how-do-i-use-gradle-to-inspect-an-android-project
         property "sonar.projectKey", "AndroidDemo"

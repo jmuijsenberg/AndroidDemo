@@ -1,0 +1,30 @@
+@startuml
+
+package app {}
+package viewmodels {}
+package control {}
+package repository {}
+package repositorysqlite {}
+package util {}
+package utilandroid {}
+package devices {}
+package devicesandroid {}
+package entities {}
+
+app ..> viewmodels
+viewmodels ..> control
+control ..> repository
+control ..> devices
+
+viewmodels -> entities
+control --> entities
+repository --> entities
+
+devices --|> devicesandroid
+repository --|> repositorysqlite
+
+util <|-- utilandroid
+
+note "Architecture diagram created with PlantUML plugin" as N1
+
+@enduml

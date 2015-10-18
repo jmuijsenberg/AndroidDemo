@@ -99,8 +99,8 @@ Required for Continuous Inspection
 5.	Create folder C:\Windows\System32\config\systemprofile\AppData\Local\Temp
 6.	Run C:\SonarQube\bin\windows-x86-64\InstallNTService.bat to install the service.
 7.	Edit C:\SonarQube\conf\sonar.properties file and uncomment lines:
-    *	sonar.jdbc.username=sonar
-    *	sonar.jdbc.password=sonar
+    *	sonar.jdbc.username=sonar (or other if desirable)
+    *	sonar.jdbc.password=sonar (or other if desirable)
     *	sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
 8.	Run C:\SonarQube\bin\windows-x86-64\StartNTService.bat to start the service.
 9.	Wait some time for the sonar server to have initialized the first time and go to http://localhost:9000/
@@ -115,3 +115,4 @@ Required for Continuous Inspection
     *	Motion chart plugin
     *	Timeline plugin
     *	Tab metrics plugin
+11. Set enviroment variables defined configure sonar usename and password (SONAR_USERNAME and SONAR_PASSWORD)
