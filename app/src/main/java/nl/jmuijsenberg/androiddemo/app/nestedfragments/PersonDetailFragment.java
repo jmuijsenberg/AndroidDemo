@@ -24,6 +24,7 @@ import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
 public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
     private static String TAG = "PersonDetailFragment";
+    private static String FIRSTNAME = "FirstName";
 
     private OnFragmentInteractionListener mListener;
 
@@ -50,6 +51,10 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         View view = inflater.inflate(R.layout.fragment_person_detail, container, false);
         ButterKnife.bind(this, view);
 
+        if (savedInstanceState != null) {
+            mFirstNameText.setText(savedInstanceState.getString(FIRSTNAME) + "1");
+        }
+
         return view;
     }
 
@@ -63,6 +68,15 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
             Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
             throw new Error(e);
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+        savedInstanceState.putString(FIRSTNAME, mFirstNameText.getText().toString());
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     @Override
