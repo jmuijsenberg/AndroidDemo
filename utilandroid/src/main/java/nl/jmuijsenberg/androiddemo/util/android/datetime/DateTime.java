@@ -13,5 +13,11 @@ public class DateTime {
         return  DATE_FORMAT.format(date);
     }
 
+    public static String formatDate(Calendar calendar)
+    {
+        Date date = calendar.getTime();
+        return  DATE_FORMAT.format(date);
+    }
+
     private final static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MMM-dd");
 }

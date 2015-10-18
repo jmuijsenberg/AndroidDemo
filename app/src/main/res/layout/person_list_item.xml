@@ -3,8 +3,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
+    <TextView
         android:id="@+id/personFullName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/personDateOfBirth"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
