@@ -18,14 +18,8 @@ import nl.jmuijsenberg.androiddemo.app.adapters.PageAdapter;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment1;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
-import nl.jmuijsenberg.androiddemo.control.MainController;
-import nl.jmuijsenberg.androiddemo.devices.android.NativeDevice;
-import nl.jmuijsenberg.androiddemo.repository.sqlite.RepositorySqlite;
-import nl.jmuijsenberg.androiddemo.viewmodels.MainViewModel;
 
 public class MainActivity extends AppCompatActivity  implements ViewPager.OnPageChangeListener, Fragment1.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener, DatePickerDialog.OnDateSetListener{
-    public MainViewModel mMainViewModel;
-
     @Bind(R.id.fab)
     public FloatingActionButton mFloatingActionButton;
 
@@ -49,11 +43,6 @@ public class MainActivity extends AppCompatActivity  implements ViewPager.OnPage
 
         mPagerTabStrip.setTextSpacing(10);
         mPagerTabStrip.setDrawFullUnderline(false);
-
-        mMainViewModel = new MainViewModel();
-        mMainViewModel.mMainController = new MainController();
-        mMainViewModel.mMainController.mRepositiory = new RepositorySqlite();
-        mMainViewModel.mMainController.mDevice = new NativeDevice();
 
         mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager()));
     }

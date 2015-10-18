@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: "jacoco"
 
-project(":viewmodels") {
+project(":entities") {
     sonarRunner {
         sonarProperties {
             property "sonar.language", "java"
@@ -23,11 +23,6 @@ dependencies {
 
     // Module dependencies
     compile project(':utiljava')
-    compile project(':control')
-    compile project(':entities')
-
-    // RxJava support
-    compile "io.reactivex:rxjava:${rxjavaVersion}"
 
     // Junit 4 support
     testCompile "junit:junit:${junitVersion}"

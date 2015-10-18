@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/control/control.iml" filepath="$PROJECT_DIR$/control/control.iml" />
       <module fileurl="file://$PROJECT_DIR$/devices/devices.iml" filepath="$PROJECT_DIR$/devices/devices.iml" />
       <module fileurl="file://$PROJECT_DIR$/devicesandroid/devicesandroid.iml" filepath="$PROJECT_DIR$/devicesandroid/devicesandroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entities/entities.iml" filepath="$PROJECT_DIR$/entities/entities.iml" />
       <module fileurl="file://$PROJECT_DIR$/repository/repository.iml" filepath="$PROJECT_DIR$/repository/repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/repositorysqlite/repositorysqlite.iml" filepath="$PROJECT_DIR$/repositorysqlite/repositorysqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilandroid/utilandroid.iml" filepath="$PROJECT_DIR$/utilandroid/utilandroid.iml" />

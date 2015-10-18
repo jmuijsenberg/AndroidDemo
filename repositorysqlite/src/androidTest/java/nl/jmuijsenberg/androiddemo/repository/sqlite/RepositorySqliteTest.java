@@ -3,8 +3,6 @@ package nl.jmuijsenberg.androiddemo.repository.sqlite;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
-import nl.jmuijsenberg.androiddemo.util.android.AndroidUtil;
-
 public class RepositorySqliteTest extends ApplicationTestCase<Application> {
     public RepositorySqliteTest() {
         super(Application.class);
@@ -21,7 +19,7 @@ public class RepositorySqliteTest extends ApplicationTestCase<Application> {
     }
 
     public void testConstructor() {
-        RepositorySqlite repository = new RepositorySqlite();
+        RepositorySqlite repository = new RepositorySqlite(null, null);
         assertNotNull(repository);
     }
 }

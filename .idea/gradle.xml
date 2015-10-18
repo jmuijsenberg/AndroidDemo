@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/control" />
             <option value="$PROJECT_DIR$/devices" />
             <option value="$PROJECT_DIR$/devicesandroid" />
+            <option value="$PROJECT_DIR$/entities" />
             <option value="$PROJECT_DIR$/repository" />
             <option value="$PROJECT_DIR$/repositorysqlite" />
             <option value="$PROJECT_DIR$/utilandroid" />

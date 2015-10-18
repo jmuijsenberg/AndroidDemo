@@ -1,4 +1,4 @@
-package nl.jmuijsenberg.androiddemo.devices;
+package nl.jmuijsenberg.androiddemo.viewmodels;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-public class DeviceTest {
+public class ViewModelFactoryTest {
     @Before
     public void before() {
     }
@@ -17,8 +17,8 @@ public class DeviceTest {
 
     @Test
     public void testConstructor() {
-        Device device = new Device();
+        ViewModelFactory mainViewModel = new ViewModelFactory(null, null);
 
-        assertNotNull(device);
+        assertNotNull(mainViewModel);
     }
 }

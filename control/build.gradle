@@ -25,6 +25,7 @@ dependencies {
     compile project(':repository')
     compile project(':utiljava')
     compile project(':devices')
+    compile project(':entities')
 
     // RxJava support
     compile "io.reactivex:rxjava:${rxjavaVersion}"

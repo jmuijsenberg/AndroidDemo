@@ -1,4 +1,4 @@
-package nl.jmuijsenberg.androiddemo.devices;
+package nl.jmuijsenberg.androiddemo.control;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-public class DeviceTest2 {
+public class ControllerFactoryTest {
     @Before
     public void before() {
     }
@@ -17,8 +17,8 @@ public class DeviceTest2 {
 
     @Test
     public void testConstructor() {
-        Device device = new Device();
+        ControllerFactory mainController = new ControllerFactory(null, null, null);
 
-        assertNotNull(device);
+        assertNotNull(mainController);
     }
 }

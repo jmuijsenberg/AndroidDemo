@@ -6,8 +6,8 @@ import android.test.ApplicationTestCase;
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
-public class NativeDeviceTest extends ApplicationTestCase<Application> {
-    public NativeDeviceTest() {
+public class AndroidDeviceFactoryTest extends ApplicationTestCase<Application> {
+    public AndroidDeviceFactoryTest() {
         super(Application.class);
     }
 
@@ -22,7 +22,7 @@ public class NativeDeviceTest extends ApplicationTestCase<Application> {
     }
 
     public void testConstructor() {
-        NativeDevice device = new NativeDevice();
+        AndroidDeviceFactory device = new AndroidDeviceFactory();
         assertNotNull(device);
     }
 }

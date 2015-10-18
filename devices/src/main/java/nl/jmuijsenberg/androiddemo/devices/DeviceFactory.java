@@ -1,4 +1,4 @@
 package nl.jmuijsenberg.androiddemo.devices;
 
-public class Device {
+public class DeviceFactory {
 }

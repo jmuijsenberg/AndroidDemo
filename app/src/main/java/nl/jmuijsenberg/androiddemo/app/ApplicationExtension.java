@@ -9,13 +9,17 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import nl.jmuijsenberg.androiddemo.BuildConfig;
+import nl.jmuijsenberg.androiddemo.viewmodels.ViewModelFactory;
 
-public class ExtendedApplication extends Application {
+public class ApplicationExtension extends Application {
     private RefWatcher refWatcher;
+    private ApplicationLayers mApplicationLayers;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mApplicationLayers = new ApplicationLayers(getApplicationContext());
 
         if (BuildConfig.DEBUG) {
             enableStrictMode();
@@ -24,8 +28,23 @@ public class ExtendedApplication extends Application {
         }
     }
 
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        if (mApplicationLayers != null)
+        {
+            mApplicationLayers.cleanup();
+            mApplicationLayers = null;
+        }
+    }
+
+    public ViewModelFactory getViewModelFactory()
+    {
+        return (mApplicationLayers != null) ? mApplicationLayers.getViewModelFactory() : null;
+    }
+
     public static RefWatcher getRefWatcher(Context context) {
-        ExtendedApplication application = (ExtendedApplication) context.getApplicationContext();
+        ApplicationExtension application = (ApplicationExtension) context.getApplicationContext();
         return application.refWatcher;
     }
 
@@ -53,4 +72,6 @@ public class ExtendedApplication extends Application {
     private void enableMemoryLeakDetection() {
         refWatcher = LeakCanary.install(this);
     }
+
+
 }

@@ -23,6 +23,7 @@ dependencies {
 
     // Module dependencies
     compile project(':utiljava')
+    compile project(':entities')
 
     // RxJava support
     compile "io.reactivex:rxjava:${rxjavaVersion}"

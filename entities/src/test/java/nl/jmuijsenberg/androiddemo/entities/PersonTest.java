@@ -1,4 +1,4 @@
-package nl.jmuijsenberg.androiddemo.viewmodels;
+package nl.jmuijsenberg.androiddemo.entities;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-public class MainViewModelTest {
+public class PersonTest {
     @Before
     public void before() {
     }
@@ -17,8 +17,8 @@ public class MainViewModelTest {
 
     @Test
     public void testConstructor() {
-        MainViewModel mainViewModel = new MainViewModel();
+        Person person = new Person();
 
-        assertNotNull(mainViewModel);
+        assertNotNull(person);
     }
 }

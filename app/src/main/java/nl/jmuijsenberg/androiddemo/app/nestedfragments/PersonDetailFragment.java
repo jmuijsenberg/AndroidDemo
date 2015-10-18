@@ -46,6 +46,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_person_detail, container, false);
         ButterKnife.bind(this, view);
+
         return view;
     }
 
