@@ -55,6 +55,7 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
         return view;
     }
 
+    @SuppressWarnings({"squid:S00112"}) // Rethrow unchecked exception due to constraint in method signature
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -62,6 +63,7 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
             mListener = (OnFragmentInteractionListener) context;
         } catch (ClassCastException e) {
             Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+
             throw new Error(e);
         }
     }

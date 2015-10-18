@@ -53,6 +53,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         return view;
     }
 
+    @SuppressWarnings({"squid:S00112"}) // Rethrow unchecked exception due to constraint in method signature
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

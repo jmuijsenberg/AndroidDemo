@@ -38,6 +38,7 @@ public class PersonListFragment extends Fragment {
         return view;
     }
 
+    @SuppressWarnings({"squid:S00112"}) // Rethrow unchecked exception due to constraint in method signature
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

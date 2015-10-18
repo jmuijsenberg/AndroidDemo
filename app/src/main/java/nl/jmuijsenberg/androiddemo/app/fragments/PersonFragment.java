@@ -46,6 +46,7 @@ public class PersonFragment extends Fragment implements PersonListFragment.OnFra
         return view;
     }
 
+    @SuppressWarnings({"squid:S00112"}) // Rethrow unchecked exception due to constraint in method signature
     @Override
     public void onAttach(Context context) {
 
