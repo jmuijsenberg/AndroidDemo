@@ -8,6 +8,19 @@ public class Person {
     private Gender mGender;
     private Calendar mDateOfBirth;
 
+    public Person() {
+    }
+
+    public Person(String firstName,
+                  String lastName,
+                  Gender gender,
+                  Calendar dateOfBirth) {
+        mFirstName = firstName;
+        mLastName = lastName;
+        mGender = gender;
+        mDateOfBirth = dateOfBirth;
+    }
+
     public String getFirstName() {
         return mFirstName;
     }

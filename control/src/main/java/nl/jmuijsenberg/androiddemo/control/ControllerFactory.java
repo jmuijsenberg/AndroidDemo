@@ -15,4 +15,8 @@ public class ControllerFactory {
         mRepository = repository;
         mSchedulers = schedulers;
     }
+
+    public ManagePersonsController getManagePersonsController() {
+        return new ManagePersonsController(mRepository, mSchedulers);
+    }
 }

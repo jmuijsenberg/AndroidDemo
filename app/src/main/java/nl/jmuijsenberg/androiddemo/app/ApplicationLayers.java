@@ -10,7 +10,7 @@ import nl.jmuijsenberg.androiddemo.util.android.logging.AndroidLogger;
 import nl.jmuijsenberg.androiddemo.util.android.rxjava.RxAndroidSchedulers;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
-import nl.jmuijsenberg.androiddemo.viewmodels.ViewModelFactory;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 
 public class ApplicationLayers {
     private RxSchedulers mSchedulers;

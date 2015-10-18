@@ -13,7 +13,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/DataBinding.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/binding/DataBinding.java">
           <value>
             <set />
           </value>
@@ -43,6 +53,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ControllerFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ManagePersonsController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/control/src/test/java/nl/jmuijsenberg/androiddemo/control/PersonManagementController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/entities/src/main/java/nl/jmuijsenberg/androiddemo/entities/Person.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqlite.java">
           <value>
             <set />
@@ -54,6 +84,61 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/exceptions/InterfaceNotImplementedException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/ManagePersonsViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/ViewModelFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/base/PropertyField.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/factory/ViewModelFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/persons/ManagePersonsViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/Command.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/DataBinding.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/DateField.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/OnPropertyFieldChanged.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/OnPropertyValidate.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/PropertyField.java">
           <value>
             <set />
           </value>

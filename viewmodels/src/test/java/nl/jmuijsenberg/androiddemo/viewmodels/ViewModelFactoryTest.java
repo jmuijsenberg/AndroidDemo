@@ -17,7 +17,7 @@ public class ViewModelFactoryTest {
 
     @Test
     public void testConstructor() {
-        ViewModelFactory mainViewModel = new ViewModelFactory(null, null);
+        nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory mainViewModel = new nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory(null, null);
 
         assertNotNull(mainViewModel);
     }

@@ -9,7 +9,7 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import nl.jmuijsenberg.androiddemo.BuildConfig;
-import nl.jmuijsenberg.androiddemo.viewmodels.ViewModelFactory;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 
 public class ApplicationExtension extends Application {
     private RefWatcher refWatcher;

@@ -4,14 +4,17 @@ import java.util.List;
 
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.repository.Repository;
+import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
 import rx.Observable;
 
 public class ManagePersonsController {
     private Repository mRepository;
+    private RxSchedulers mSchedulers;
 
-    public ManagePersonsController(Repository repository)
+    public ManagePersonsController(Repository repository, RxSchedulers schedulers)
     {
         mRepository = repository;
+        mSchedulers = schedulers;
     }
 
     public Observable<List<Person>> getPersons()
