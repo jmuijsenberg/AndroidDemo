@@ -102,13 +102,13 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
 
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.date_changed, R.string.date_confirm, R.drawable.calendar_24p);
+        ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.date_changed, R.string.date_confirm, R.drawable.ic_calendar);
         dialog.show(getChildFragmentManager(), "confirm");
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.time_changed, R.string.time_confirm, R.drawable.clock_24dp);
+        ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.time_changed, R.string.time_confirm, R.drawable.ic_clock);
         dialog.show(getChildFragmentManager(), "confirm");
     }
 

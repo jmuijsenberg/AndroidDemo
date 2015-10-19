@@ -20,18 +20,18 @@
         android:id="@+id/updateTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/clock_24dp"/>
+        android:src="@drawable/ic_clock"/>
 
     <ImageButton
         android:id="@+id/updateDateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/calendar_24p"/>
+        android:src="@drawable/ic_calendar"/>
 
     <ImageButton
         android:id="@+id/updateGenderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:src="@drawable/male_24p"/>
+        android:src="@drawable/ic_male"/>
 </LinearLayout>
