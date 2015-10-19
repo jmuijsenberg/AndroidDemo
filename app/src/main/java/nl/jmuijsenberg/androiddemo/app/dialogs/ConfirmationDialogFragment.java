@@ -13,10 +13,6 @@ public class ConfirmationDialogFragment extends DialogFragment {
     private static final String ARG_MESSAGE = "message";
     private static final String ARG_ICON = "icon";
 
-    private int mTitleResourceId;
-    private int mMessageResourceId;
-    private int mIconResourceId;
-
     public ConfirmationDialogFragment() {
     }
 

@@ -117,3 +117,15 @@ Required for Continuous Inspection
     *	Timeline plugin
     *	Tab metrics plugin
 11. Set enviroment variables defined configure sonar usename and password (SONAR_USERNAME and SONAR_PASSWORD)
+
+## SOnarQube Commminity plugin android studio
+1. Install plugin
+2. Configure server eg:
+     name: sonarqube
+     host: loca
+3. Get modules
+4. Configure runner
+    name: sonarrunner
+    script: $WORKING_DIR\gradlew.bat sonarRunner -Dsonar.analysis.mode=incremental -Dsonar.host.url=http://localhost:9000
+    path to json: $WORKING_DIR\build\sonar\sonar-report.json
+

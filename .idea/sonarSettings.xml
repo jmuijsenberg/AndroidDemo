@@ -3,6 +3,130 @@
   <component name="projectSettings">
     <option name="alternativeWorkingDirPath" value="" />
     <option name="localAnalysisScripName" value="sonarrun" />
+    <option name="resources">
+      <list>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="2" />
+          <option name="key" value="AndroidDemo:app" />
+          <option name="longName" value="app" />
+          <option name="name" value="app" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="3" />
+          <option name="key" value="AndroidDemo:control" />
+          <option name="longName" value="control" />
+          <option name="name" value="control" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="4" />
+          <option name="key" value="AndroidDemo:devices" />
+          <option name="longName" value="devices" />
+          <option name="name" value="devices" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="5" />
+          <option name="key" value="AndroidDemo:devicesandroid" />
+          <option name="longName" value="devicesandroid" />
+          <option name="name" value="devicesandroid" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1445161736000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="117" />
+          <option name="key" value="AndroidDemo:entities" />
+          <option name="longName" value="entities" />
+          <option name="name" value="entities" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="6" />
+          <option name="key" value="AndroidDemo:repository" />
+          <option name="longName" value="repository" />
+          <option name="name" value="repository" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="7" />
+          <option name="key" value="AndroidDemo:repositorysqlite" />
+          <option name="longName" value="repositorysqlite" />
+          <option name="name" value="repositorysqlite" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="8" />
+          <option name="key" value="AndroidDemo:utilandroid" />
+          <option name="longName" value="utilandroid" />
+          <option name="name" value="utilandroid" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="9" />
+          <option name="key" value="AndroidDemo:utiljava" />
+          <option name="longName" value="utiljava" />
+          <option name="name" value="utiljava" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+        <Resource>
+          <option name="creationDate" value="1443981033000" />
+          <option name="date" value="1445284041000" />
+          <option name="description" value="" />
+          <option name="id" value="10" />
+          <option name="key" value="AndroidDemo:viewmodels" />
+          <option name="longName" value="viewmodels" />
+          <option name="name" value="viewmodels" />
+          <option name="qualifier" value="BRC" />
+          <option name="scope" value="PRJ" />
+          <option name="version" value="V1.0" />
+        </Resource>
+      </list>
+    </option>
     <option name="serverName" value="sonarqube" />
     <option name="useAlternativeWorkingDir" value="false" />
     <option name="workingDirSelection" value="&lt;PROJECT&gt;" />

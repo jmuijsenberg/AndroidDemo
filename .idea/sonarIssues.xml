@@ -8,9 +8,22 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/ApplicationLayers.java">
+        <entry key="$PROJECT_DIR$/TOOL_INSTALLATION_GUIDE.md">
           <value>
             <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/ApplicationExtension.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="03946ec7-a4cb-4c73-a221-66cb9cc2536e" />
+                <option name="message" value="3 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/DataBinding.java">
@@ -20,32 +33,179 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/MainActivity.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="b57c9625-f7ef-4054-9d4f-9eca0edd5856" />
+                <option name="line" value="98" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a59765cc-a7f5-47b9-ba90-8d69a1c3a37c" />
+                <option name="line" value="93" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="49cd2760-7d6b-4094-8097-20e90f883a92" />
+                <option name="line" value="83" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="d8d8fb8f-52ce-49dc-a496-638f49f7bdf0" />
+                <option name="line" value="103" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="b8606823-3acd-46d6-be94-dd6ceb084e04" />
+                <option name="line" value="4" />
+                <option name="message" value="Remove this unused import 'android.graphics.drawable.Drawable'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="7a90fbf6-85e0-4e95-89bd-815d2cf518f6" />
+                <option name="line" value="17" />
+                <option name="message" value="Remove this unused import 'butterknife.BindDrawable'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="6cd7212e-f420-4cb1-8b20-83f9f232a326" />
+                <option name="message" value="2 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/PageAdapter.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="cc9dc353-5e4c-4482-87dc-2a563c2e9508" />
+                <option name="line" value="36" />
+                <option name="message" value="The Cyclomatic Complexity of this method &quot;getPageTitle&quot; is 13 which is greater than 10 authorized." />
+                <option name="ruleKey" value="squid:MethodCyclomaticComplexity" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="685c4592-e085-4071-81e6-6ec8d0dc8fdc" />
+                <option name="line" value="16" />
+                <option name="message" value="The Cyclomatic Complexity of this method &quot;getItem&quot; is 14 which is greater than 10 authorized." />
+                <option name="ruleKey" value="squid:MethodCyclomaticComplexity" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="57fb91b4-e4a2-4ac9-a8fa-70e959992624" />
+                <option name="line" value="37" />
+                <option name="message" value="Add a default case to this switch." />
+                <option name="ruleKey" value="squid:SwitchLastCaseIsDefaultCheck" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="5327bd93-102a-45b1-ac47-b8f5abb0763b" />
+                <option name="message" value="6 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/PersonAdapter.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="3bbe1096-3418-44a6-8612-55247c79301d" />
+                <option name="message" value="7 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="ec197dd0-aa9f-4f04-8551-7788346f3fdc" />
+                <option name="line" value="7" />
+                <option name="message" value="Remove this unused import 'android.widget.RelativeLayout'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/binding/DataBinding.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="373d29f3-1480-4e6a-8d8a-4dcdadf850ef" />
+                <option name="line" value="29" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="9d269fbf-0809-4cda-b999-52acc74feb87" />
+                <option name="line" value="24" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a2f64a3a-4031-48c3-83d5-9b94c7559d36" />
+                <option name="message" value="10 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="364b5dff-4901-4f66-9549-36803958a836" />
+                <option name="line" value="18" />
+                <option name="message" value="Add a private constructor to hide the implicit public one." />
+                <option name="ruleKey" value="squid:S1118" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/dialogs/ConfirmationDialogFragment.java">
           <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/dialogs/DatePickerDialogFragment.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/dialogs/GenderSelectDialogFragment.java">
-          <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="77e0e09e-63ea-469c-88da-ca88a42894d9" />
+                <option name="message" value="2 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="21894674-d7d0-409f-8c8b-6c129e82a60e" />
+                <option name="line" value="16" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/dialogs/ItemListDialogFragment.java">
@@ -55,7 +215,47 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/dialogs/LoginDialogFragment.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="f1964230-6576-4f96-b8a2-60e2c50ac4c7" />
+                <option name="message" value="2 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="cf96913e-5a10-4def-a8d2-93fe4e7ba044" />
+                <option name="line" value="12" />
+                <option name="message" value="Remove this unused import 'android.view.Window'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="8c80d4ac-b4d7-42d6-9b7d-8a0396899d22" />
+                <option name="line" value="11" />
+                <option name="message" value="Remove this unused import 'android.view.ViewGroup'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="3d560315-8fcb-42b1-ad4d-1854547b3f31" />
+                <option name="line" value="13" />
+                <option name="message" value="Remove this unused import 'android.view.WindowManager'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="145d7139-cddb-4c84-ad05-3a2a1c6db1ab" />
+                <option name="line" value="8" />
+                <option name="message" value="Remove this unused import 'android.view.Gravity'." />
+                <option name="ruleKey" value="squid:UselessImportCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/fragments/Fragment1.java">
@@ -65,42 +265,189 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/fragments/Fragment2.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="e7e7e8ff-7438-446e-9bb0-36e9e8fe9afd" />
+                <option name="line" value="45" />
+                <option name="message" value="Remove this method to simply inherit it." />
+                <option name="ruleKey" value="squid:S1185" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="5601a217-c623-4668-948b-d7eaf95e9522" />
+                <option name="line" value="34" />
+                <option name="message" value="Remove this unused &quot;mListener&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="3cff7f6b-99e2-426d-b52a-e7b98c47d5ab" />
+                <option name="message" value="1 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="32590853-430c-4c68-8f1e-6c300658f6fb" />
+                <option name="line" value="116" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/fragments/PersonFragment.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="f7ea3fb7-f701-4cc2-92dc-9804f332d85c" />
+                <option name="line" value="82" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="815a8e69-7c63-4a2a-bfed-89f157a18f3b" />
+                <option name="line" value="75" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="29429c55-bcf2-4b57-8091-37466dcd3ca5" />
+                <option name="line" value="32" />
+                <option name="message" value="Remove this method to simply inherit it." />
+                <option name="ruleKey" value="squid:S1185" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="11f761fc-e4c2-49d5-bebc-361cfb479a23" />
+                <option name="line" value="21" />
+                <option name="message" value="Remove this unused &quot;mListener&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="ebd1f2d5-6b3a-4b86-8899-816fe1fe5724" />
+                <option name="message" value="3 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/nestedfragments/PersonDetailFragment.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="f62a0a25-01fb-4694-be1f-d50502fbfe82" />
+                <option name="line" value="40" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="7308913b-2f81-438a-88e4-01e90845f491" />
+                <option name="line" value="107" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="4cc908f8-97a1-4f50-b1ed-ab454c9f9f87" />
+                <option name="line" value="29" />
+                <option name="message" value="Remove this unused &quot;mListener&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="3365d86b-10f8-4567-a639-2e934372b2c3" />
+                <option name="line" value="44" />
+                <option name="message" value="Remove this method to simply inherit it." />
+                <option name="ruleKey" value="squid:S1185" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="6c0eaec2-8862-42f6-9258-0d8f8f6a051a" />
+                <option name="message" value="1 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="5bbe1113-ce76-4cc4-b4f1-ed347eb94974" />
+                <option name="message" value="1 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/nestedfragments/PersonListFragment.java">
           <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/selector_person_list.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/demo.xml">
-          <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="dccd2ca5-4527-4216-ac8e-7ac50c5b1153" />
+                <option name="line" value="39" />
+                <option name="message" value="Remove this method to simply inherit it." />
+                <option name="ruleKey" value="squid:S1185" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="aee80d53-bd7d-4aeb-b927-2030804ea7ea" />
+                <option name="message" value="2 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="aa314ce1-9127-457e-abd0-02cf2d7b9074" />
+                <option name="line" value="33" />
+                <option name="message" value="Remove this unused &quot;mListener&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a60794e1-4dbf-44e6-b49b-634cf36f2884" />
+                <option name="line" value="35" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="896c801d-bddd-4ed9-bcf0-7d09be2b4009" />
+                <option name="line" value="87" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="d6dfe9cd-f095-4c7e-90f7-5f8cec34cff4" />
+                <option name="line" value="82" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml">
@@ -108,49 +455,32 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment2.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_person_detail.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/person_list_item.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ControllerFactory.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="87e8c97f-d80b-458d-8186-eef46b3f1794" />
+                <option name="line" value="8" />
+                <option name="message" value="Remove this unused &quot;mDevice&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ManagePersonsController.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="36163a0a-d85d-4e42-b03a-e1aa1ac671fb" />
+                <option name="line" value="12" />
+                <option name="message" value="Remove this unused &quot;mSchedulers&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/control/src/test/java/nl/jmuijsenberg/androiddemo/control/PersonManagementController.java">
@@ -158,24 +488,163 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/devices/src/main/java/nl/jmuijsenberg/androiddemo/devices/DeviceFactory.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="d4b44802-e7e1-4a67-a7f5-355d8f5fe84a" />
+                <option name="line" value="3" />
+                <option name="message" value="Remove this empty class, write its code or make it an &quot;interface&quot;." />
+                <option name="ruleKey" value="squid:S2094" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/entities/src/main/java/nl/jmuijsenberg/androiddemo/entities/Person.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="15678d6d-9515-4203-83f0-4f3b1d066111" />
+                <option name="line" value="11" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqlite.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="85492569-83dd-4058-8569-a0aac233995d" />
+                <option name="line" value="17" />
+                <option name="message" value="Remove this unused &quot;mContext&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utilandroid/src/main/java/nl/jmuijsenberg/androiddemo/util/android/AndroidUtil.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="5aa11717-9724-4ec9-ae64-0860ba1116d4" />
+                <option name="line" value="6" />
+                <option name="message" value="Remove this empty class, write its code or make it an &quot;interface&quot;." />
+                <option name="ruleKey" value="squid:S2094" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/utilandroid/src/main/java/nl/jmuijsenberg/androiddemo/util/android/datetime/DateTime.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="ec01db03-37c7-486f-b7c6-544033238afd" />
+                <option name="line" value="22" />
+                <option name="message" value="Reorder the modifiers to comply with the Java Language Specification." />
+                <option name="ruleKey" value="squid:ModifiersOrderCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="e6d65aaf-cb9d-4452-b3a2-fea254d8d590" />
+                <option name="line" value="8" />
+                <option name="message" value="Add a private constructor to hide the implicit public one." />
+                <option name="ruleKey" value="squid:S1118" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="6916773a-177b-43f5-afd8-e3bea11f9586" />
+                <option name="line" value="22" />
+                <option name="message" value="Move this variable to comply with Java Code Conventions." />
+                <option name="ruleKey" value="squid:S1213" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utilandroid/src/main/java/nl/jmuijsenberg/androiddemo/util/android/logging/AndroidLogger.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="338f8981-7c7a-4232-a718-da7c6edc717e" />
+                <option name="message" value="2 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utilandroid/src/main/java/nl/jmuijsenberg/androiddemo/util/android/rxjava/RxAndroidSchedulers.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="396e5d19-f506-4ec0-88c4-90ddb1d5db3c" />
+                <option name="line" value="12" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/Util.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="8acefa1b-799f-47f6-8dd4-0d5db8ac0fcb" />
+                <option name="line" value="3" />
+                <option name="message" value="Remove this empty class, write its code or make it an &quot;interface&quot;." />
+                <option name="ruleKey" value="squid:S2094" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/exceptions/InterfaceNotImplementedException.java">
           <value>
             <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/logging/Logger.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a69e168d-b2fb-48f8-abbf-8aaf192c76ce" />
+                <option name="message" value="7 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/rxjava/RxJvmSchedulers.java">
+          <value>
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a1e1392d-0deb-4dcf-98e0-9b1a385e94b5" />
+                <option name="line" value="9" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/ManagePersonsViewModel.java">
@@ -190,22 +659,51 @@
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/base/DateField.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="22ee6c53-871b-4a3a-9542-df03f43edf81" />
+                <option name="line" value="26" />
+                <option name="message" value="Remove the unused method parameter(s) &quot;minimum,maximum&quot;." />
+                <option name="ruleKey" value="squid:S1172" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/base/PropertyField.java">
           <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/factory/ViewModelFactory.java">
-          <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a77c4ed3-6453-4387-9edb-93a560eef7df" />
+                <option name="message" value="10 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/persons/ManagePersonsViewModel.java">
           <value>
-            <set />
+            <set>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="9abee66e-e75e-4510-b6c0-a0233b5c90df" />
+                <option name="line" value="7" />
+                <option name="message" value="Remove this unused &quot;mController&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="5673cc69-7f48-4c3b-8a72-f91e671d5c1e" />
+                <option name="line" value="8" />
+                <option name="message" value="Remove this unused &quot;mSchedulers&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+            </set>
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/util/Command.java">

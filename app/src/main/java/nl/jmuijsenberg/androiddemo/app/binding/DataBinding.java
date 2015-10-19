@@ -56,7 +56,7 @@ public class DataBinding {
         }
     }
 
-    public static void bindDatePicker(final View parent, final DatePicker datePicker, final DateField date) {
+    public static void bindDatePicker(final DatePicker datePicker, final DateField date) {
         if (datePicker != null) {
             datePicker.setMaxDate(date.getMaximum().getTimeInMillis());
             datePicker.setMinDate(date.getMinimum().getTimeInMillis());
@@ -82,7 +82,7 @@ public class DataBinding {
         }
     }
 
-    public static void bindButton(final View parent, final Button button, final Command command) {
+    public static void bindButton(final Button button, final Command command) {
         if (button != null) {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
