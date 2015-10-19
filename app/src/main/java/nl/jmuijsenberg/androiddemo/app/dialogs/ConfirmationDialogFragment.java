@@ -49,7 +49,6 @@ public class ConfirmationDialogFragment extends DialogFragment {
                 .setMessage(message)
                 .setIcon(icon)
                 .setCancelable(false)
-                .setPositiveButton(getString(R.string.ok), null)
                 .setNegativeButton(getString(R.string.cancel), null);
 
         return builder.create();

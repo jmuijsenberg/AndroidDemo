@@ -20,6 +20,7 @@ import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.ConfirmationDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.GenderSelectDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
@@ -91,6 +92,12 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
     public void updateTime(ImageButton button) {
         TimePickerDialogFragment dialog = new TimePickerDialogFragment();
         dialog.show(getChildFragmentManager(), "timePicker");
+    }
+
+    @OnClick(R.id.updateGenderButton)
+    public void updateGender(ImageButton button) {
+        GenderSelectDialogFragment dialog = new GenderSelectDialogFragment();
+        dialog.show(getChildFragmentManager(), "genderPicker");
     }
 
     @Override

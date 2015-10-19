@@ -15,9 +15,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.adapters.PageAdapter;
-import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
-import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.LoginDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
+import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, PersonFragment.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener, DatePickerDialog.OnDateSetListener {
     @Bind(R.id.fab)
@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @OnClick(R.id.fab)
     public void updateDate(FloatingActionButton button) {
-        DatePickerDialogFragment datePicker = new DatePickerDialogFragment();
-        datePicker.show(getSupportFragmentManager(), "datePicker");
+        LoginDialogFragment datePicker = new LoginDialogFragment();
+        datePicker.show(getSupportFragmentManager(), "login");
     }
 
     @Override
