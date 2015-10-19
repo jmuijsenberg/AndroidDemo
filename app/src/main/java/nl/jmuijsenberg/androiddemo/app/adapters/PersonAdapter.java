@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -44,6 +45,12 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
         Person person = mPersonList.get(i);
         viewHolder.itemView.setTag(person);
         viewHolder.setPerson(person);
+
+        if(person.equals(mSelectedPerson)) {
+            viewHolder.itemView.setSelected(true);
+        } else {
+            viewHolder.itemView.setSelected(false);
+        }
     }
 
     @Override
