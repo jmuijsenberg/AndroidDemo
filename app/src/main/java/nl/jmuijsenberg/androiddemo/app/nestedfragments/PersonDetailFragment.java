@@ -18,9 +18,13 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
+import nl.jmuijsenberg.androiddemo.app.binding.DataBinding;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
+import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
 
 public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
     private static String TAG = "PersonDetailFragment";
@@ -37,7 +41,10 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     @Bind(R.id.applyButton)
     Button mApplyButton;
 
+    private ManagePersonsViewModel mManagePersonsViewModel;
+
     public PersonDetailFragment() {
+
     }
 
     @Override
@@ -51,10 +58,15 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         View view = inflater.inflate(R.layout.fragment_person_detail, container, false);
         ButterKnife.bind(this, view);
 
+        ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
+        mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
+
         if (savedInstanceState != null) {
             mFirstNameText.setText(savedInstanceState.getString(FIRSTNAME) + "1");
         }
 
+        DataBinding.bindEditText(mFirstNameText, mManagePersonsViewModel.getSelectedPerson().get().getFirstName());
+        DataBinding.bindEditText(mLastNameText, mManagePersonsViewModel.getSelectedPerson().get().getLastName());
         return view;
     }
 

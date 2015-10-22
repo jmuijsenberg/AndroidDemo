@@ -32,7 +32,7 @@ public class DateField extends PropertyField<Calendar> {
     {
         Calendar date = Calendar.getInstance();
         date.setTimeInMillis(dateInMilliSeconds);
-        set(date);
+        setInternal(date);
     }
 
     public Calendar getMinimum()

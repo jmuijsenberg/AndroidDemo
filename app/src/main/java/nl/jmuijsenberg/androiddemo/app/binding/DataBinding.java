@@ -32,7 +32,7 @@ public class DataBinding {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-                    text.setui(s.toString());
+                    text.set(s.toString());
                 }
             });
 
@@ -68,7 +68,7 @@ public class DataBinding {
                             (dayOfMonth != date.get().get(Calendar.DAY_OF_MONTH))) {
                         Calendar calendar = Calendar.getInstance();
                         calendar.set(year, monthOfYear, dayOfMonth);
-                        date.setui(calendar);
+                        date.set(calendar);
                     }
                 }
             });

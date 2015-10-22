@@ -32,7 +32,7 @@ public class PropertyField<T> {
         observers = new ArrayList<>();
     }
 
-    public void setui(T value)
+    public void set(T value)
     {
         if ((mValue == null) || (!mValue.equals(value))) {
             mValue = value;
@@ -43,7 +43,7 @@ public class PropertyField<T> {
         }
     }
 
-    public void set(T value)
+    public void setInternal(T value)
     {
         if ((mValue == null) ||
             (!mValue.equals(value))) {
