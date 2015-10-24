@@ -460,13 +460,18 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/entities/src/main/java/nl/jmuijsenberg/androiddemo/entities/Gender.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/entities/src/main/java/nl/jmuijsenberg/androiddemo/entities/Person.java">
           <value>
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="15678d6d-9515-4203-83f0-4f3b1d066111" />
-                <option name="line" value="11" />
+                <option name="line" value="12" />
                 <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
                 <option name="ruleKey" value="squid:S1186" />
                 <option name="severity" value="MAJOR" />
@@ -498,7 +503,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/Db.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/DbOpenHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/OnSubscribeCursor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/SqlStatement.java">
           <value>
             <set />
           </value>
@@ -586,6 +606,16 @@
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/datetime/DateTime.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/datetime/DateTimeUtil.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/utiljava/src/main/java/nl/jmuijsenberg/androiddemo/util/java/exceptions/InterfaceNotImplementedException.java">

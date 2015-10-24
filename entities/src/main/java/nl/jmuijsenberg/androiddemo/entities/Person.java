@@ -3,6 +3,7 @@ package nl.jmuijsenberg.androiddemo.entities;
 import java.util.Calendar;
 
 public class Person {
+    private long mId;
     private String mFirstName;
     private String mLastName;
     private Gender mGender;
@@ -19,6 +20,14 @@ public class Person {
         mLastName = lastName;
         mGender = gender;
         mDateOfBirth = dateOfBirth;
+    }
+
+    public long getId() {
+        return mId;
+    }
+
+    public void setId(long id) {
+        mId = id;
     }
 
     public String getFirstName() {
