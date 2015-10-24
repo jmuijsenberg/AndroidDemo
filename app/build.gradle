@@ -118,6 +118,9 @@ dependencies {
     compile project(':control')
     compile project(':entities')
 
+    // Sqlbrite reactive sqlite wrapper support
+    compile 'com.squareup.sqlbrite:sqlbrite:0.4.1'
+
     // Fragment support
     compile "com.android.support:support-v4:${supportLibraryVersion}"
 

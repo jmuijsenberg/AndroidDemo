@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/ApplicationExtension.java">
           <value>
             <set>
@@ -155,21 +160,6 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="a2f64a3a-4031-48c3-83d5-9b94c7559d36" />
-                <option name="message" value="10 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
-                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="9d269fbf-0809-4cda-b999-52acc74feb87" />
-                <option name="line" value="24" />
-                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
-                <option name="ruleKey" value="squid:S1186" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="373d29f3-1480-4e6a-8d8a-4dcdadf850ef" />
                 <option name="line" value="29" />
                 <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
@@ -182,6 +172,21 @@
                 <option name="line" value="18" />
                 <option name="message" value="Add a private constructor to hide the implicit public one." />
                 <option name="ruleKey" value="squid:S1118" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="9d269fbf-0809-4cda-b999-52acc74feb87" />
+                <option name="line" value="24" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="a2f64a3a-4031-48c3-83d5-9b94c7559d36" />
+                <option name="message" value="10 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
+                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
@@ -469,6 +474,11 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqlite.java">
           <value>
             <set>
@@ -481,6 +491,16 @@
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/DataManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/DbOpenHelper.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/utilandroid/src/main/java/nl/jmuijsenberg/androiddemo/util/android/AndroidUtil.java">

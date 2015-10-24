@@ -91,6 +91,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="rxjava-1.0.14" level="project" />
     <orderEntry type="library" exported="" name="rxandroid-0.23.0" level="project" />
+    <orderEntry type="library" exported="" name="sqlbrite-0.4.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.0.0" level="project" />
     <orderEntry type="module" module-name="entities" exported="" />
     <orderEntry type="module" module-name="utilandroid" exported="" />
     <orderEntry type="module" module-name="repository" exported="" />
