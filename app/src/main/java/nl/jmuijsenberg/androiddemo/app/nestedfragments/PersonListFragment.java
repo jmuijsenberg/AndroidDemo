@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -17,15 +18,21 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.adapters.PersonAdapter;
 import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
+import nl.jmuijsenberg.androiddemo.viewmodels.base.OnPropertyFieldChanged;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
+import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.persons.PersonViewModel;
 
 public class PersonListFragment extends Fragment implements PersonAdapter.OnClickListener {
     private static String TAG = "PersonListFragment";
     PersonAdapter mAdapter;
     LinearLayoutManager mLayoutManager;
+    private ManagePersonsViewModel mManagePersonsViewModel;
 
     @Bind(R.id.personList)
     RecyclerView mPersonList;
@@ -46,17 +53,21 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
         View view = inflater.inflate(R.layout.fragment_person_list, container, false);
         ButterKnife.bind(this, view);
 
-
         mLayoutManager = new LinearLayoutManager(getActivity());
         mPersonList.setLayoutManager(mLayoutManager);
 
         mAdapter = new PersonAdapter(this);
         mPersonList.setAdapter(mAdapter);
 
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person("Johan", "M", Gender.MALE, new GregorianCalendar(1960, 5, 11)));
-        persons.add(new Person("Jeanette", "R", Gender.FEMALE, new GregorianCalendar(1900, 2, 3)));
-        mAdapter.updatePersonList(persons);
+        ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
+        mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
+        mManagePersonsViewModel.getPersonList().addObserver(new OnPropertyFieldChanged<PersonViewModel>() {
+            @Override
+            public void onPropertyChanged(PersonViewModel viewModel) {
+                Toast.makeText(getActivity(), "Update list", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return view;
     }
 

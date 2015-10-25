@@ -11,6 +11,8 @@ import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSubscriberBase;
 import nl.jmuijsenberg.androiddemo.viewmodels.base.Command;
 import nl.jmuijsenberg.androiddemo.viewmodels.base.PropertyField;
+import rx.Subscriber;
+import rx.functions.Func1;
 
 public class ManagePersonsViewModel {
     private ManagePersonsController mController;
@@ -32,6 +34,21 @@ public class ManagePersonsViewModel {
         mPersonList.setInternal(new ArrayList<PersonViewModel>());
 
         mAddPersonCommand = new AddCommand();
+
+        mController.getPersons()
+                .subscribeOn(mSchedulers.main())
+                .map(new Func1<Person, PersonViewModel>() {
+                    @Override
+                    public PersonViewModel call(Person person) {
+                        return new PersonViewModel(person);
+                    }
+                })
+                .subscribe(new RxSubscriberBase<PersonViewModel>() {
+                    @Override
+                    public void onNext(PersonViewModel personViewModel) {
+                        getPersonList().get().add(personViewModel);
+                    }
+                });
     }
 
     public PropertyField<PersonViewModel> getSelectedPerson() {

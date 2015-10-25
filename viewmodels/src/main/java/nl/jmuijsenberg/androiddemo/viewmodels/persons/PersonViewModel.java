@@ -2,9 +2,8 @@ package nl.jmuijsenberg.androiddemo.viewmodels.persons;
 
 import java.util.Calendar;
 
-import nl.jmuijsenberg.androiddemo.control.ManagePersonsController;
 import nl.jmuijsenberg.androiddemo.entities.Gender;
-import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
+import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.viewmodels.base.PropertyField;
 
 public class PersonViewModel {
@@ -12,6 +11,14 @@ public class PersonViewModel {
     private PropertyField<String> mLastName;
     private PropertyField<Gender> mGender;
     private PropertyField<Calendar> mDateOfBirth;
+
+    PersonViewModel(Person person)
+    {
+        this();
+
+        mFirstName.set(person.getFirstName());
+        mLastName.set(person.getLastName());
+    }
 
     public PersonViewModel() {
         mFirstName = new PropertyField<>();

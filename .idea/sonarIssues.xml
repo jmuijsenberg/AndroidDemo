@@ -360,23 +360,24 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="dccd2ca5-4527-4216-ac8e-7ac50c5b1153" />
-                <option name="line" value="39" />
-                <option name="message" value="Remove this method to simply inherit it." />
-                <option name="ruleKey" value="squid:S1185" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="aee80d53-bd7d-4aeb-b927-2030804ea7ea" />
-                <option name="message" value="2 duplicated blocks of code must be removed." />
-                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="key" value="aa314ce1-9127-457e-abd0-02cf2d7b9074" />
+                <option name="line" value="40" />
+                <option name="message" value="Remove this unused &quot;mListener&quot; private field." />
+                <option name="ruleKey" value="squid:S1068" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="a60794e1-4dbf-44e6-b49b-634cf36f2884" />
-                <option name="line" value="35" />
+                <option name="line" value="42" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="d6dfe9cd-f095-4c7e-90f7-5f8cec34cff4" />
+                <option name="line" value="93" />
                 <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
                 <option name="ruleKey" value="squid:S1186" />
                 <option name="severity" value="MAJOR" />
@@ -384,25 +385,16 @@
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="896c801d-bddd-4ed9-bcf0-7d09be2b4009" />
-                <option name="line" value="87" />
+                <option name="line" value="98" />
                 <option name="message" value="Complete the task associated to this TODO comment." />
                 <option name="ruleKey" value="squid:S1135" />
                 <option name="severity" value="INFO" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="aa314ce1-9127-457e-abd0-02cf2d7b9074" />
-                <option name="line" value="33" />
-                <option name="message" value="Remove this unused &quot;mListener&quot; private field." />
-                <option name="ruleKey" value="squid:S1068" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="d6dfe9cd-f095-4c7e-90f7-5f8cec34cff4" />
-                <option name="line" value="82" />
-                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
-                <option name="ruleKey" value="squid:S1186" />
+                <option name="key" value="aee80d53-bd7d-4aeb-b927-2030804ea7ea" />
+                <option name="message" value="2 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
@@ -710,7 +702,7 @@
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="9abee66e-e75e-4510-b6c0-a0233b5c90df" />
-                <option name="line" value="16" />
+                <option name="line" value="18" />
                 <option name="message" value="Remove this unused &quot;mController&quot; private field." />
                 <option name="ruleKey" value="squid:S1068" />
                 <option name="severity" value="MAJOR" />
@@ -718,7 +710,7 @@
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="5673cc69-7f48-4c3b-8a72-f91e671d5c1e" />
-                <option name="line" value="17" />
+                <option name="line" value="19" />
                 <option name="message" value="Remove this unused &quot;mSchedulers&quot; private field." />
                 <option name="ruleKey" value="squid:S1068" />
                 <option name="severity" value="MAJOR" />

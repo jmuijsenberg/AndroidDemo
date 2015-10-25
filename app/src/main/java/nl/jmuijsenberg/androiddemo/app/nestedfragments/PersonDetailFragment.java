@@ -23,8 +23,10 @@ import nl.jmuijsenberg.androiddemo.app.binding.DataBinding;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
+import nl.jmuijsenberg.androiddemo.viewmodels.base.OnPropertyFieldChanged;
 import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.persons.PersonViewModel;
 
 public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
     private static String TAG = "PersonDetailFragment";
@@ -61,9 +63,6 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
         mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
 
-        if (savedInstanceState != null) {
-            mFirstNameText.setText(savedInstanceState.getString(FIRSTNAME) + "1");
-        }
 
         DataBinding.bindEditText(mFirstNameText, mManagePersonsViewModel.getSelectedPerson().get().getFirstName());
         DataBinding.bindEditText(mLastNameText, mManagePersonsViewModel.getSelectedPerson().get().getLastName());
@@ -100,8 +99,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     @OnClick(R.id.applyButton)
     public void onApply(Button button) {
         mManagePersonsViewModel.getAddPersonCommand().execute();
-        Toast.makeText(getActivity(), "Applied", Toast.LENGTH_SHORT).show();
-        button.setText("Done");
+
     }
 
     @OnClick(R.id.personDateOfBirthValue)
