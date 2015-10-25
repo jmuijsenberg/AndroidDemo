@@ -6,7 +6,10 @@ import java.util.List;
 
 import nl.jmuijsenberg.androiddemo.control.ManagePersonsController;
 import nl.jmuijsenberg.androiddemo.entities.Gender;
+import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
+import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSubscriberBase;
+import nl.jmuijsenberg.androiddemo.viewmodels.base.Command;
 import nl.jmuijsenberg.androiddemo.viewmodels.base.PropertyField;
 
 public class ManagePersonsViewModel {
@@ -18,25 +21,46 @@ public class ManagePersonsViewModel {
     private PropertyField<String> mLastName;
     private PropertyField<Gender> mGender;
     private PropertyField<Calendar> mDateOfBirth;
+    private Command mAddPersonCommand;
 
     public ManagePersonsViewModel(ManagePersonsController controller, RxSchedulers schedulers) {
         mController = controller;
         mSchedulers = schedulers;
         mSelectedPerson = new PropertyField<>();
         mSelectedPerson.setInternal(new PersonViewModel());
-        mSelectedPerson.get().getFirstName().setInternal("Piet");
-        mSelectedPerson.get().getLastName().setInternal("Van der KLaas");
         mPersonList = new PropertyField<>();
         mPersonList.setInternal(new ArrayList<PersonViewModel>());
+
+        mAddPersonCommand = new AddCommand();
     }
 
-    public PropertyField<PersonViewModel> getSelectedPerson()
-    {
+    public PropertyField<PersonViewModel> getSelectedPerson() {
         return mSelectedPerson;
     }
 
-    public PropertyField<List<PersonViewModel>> getPersonList()
-    {
+    public PropertyField<List<PersonViewModel>> getPersonList() {
         return mPersonList;
+    }
+
+    public Command getAddPersonCommand() {
+        return mAddPersonCommand;
+    }
+
+    private class AddCommand extends Command
+    {
+        @Override
+        public void execute() {
+            Person person = new Person();
+            person.setFirstName(getSelectedPerson().get().getFirstName().get());
+            person.setLastName(getSelectedPerson().get().getLastName().get());
+            mController.addPerson(person)
+                    .subscribeOn(mSchedulers.main())
+                    .subscribe(new RxSubscriberBase<Person>() {
+                        @Override
+                        public void onNext(Person person) {
+
+                        }
+                    });
+        }
     }
 }

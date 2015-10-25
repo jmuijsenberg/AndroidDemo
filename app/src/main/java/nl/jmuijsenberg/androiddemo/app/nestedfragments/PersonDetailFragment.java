@@ -99,6 +99,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
 
     @OnClick(R.id.applyButton)
     public void onApply(Button button) {
+        mManagePersonsViewModel.getAddPersonCommand().execute();
         Toast.makeText(getActivity(), "Applied", Toast.LENGTH_SHORT).show();
         button.setText("Done");
     }

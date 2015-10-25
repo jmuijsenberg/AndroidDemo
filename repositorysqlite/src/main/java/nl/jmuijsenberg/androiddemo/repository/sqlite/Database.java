@@ -16,7 +16,7 @@ public class Database {
     }
 
     public class ColumnType {
-        private static final String TEXT_NOT_NULL_PRIMARY_KEY = " TEXT NOT NULL PRIMARY KEY";
+        private static final String PRIMARY_KEY = " INTEGER PRIMARY KEY AUTOINCREMENT";
         private static final String TEXT_NOT_NULL = " TEXT NOT NULL";
         private static final String TEXT_UNIQUE_NOT_NULL = " TEXT UNIQUE NOT NULL";
         private static final String TEXT = " TEXT";
@@ -39,7 +39,7 @@ public class Database {
         public static final String COLUMN_MODIFIED = "modified";
 
         public static final String CREATE = Sql.CREATE_TABLE + TABLE_NAME + "("
-                + COLUMN_ID + ColumnType.TEXT_NOT_NULL_PRIMARY_KEY + COMMA
+                + COLUMN_ID + ColumnType.PRIMARY_KEY + COMMA
                 + COLUMN_FIRSTNAME + ColumnType.TEXT + COMMA
                 + COLUMN_LASTNAME + ColumnType.TEXT + COMMA
                 + COLUMN_GENDER + ColumnType.INTEGER + COMMA
@@ -49,11 +49,10 @@ public class Database {
 
         public static ContentValues toContentValues(Person person) {
             ContentValues values = new ContentValues();
-            values.put(COLUMN_ID, person.getId());
             values.put(COLUMN_FIRSTNAME, person.getFirstName());
             values.put(COLUMN_LASTNAME, person.getLastName());
-            values.put(COLUMN_DOB, person.getDateOfBirth().getTimeInMillis());
-            values.put(COLUMN_GENDER, person.getGender().getValue());
+            //values.put(COLUMN_DOB, person.getDateOfBirth().getTimeInMillis());
+            //values.put(COLUMN_GENDER, person.getGender().getValue());
              return values;
         }
 
@@ -62,8 +61,8 @@ public class Database {
             person.setId(cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_ID)));
             person.setFirstName(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FIRSTNAME)));
             person.setLastName(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LASTNAME)));
-            person.setDateOfBirth(DateTimeUtil.calendarFromMilliSeconds(cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_DOB))));
-            person.setGender(Gender.getGender(cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GENDER))));
+            //person.setDateOfBirth(DateTimeUtil.calendarFromMilliSeconds(cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_DOB))));
+            //person.setGender(Gender.getGender(cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GENDER))));
             return person;
         }
     }
