@@ -1,4 +1,4 @@
-package nl.jmuijsenberg.androiddemo.repository.sqlite.sqlbrite;
+package nl.jmuijsenberg.androiddemo.repository.sqlite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -7,7 +7,7 @@ import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.datetime.DateTimeUtil;
 
-public class Db {
+public class Database {
     private static final String COMMA = ", ";
 
     public class Sql {
@@ -25,7 +25,7 @@ public class Db {
         private static final String REAL = " REAL";
     }
 
-    private Db() {
+    private Database() {
     }
 
     public static abstract class PersonTable {
@@ -38,7 +38,7 @@ public class Db {
         public static final String COLUMN_CREATED = "created";
         public static final String COLUMN_MODIFIED = "modified";
 
-        private static final String CREATE = Sql.CREATE_TABLE + TABLE_NAME + "("
+        public static final String CREATE = Sql.CREATE_TABLE + TABLE_NAME + "("
                 + COLUMN_ID + ColumnType.TEXT_NOT_NULL_PRIMARY_KEY + COMMA
                 + COLUMN_FIRSTNAME + ColumnType.TEXT + COMMA
                 + COLUMN_LASTNAME + ColumnType.TEXT + COMMA

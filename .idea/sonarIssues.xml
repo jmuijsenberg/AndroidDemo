@@ -429,16 +429,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ManagePersonsController.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="36163a0a-d85d-4e42-b03a-e1aa1ac671fb" />
-                <option name="line" value="12" />
-                <option name="message" value="Remove this unused &quot;mSchedulers&quot; private field." />
-                <option name="ruleKey" value="squid:S1068" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/control/src/test/java/nl/jmuijsenberg/androiddemo/control/PersonManagementController.java">
@@ -479,23 +470,39 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/repository/src/main/java/nl/jmuijsenberg/androiddemo/repository/Repository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/DataManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/Database.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/DatabaseOpenHelper.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqlite.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="85492569-83dd-4058-8569-a0aac233995d" />
-                <option name="line" value="17" />
-                <option name="message" value="Remove this unused &quot;mContext&quot; private field." />
-                <option name="ruleKey" value="squid:S1068" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/Sql.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/DataManager.java">

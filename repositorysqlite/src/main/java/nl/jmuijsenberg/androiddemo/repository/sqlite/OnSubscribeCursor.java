@@ -1,4 +1,4 @@
-package nl.jmuijsenberg.androiddemo.repository.sqlite.sqlbrite;
+package nl.jmuijsenberg.androiddemo.repository.sqlite;
 
 import android.database.Cursor;
 

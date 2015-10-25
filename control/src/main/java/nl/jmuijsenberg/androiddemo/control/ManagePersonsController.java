@@ -17,12 +17,12 @@ public class ManagePersonsController {
         mSchedulers = schedulers;
     }
 
-    public Observable<List<Person>> getPersons()
+    public Observable<Person> getPersons()
     {
         return mRepository.getPersons();
     }
 
-    public Observable<Boolean> addPerson(Person person)
+    public Observable<Person> addPerson(Person person)
     {
         return mRepository.addPerson(person);
     }

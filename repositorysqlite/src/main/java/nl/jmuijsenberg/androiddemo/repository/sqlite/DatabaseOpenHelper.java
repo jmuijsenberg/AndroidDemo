@@ -1,14 +1,14 @@
-package nl.jmuijsenberg.androiddemo.repository.sqlite.sqlbrite;
+package nl.jmuijsenberg.androiddemo.repository.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DbOpenHelper extends SQLiteOpenHelper {
+public class DatabaseOpenHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "nl.jmuijsenberg.androiddemo.db";
 
-    public DbOpenHelper(Context context) {
+    public DatabaseOpenHelper(Context context) {
         super(context, DATABASE_NAME, null /* factory */, VERSION);
     }
 
@@ -16,7 +16,7 @@ public class DbOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.beginTransaction();
         try {
-            //db.execSQL(Db.PersonTable.CREATE);
+            db.execSQL(Database.PersonTable.CREATE);
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
