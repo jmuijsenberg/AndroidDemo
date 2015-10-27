@@ -2,7 +2,6 @@ package nl.jmuijsenberg.androiddemo.app.nestedfragments;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,27 +11,23 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
-import nl.jmuijsenberg.androiddemo.app.binding.DataBinding;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
+import nl.jmuijsenberg.androiddemo.app.dialogs.LoginDialogFragment;
+import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
-import nl.jmuijsenberg.androiddemo.viewmodels.base.OnPropertyFieldChanged;
-import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
-import nl.jmuijsenberg.androiddemo.viewmodels.persons.PersonViewModel;
 
-public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener{
+public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener, ManagePersonsViewModel.PersonDetailListener{
     private static String TAG = "PersonDetailFragment";
     private static String FIRSTNAME = "FirstName";
-
-    private OnFragmentInteractionListener mListener;
 
     @Bind(R.id.personFirstNameValue)
     EditText mFirstNameText;
@@ -46,7 +41,6 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     private ManagePersonsViewModel mManagePersonsViewModel;
 
     public PersonDetailFragment() {
-
     }
 
     @Override
@@ -60,12 +54,6 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         View view = inflater.inflate(R.layout.fragment_person_detail, container, false);
         ButterKnife.bind(this, view);
 
-        ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
-        mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
-
-
-        DataBinding.bindEditText(mFirstNameText, mManagePersonsViewModel.getSelectedPerson().get().getFirstName());
-        DataBinding.bindEditText(mLastNameText, mManagePersonsViewModel.getSelectedPerson().get().getLastName());
         return view;
     }
 
@@ -74,9 +62,11 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnFragmentInteractionListener) getParentFragment ();
+            PersonFragment parentFragment = (PersonFragment) getParentFragment();
+            mManagePersonsViewModel = parentFragment.getManagePersonsViewModel();
+            mManagePersonsViewModel.attachDetailView(this);
         } catch (ClassCastException e) {
-            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+            Logger.e(TAG, e, "illegal cast");
             throw new Error(e);
         }
     }
@@ -93,13 +83,18 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        mManagePersonsViewModel.detachDetailView();
+        mManagePersonsViewModel = null;
     }
 
-    @OnClick(R.id.applyButton)
-    public void onApply(Button button) {
-        mManagePersonsViewModel.getAddPersonCommand().execute();
+    @OnTextChanged(R.id.personFirstNameValue)
+    public void onFirstNameTextChanged(CharSequence text) {
+        mManagePersonsViewModel.setFirstName(text.toString());
+    }
 
+    @OnTextChanged(R.id.personLastNameValue)
+    public void onLastNameTextChanged(CharSequence text) {
+        mManagePersonsViewModel.setLastName(text.toString());
     }
 
     @OnClick(R.id.personDateOfBirthValue)
@@ -113,9 +108,34 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         mDateOfBirthText.setText(DateTime.formatDate(year, monthOfYear, dayOfMonth));
     }
 
+    @OnClick(R.id.applyButton)
+    public void onApply(Button button) {
+        mManagePersonsViewModel.addPerson();
+    }
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+    @Override
+    public void onFirstNameChanged(String firstName) {
+        mFirstNameText.setText(firstName);
+    }
+
+    @Override
+    public void onLastNameChanged(String lastName) {
+        mLastNameText.setText(lastName);
+    }
+
+    @Override
+    public void onGenderChanged(String gender) {
+
+    }
+
+    @Override
+    public void onDateOfBirthChanged(String dateOfBirth) {
+
+    }
+
+    @Override
+    public void onException(Throwable e) {
+        ExceptionDialogFragment dialog = ExceptionDialogFragment.newInstance(e.getMessage(), e.getStackTrace().toString());
+        dialog.show(getChildFragmentManager(), "exception");
     }
 }

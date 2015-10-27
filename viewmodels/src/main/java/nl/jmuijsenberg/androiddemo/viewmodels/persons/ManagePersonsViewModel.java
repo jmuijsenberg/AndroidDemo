@@ -9,75 +9,128 @@ import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSubscriberBase;
-import nl.jmuijsenberg.androiddemo.viewmodels.base.Command;
-import nl.jmuijsenberg.androiddemo.viewmodels.base.PropertyField;
+import rx.Observable;
 import rx.Subscriber;
-import rx.functions.Func1;
 
 public class ManagePersonsViewModel {
-    private ManagePersonsController mController;
-    private RxSchedulers mSchedulers;
-    private PropertyField<PersonViewModel> mSelectedPerson;
-    private PropertyField<List<PersonViewModel>> mPersonList;
-    private PropertyField<String> mFirstName;
-    private PropertyField<String> mLastName;
-    private PropertyField<Gender> mGender;
-    private PropertyField<Calendar> mDateOfBirth;
-    private Command mAddPersonCommand;
+    private String mFirstName;
+    private String mLastName;
+    private Gender mGender;
+    private Calendar mDateOfBirth;
+    private List<Person> mPersonList;
+
+    private final ManagePersonsController mController;
+    private PersonDetailListener mPersonDetailListener;
+    private PersonListListener mPersonListListener;
+    private final RxSchedulers mSchedulers;
 
     public ManagePersonsViewModel(ManagePersonsController controller, RxSchedulers schedulers) {
         mController = controller;
         mSchedulers = schedulers;
-        mSelectedPerson = new PropertyField<>();
-        mSelectedPerson.setInternal(new PersonViewModel());
-        mPersonList = new PropertyField<>();
-        mPersonList.setInternal(new ArrayList<PersonViewModel>());
+        mPersonList = new ArrayList<>();
+    }
 
-        mAddPersonCommand = new AddCommand();
+    public void attachDetailView(PersonDetailListener personDetailListener)
+    {
+        mPersonDetailListener = personDetailListener;
+    }
+
+    public void detachDetailView()
+    {
+        mPersonDetailListener = null;
+    }
+
+    public void attachListView(PersonListListener personListListener)
+    {
+        mPersonListListener = personListListener;
 
         mController.getPersons()
-                .subscribeOn(mSchedulers.main())
-                .map(new Func1<Person, PersonViewModel>() {
+                .observeOn(mSchedulers.main())
+                .subscribe(new Subscriber<Person>() {
                     @Override
-                    public PersonViewModel call(Person person) {
-                        return new PersonViewModel(person);
+                    public void onCompleted() {
+
                     }
-                })
-                .subscribe(new RxSubscriberBase<PersonViewModel>() {
+
                     @Override
-                    public void onNext(PersonViewModel personViewModel) {
-                        getPersonList().get().add(personViewModel);
+                    public void onError(Throwable e) {
+                        mPersonListListener.onException(e);
+                    }
+
+                    @Override
+                    public void onNext(Person person) {
+                        List<Person> p = new ArrayList<Person>();
+                        p.add(person);
+                        mPersonListListener.onListChanged(p);
                     }
                 });
     }
 
-    public PropertyField<PersonViewModel> getSelectedPerson() {
-        return mSelectedPerson;
-    }
-
-    public PropertyField<List<PersonViewModel>> getPersonList() {
-        return mPersonList;
-    }
-
-    public Command getAddPersonCommand() {
-        return mAddPersonCommand;
-    }
-
-    private class AddCommand extends Command
+    public void detachListView()
     {
-        @Override
-        public void execute() {
-            Person person = new Person();
-            person.setFirstName(getSelectedPerson().get().getFirstName().get());
-            person.setLastName(getSelectedPerson().get().getLastName().get());
-            mController.addPerson(person)
-                    .subscribeOn(mSchedulers.main())
-                    .subscribe(new RxSubscriberBase<Person>() {
-                        @Override
-                        public void onNext(Person person) {
+        mPersonListListener = null;
+    }
 
-                        }
-                    });
-        }
+    public void addPerson() {
+        Person person = new Person();
+        person.setFirstName(mFirstName);
+        person.setLastName(mLastName);
+        mController.addPerson(person)
+                .observeOn(mSchedulers.main())
+                .subscribe(new RxSubscriberBase<Person>() {
+                    @Override
+                    public void onNext(Person person) {
+
+                    }
+                });
+    }
+
+    public void setFirstName(String firstName) {
+        mFirstName = firstName;
+    }
+
+    public String getFirstName() {
+        return mFirstName;
+    }
+
+    public void setLastName(String lastName) {
+        mLastName = lastName;
+    }
+
+    public String getLastName() {
+        return mLastName;
+    }
+
+    public void setGender(Gender gender) {
+        this.mGender = gender;
+    }
+
+    public Gender getGender() {
+        return mGender;
+    }
+
+    public void setDateOfBirth(Calendar dateOfBirth) {
+        this.mDateOfBirth = dateOfBirth;
+    }
+
+    public Calendar getDateOfBirth() {
+        return mDateOfBirth;
+    }
+
+    public interface PersonDetailListener {
+        public void onFirstNameChanged(String firstName);
+
+        public void onLastNameChanged(String lastName);
+
+        public void onGenderChanged(String gender);
+
+        public void onDateOfBirthChanged(String dateOfBirth);
+
+        public void onException(Throwable e);
+    }
+
+    public interface PersonListListener {
+        public void onListChanged(List<Person> persons);
+        public void onException(Throwable e);
     }
 }

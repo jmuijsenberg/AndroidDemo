@@ -31,7 +31,6 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
     TextView textView1;
     @Bind(R.id.textView2)
     TextView textView2;
-    private OnFragmentInteractionListener mListener;
 
     public Fragment2() {
         // Required empty public constructor
@@ -61,19 +60,11 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        try {
-            mListener = (OnFragmentInteractionListener) context;
-        } catch (ClassCastException e) {
-            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
-
-            throw new Error(e);
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     @Override
@@ -111,10 +102,4 @@ public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetLis
         ConfirmationDialogFragment dialog = ConfirmationDialogFragment.newInstance(R.string.time_changed, R.string.time_confirm, R.drawable.ic_clock);
         dialog.show(getChildFragmentManager(), "confirm");
     }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
-    }
-
 }

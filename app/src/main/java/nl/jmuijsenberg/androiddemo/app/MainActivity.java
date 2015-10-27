@@ -23,7 +23,7 @@ import nl.jmuijsenberg.androiddemo.app.dialogs.LoginDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
 import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 
-public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, PersonFragment.OnFragmentInteractionListener, Fragment2.OnFragmentInteractionListener, DatePickerDialog.OnDateSetListener {
+public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, DatePickerDialog.OnDateSetListener {
     @Bind(R.id.fab)
     public FloatingActionButton mFloatingActionButton;
 
@@ -91,11 +91,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
     }
 

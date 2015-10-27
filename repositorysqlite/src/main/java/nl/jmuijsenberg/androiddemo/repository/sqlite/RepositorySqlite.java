@@ -50,7 +50,7 @@ public class RepositorySqlite implements Repository {
                         Log.d("SIZE", cursor.getCount() + "");
                         return Database.PersonTable.parseCursor(cursor);
                     }
-                }).observeOn(mSchedulers.io());
+                }).subscribeOn(mSchedulers.io());
     }
 
     @Override
@@ -62,7 +62,7 @@ public class RepositorySqlite implements Repository {
                 if (result >= 0) subscriber.onNext(person);
                 subscriber.onCompleted();
             }
-        }).observeOn(mSchedulers.io());
+        }).subscribeOn(mSchedulers.io());
     }
 
 
@@ -71,13 +71,13 @@ public class RepositorySqlite implements Repository {
     public Observable<Boolean> deletePeson(Person person) {
         persons.remove(person);
         return Observable.just(true)
-                .observeOn(mSchedulers.io());
+                .subscribeOn(mSchedulers.io());
     }
 
     @Override
     public Observable<Boolean> updatePerson(Person person) {
         return Observable.just(false)
-                .observeOn(mSchedulers.io());
+                .subscribeOn(mSchedulers.io());
     }
 
     // Copied from obsoleterx.android.content.ContentObservable

@@ -113,7 +113,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
         {
             itemView.setTag(person);
             fullnameValue.setText(person.getFirstName() + " " + person.getLastName());
-            dateOfBirthValue.setText(DateTime.formatDate(person.getDateOfBirth()));
+            //dateOfBirthValue.setText(DateTime.formatDate(person.getDateOfBirth()));
         }
     }
 }

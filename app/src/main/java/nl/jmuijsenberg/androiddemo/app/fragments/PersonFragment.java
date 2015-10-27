@@ -11,14 +11,17 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonDetailFragment;
 import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonListFragment;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
+import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
 
-public class PersonFragment extends Fragment implements PersonListFragment.OnFragmentInteractionListener, PersonDetailFragment.OnFragmentInteractionListener {
+public class PersonFragment extends Fragment {
     private static String TAG = "PersonFragment";
 
-    private OnFragmentInteractionListener mListener;
+    private ManagePersonsViewModel mManagePersonsViewModel;
 
     public PersonFragment() {
         // Required empty public constructor
@@ -39,6 +42,9 @@ public class PersonFragment extends Fragment implements PersonListFragment.OnFra
         View view = inflater.inflate(R.layout.fragment_fragment1, container, false);
         ButterKnife.bind(this, view);
 
+        ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
+        mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
+
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.personListFrame, new PersonListFragment(), "tag1");
         transaction.add(R.id.personDetailFrame, new PersonDetailFragment(), "tag2");
@@ -49,20 +55,12 @@ public class PersonFragment extends Fragment implements PersonListFragment.OnFra
     @SuppressWarnings({"squid:S00112"}) // Rethrow unchecked exception due to constraint in method signature
     @Override
     public void onAttach(Context context) {
-
         super.onAttach(context);
-        try {
-            mListener = (OnFragmentInteractionListener) getParentFragment ();
-        } catch (ClassCastException e) {
-            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
-            throw new Error(e);
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     @Override
@@ -71,16 +69,7 @@ public class PersonFragment extends Fragment implements PersonListFragment.OnFra
         ButterKnife.unbind(this);
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
+    public ManagePersonsViewModel getManagePersonsViewModel() {
+        return mManagePersonsViewModel;
     }
-
-
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
-    }
-
 }

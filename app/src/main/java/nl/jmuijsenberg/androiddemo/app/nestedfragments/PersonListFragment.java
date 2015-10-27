@@ -20,15 +20,14 @@ import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.adapters.PersonAdapter;
+import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
-import nl.jmuijsenberg.androiddemo.viewmodels.base.OnPropertyFieldChanged;
 import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
-import nl.jmuijsenberg.androiddemo.viewmodels.persons.PersonViewModel;
 
-public class PersonListFragment extends Fragment implements PersonAdapter.OnClickListener {
+public class PersonListFragment extends Fragment implements PersonAdapter.OnClickListener, ManagePersonsViewModel.PersonListListener {
     private static String TAG = "PersonListFragment";
     PersonAdapter mAdapter;
     LinearLayoutManager mLayoutManager;
@@ -36,8 +35,6 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
 
     @Bind(R.id.personList)
     RecyclerView mPersonList;
-
-    private OnFragmentInteractionListener mListener;
 
     public PersonListFragment() {
     }
@@ -59,15 +56,6 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
         mAdapter = new PersonAdapter(this);
         mPersonList.setAdapter(mAdapter);
 
-        ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
-        mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
-        mManagePersonsViewModel.getPersonList().addObserver(new OnPropertyFieldChanged<PersonViewModel>() {
-            @Override
-            public void onPropertyChanged(PersonViewModel viewModel) {
-                Toast.makeText(getActivity(), "Update list", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         return view;
     }
 
@@ -76,9 +64,11 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            mListener = (OnFragmentInteractionListener) getParentFragment ();
+            PersonFragment parentFragment = (PersonFragment) getParentFragment();
+            mManagePersonsViewModel = parentFragment.getManagePersonsViewModel();
+            mManagePersonsViewModel.attachListView(this);
         } catch (ClassCastException e) {
-            Logger.e(TAG, e, "Parent fragemnt does not implement listener interface");
+            Logger.e(TAG, e, "illegal cast");
             throw new Error(e);
         }
     }
@@ -86,7 +76,8 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        mManagePersonsViewModel.detachListView();
+        mManagePersonsViewModel = null;
     }
 
     @Override
@@ -94,8 +85,13 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
 
     }
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+    @Override
+    public void onListChanged(List<Person> persons) {
+        mAdapter.updatePersonList(persons);
+    }
+
+    @Override
+    public void onException(Throwable e) {
+
     }
 }
