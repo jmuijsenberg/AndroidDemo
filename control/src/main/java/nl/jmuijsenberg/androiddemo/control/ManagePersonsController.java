@@ -22,7 +22,7 @@ public class ManagePersonsController {
         return mRepository.getPersons();
     }
 
-    public Observable<Person> addPerson(Person person)
+    public Observable<Boolean> addPerson(Person person)
     {
         return mRepository.addPerson(person);
     }

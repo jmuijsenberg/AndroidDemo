@@ -7,7 +7,7 @@ import rx.Observable;
 
 public interface Repository {
     Observable<List<Person>> getPersons();
-    Observable<Person> addPerson(final Person person);
+    Observable<Boolean> addPerson(final Person person);
     Observable<Boolean> deletePeson(Person person);
     Observable<Boolean> updatePerson(Person person);
 }

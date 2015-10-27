@@ -11,8 +11,9 @@ public class Database {
     private static final String COMMA = ", ";
 
     public class Sql {
-        private static final String DROP_IF_EXISTS = "DROP TABLE IF EXISTS ";
-        private static final String CREATE_TABLE = "CREATE TABLE ";
+        public static final String DROP_IF_EXISTS = "DROP TABLE IF EXISTS ";
+        public static final String CREATE_TABLE = "CREATE TABLE ";
+        public static final String SELECT_FROM = "SELECT * FROM ";
     }
 
     public class ColumnType {

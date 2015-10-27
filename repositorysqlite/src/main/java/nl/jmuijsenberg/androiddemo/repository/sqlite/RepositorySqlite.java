@@ -38,16 +38,11 @@ public class RepositorySqlite implements Repository {
 
     @Override
     public Observable<List<Person>> getPersons() {
-        return mBriteDatabase.createQuery(Database.PersonTable.TABLE_NAME, "SELECT * FROM " + Database.PersonTable.TABLE_NAME)
-                .flatMap(new Func1<SqlBrite.Query, Observable<Cursor>>() {
+        return mBriteDatabase.createQuery(Database.PersonTable.TABLE_NAME, Database.Sql.SELECT_FROM + Database.PersonTable.TABLE_NAME)
+                .map(new Func1<SqlBrite.Query, List<Person>>() {
                     @Override
-                    public Observable<Cursor> call(SqlBrite.Query query) {
-                        return Observable.just(query.run());
-                    }
-                })
-                .map(new Func1<Cursor, List<Person>>() {
-                    @Override
-                    public List<Person> call(Cursor cursor) {
+                    public List<Person> call(SqlBrite.Query query) {
+                        Cursor cursor = query.run();
                         List<Person> persons = new ArrayList<>();
                         while (cursor.moveToNext()) {
                             persons.add(Database.PersonTable.parseCursor(cursor));
@@ -58,12 +53,12 @@ public class RepositorySqlite implements Repository {
     }
 
     @Override
-    public Observable<Person> addPerson(final Person person) {
-        return Observable.create(new Observable.OnSubscribe<Person>() {
+    public Observable<Boolean> addPerson(final Person person) {
+        return Observable.create(new Observable.OnSubscribe<Boolean>() {
             @Override
-            public void call(Subscriber<? super Person> subscriber) {
+            public void call(Subscriber<? super Boolean> subscriber) {
                 long result = mBriteDatabase.insert(Database.PersonTable.TABLE_NAME, Database.PersonTable.toContentValues(person));
-                if (result >= 0) subscriber.onNext(person);
+                subscriber.onNext(result >= 0);
                 subscriber.onCompleted();
             }
         }).subscribeOn(mSchedulers.io());

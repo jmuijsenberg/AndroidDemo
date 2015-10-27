@@ -77,9 +77,9 @@ public class ManagePersonsViewModel {
         person.setLastName(mLastName);
         mController.addPerson(person)
                 .observeOn(mSchedulers.main())
-                .subscribe(new RxSubscriberBase<Person>() {
+                .subscribe(new RxSubscriberBase<Boolean>() {
                     @Override
-                    public void onNext(Person person) {
+                    public void onNext(Boolean success) {
 
                     }
                 });
