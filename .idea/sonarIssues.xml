@@ -340,6 +340,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/OnSubscribeCursor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqlite.java">
           <value>
             <set />

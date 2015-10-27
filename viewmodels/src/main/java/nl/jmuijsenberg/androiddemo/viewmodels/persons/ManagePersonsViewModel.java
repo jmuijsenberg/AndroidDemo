@@ -19,6 +19,7 @@ public class ManagePersonsViewModel {
     private Calendar mDateOfBirth;
     private List<Person> mPersonList;
 
+    private List<Person> persons = new ArrayList<>();
     private final ManagePersonsController mController;
     private PersonDetailListener mPersonDetailListener;
     private PersonListListener mPersonListListener;
@@ -46,10 +47,9 @@ public class ManagePersonsViewModel {
 
         mController.getPersons()
                 .observeOn(mSchedulers.main())
-                .subscribe(new Subscriber<Person>() {
+                .subscribe(new Subscriber<List<Person>>() {
                     @Override
                     public void onCompleted() {
-
                     }
 
                     @Override
@@ -58,10 +58,10 @@ public class ManagePersonsViewModel {
                     }
 
                     @Override
-                    public void onNext(Person person) {
-                        List<Person> p = new ArrayList<Person>();
-                        p.add(person);
-                        mPersonListListener.onListChanged(p);
+                    public void onNext(List<Person> persons) {
+                        if (mPersonListListener != null) {
+                            mPersonListListener.onListChanged(persons);
+                        }
                     }
                 });
     }

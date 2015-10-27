@@ -37,18 +37,22 @@ public class RepositorySqlite implements Repository {
     }
 
     @Override
-    public Observable<Person> getPersons() {
+    public Observable<List<Person>> getPersons() {
         return mBriteDatabase.createQuery(Database.PersonTable.TABLE_NAME, "SELECT * FROM " + Database.PersonTable.TABLE_NAME)
                 .flatMap(new Func1<SqlBrite.Query, Observable<Cursor>>() {
                     @Override
                     public Observable<Cursor> call(SqlBrite.Query query) {
-                        return fromCursor(query.run());
+                        return Observable.just(query.run());
                     }
-                }).map(new Func1<Cursor, Person>() {
+                })
+                .map(new Func1<Cursor, List<Person>>() {
                     @Override
-                    public Person call(Cursor cursor) {
-                        Log.d("SIZE", cursor.getCount() + "");
-                        return Database.PersonTable.parseCursor(cursor);
+                    public List<Person> call(Cursor cursor) {
+                        List<Person> persons = new ArrayList<>();
+                        while (cursor.moveToNext()) {
+                            persons.add(Database.PersonTable.parseCursor(cursor));
+                        }
+                        return persons;
                     }
                 }).subscribeOn(mSchedulers.io());
     }
@@ -78,10 +82,5 @@ public class RepositorySqlite implements Repository {
     public Observable<Boolean> updatePerson(Person person) {
         return Observable.just(false)
                 .subscribeOn(mSchedulers.io());
-    }
-
-    // Copied from obsoleterx.android.content.ContentObservable
-    public static Observable<Cursor> fromCursor(final Cursor cursor) {
-        return Observable.create(new OnSubscribeCursor(cursor));
     }
 }

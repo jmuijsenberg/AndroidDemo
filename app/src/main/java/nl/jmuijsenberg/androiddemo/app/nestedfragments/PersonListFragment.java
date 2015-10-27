@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.adapters.PersonAdapter;
+import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
@@ -92,6 +93,7 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
 
     @Override
     public void onException(Throwable e) {
-
+        ExceptionDialogFragment dialog = ExceptionDialogFragment.newInstance(e.getMessage(), e.getStackTrace().toString());
+        dialog.show(getChildFragmentManager(), "exception");
     }
 }

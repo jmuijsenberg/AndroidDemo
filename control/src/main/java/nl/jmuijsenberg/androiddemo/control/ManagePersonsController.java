@@ -17,7 +17,7 @@ public class ManagePersonsController {
         mSchedulers = schedulers;
     }
 
-    public Observable<Person> getPersons()
+    public Observable<List<Person>> getPersons()
     {
         return mRepository.getPersons();
     }
