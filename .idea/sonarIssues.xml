@@ -325,6 +325,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/androidTest/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqliteTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/DataManager.java">
           <value>
             <set />
@@ -399,14 +404,6 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="e6d65aaf-cb9d-4452-b3a2-fea254d8d590" />
-                <option name="line" value="8" />
-                <option name="message" value="Add a private constructor to hide the implicit public one." />
-                <option name="ruleKey" value="squid:S1118" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="6916773a-177b-43f5-afd8-e3bea11f9586" />
                 <option name="line" value="22" />
                 <option name="message" value="Move this variable to comply with Java Code Conventions." />
@@ -420,6 +417,14 @@
                 <option name="message" value="Reorder the modifiers to comply with the Java Language Specification." />
                 <option name="ruleKey" value="squid:ModifiersOrderCheck" />
                 <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="e6d65aaf-cb9d-4452-b3a2-fea254d8d590" />
+                <option name="line" value="8" />
+                <option name="message" value="Add a private constructor to hide the implicit public one." />
+                <option name="ruleKey" value="squid:S1118" />
+                <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
           </value>

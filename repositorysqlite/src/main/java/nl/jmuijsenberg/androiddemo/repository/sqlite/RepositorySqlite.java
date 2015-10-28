@@ -64,18 +64,31 @@ public class RepositorySqlite implements Repository {
         }).subscribeOn(mSchedulers.io());
     }
 
-
-
     @Override
-    public Observable<Boolean> deletePeson(Person person) {
-        persons.remove(person);
-        return Observable.just(true)
-                .subscribeOn(mSchedulers.io());
+    public Observable<Boolean> updatePerson(final Person person) {
+        return Observable.create(new Observable.OnSubscribe<Boolean>() {
+            @Override
+            public void call(Subscriber<? super Boolean> subscriber) {
+                String whereClause = Database.PersonTable.COLUMN_ID + "= ? ";
+                String[] whereArgs = new String[]{Long.toString(person.getId())};
+                long result = mBriteDatabase.update(Database.PersonTable.TABLE_NAME, Database.PersonTable.toContentValues(person), whereClause, whereArgs);
+                subscriber.onNext(result >= 0);
+                subscriber.onCompleted();
+            }
+        }).subscribeOn(mSchedulers.io());
     }
 
     @Override
-    public Observable<Boolean> updatePerson(Person person) {
-        return Observable.just(false)
-                .subscribeOn(mSchedulers.io());
+    public Observable<Boolean> deletePerson(final Person person) {
+        return Observable.create(new Observable.OnSubscribe<Boolean>() {
+            @Override
+            public void call(Subscriber<? super Boolean> subscriber) {
+                String whereClause = Database.PersonTable.COLUMN_ID + "= ? ";
+                String[] whereArgs = new String[]{Long.toString(person.getId())};
+                long result = mBriteDatabase.delete(Database.PersonTable.TABLE_NAME, whereClause, whereArgs);
+                subscriber.onNext(result >= 0);
+                subscriber.onCompleted();
+            }
+        }).subscribeOn(mSchedulers.io());
     }
 }
