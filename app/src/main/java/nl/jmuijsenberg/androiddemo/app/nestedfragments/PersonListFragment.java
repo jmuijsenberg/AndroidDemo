@@ -1,7 +1,6 @@
 package nl.jmuijsenberg.androiddemo.app.nestedfragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,23 +8,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.Button;
 
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.adapters.PersonAdapter;
 import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
-import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
-import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
 
 public class PersonListFragment extends Fragment implements PersonAdapter.OnClickListener, ManagePersonsViewModel.PersonListListener {
@@ -36,6 +31,11 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
 
     @Bind(R.id.personList)
     RecyclerView mPersonList;
+
+    @Bind(R.id.addButton)
+    Button mAddButton;
+    @Bind(R.id.deleteButton)
+    Button mDeleteButton;
 
     public PersonListFragment() {
     }
@@ -82,13 +82,23 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
     }
 
     @Override
-    public void onPersonClick(Person p) {
-
+    public void onPersonClick(Person person) {
+        mManagePersonsViewModel.setSelectedPerson(person);
     }
 
     @Override
     public void onListChanged(List<Person> persons) {
         mAdapter.updatePersonList(persons);
+    }
+
+    @OnClick(R.id.addButton)
+    public void onAdd(Button button) {
+        mManagePersonsViewModel.newPerson();
+    }
+
+    @OnClick(R.id.deleteButton)
+    public void onDelete(Button button) {
+        mManagePersonsViewModel.deletePerson();
     }
 
     @Override

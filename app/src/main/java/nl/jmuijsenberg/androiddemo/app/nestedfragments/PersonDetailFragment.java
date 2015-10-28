@@ -35,8 +35,10 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     EditText mLastNameText;
     @Bind(R.id.personDateOfBirthValue)
     TextView mDateOfBirthText;
-    @Bind(R.id.applyButton)
-    Button mApplyButton;
+    @Bind(R.id.saveButton)
+    Button mSaveButton;
+    @Bind(R.id.cancelButton)
+    Button mCancelButton;
 
     private ManagePersonsViewModel mManagePersonsViewModel;
 
@@ -89,12 +91,12 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
 
     @OnTextChanged(R.id.personFirstNameValue)
     public void onFirstNameTextChanged(CharSequence text) {
-        mManagePersonsViewModel.setFirstName(text.toString());
+        mManagePersonsViewModel.getSelectedPerson().setFirstName(text.toString());
     }
 
     @OnTextChanged(R.id.personLastNameValue)
     public void onLastNameTextChanged(CharSequence text) {
-        mManagePersonsViewModel.setLastName(text.toString());
+        mManagePersonsViewModel.getSelectedPerson().setLastName(text.toString());
     }
 
     @OnClick(R.id.personDateOfBirthValue)
@@ -108,9 +110,14 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
         mDateOfBirthText.setText(DateTime.formatDate(year, monthOfYear, dayOfMonth));
     }
 
-    @OnClick(R.id.applyButton)
-    public void onApply(Button button) {
-        mManagePersonsViewModel.addPerson();
+    @OnClick(R.id.saveButton)
+    public void onSave(Button button) {
+        mManagePersonsViewModel.savePerson();
+    }
+
+    @OnClick(R.id.cancelButton)
+    public void onCancel(Button button) {
+
     }
 
     @Override

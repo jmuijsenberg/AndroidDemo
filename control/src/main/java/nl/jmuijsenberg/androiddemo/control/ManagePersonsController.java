@@ -27,7 +27,7 @@ public class ManagePersonsController {
         return mRepository.addPerson(person);
     }
 
-    public Observable<Boolean> deletePeson(Person person)
+    public Observable<Boolean> deletePerson(Person person)
     {
         return mRepository.deletePerson(person);
     }

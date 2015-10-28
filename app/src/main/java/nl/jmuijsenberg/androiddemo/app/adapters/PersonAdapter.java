@@ -86,6 +86,10 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
 
         mSelectedPerson = person;
 
+        if (mClickListener != null)
+        {
+            mClickListener.onPersonClick(person);
+        }
         notifyItemChanged(newSelectedIndex);
         notifyItemChanged(oldSelectedIndex);
 

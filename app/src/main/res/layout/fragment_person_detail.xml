@@ -5,6 +5,7 @@
     android:stretchColumns="0,1">
 
     <TableRow>
+
         <TextView
             android:id="@+id/personFirstNameLabel"
             android:layout_width="match_parent"
@@ -14,27 +15,31 @@
         <EditText
             android:id="@+id/personFirstNameValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </TableRow>
 
     <TableRow>
+
         <TextView
             android:id="@+id/personLastNameLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last name" />
+
         <EditText
             android:id="@+id/personLastNameValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </TableRow>
 
     <TableRow>
+
         <TextView
             android:id="@+id/personDateOfBirthLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last name" />
+
         <TextView
             android:id="@+id/personDateOfBirthValue"
             android:layout_width="match_parent"
@@ -43,27 +48,44 @@
     </TableRow>
 
     <TableRow>
+
         <TextView
             android:id="@+id/personEmailLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last name" />
+
         <EditText
             android:id="@+id/personEmailValue"
-            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
     </TableRow>
 
     <TableRow>
+
         <View>
 
         </View>
-        <Button
-            android:id="@+id/applyButton"
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="apply" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="save" />
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="cancel" />
+        </LinearLayout>
     </TableRow>
 </TableLayout>

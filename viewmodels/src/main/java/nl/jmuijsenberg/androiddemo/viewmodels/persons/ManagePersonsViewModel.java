@@ -13,13 +13,8 @@ import rx.Observable;
 import rx.Subscriber;
 
 public class ManagePersonsViewModel {
-    private String mFirstName;
-    private String mLastName;
-    private Gender mGender;
-    private Calendar mDateOfBirth;
     private List<Person> mPersonList;
-
-    private List<Person> persons = new ArrayList<>();
+    private Person mSelectedPerson = new Person();
     private final ManagePersonsController mController;
     private PersonDetailListener mPersonDetailListener;
     private PersonListListener mPersonListListener;
@@ -71,12 +66,27 @@ public class ManagePersonsViewModel {
         mPersonListListener = null;
     }
 
-    public void addPerson() {
-        Person person = new Person();
-        person.setFirstName(mFirstName);
-        person.setLastName(mLastName);
-        mController.addPerson(person)
-                .observeOn(mSchedulers.main())
+    public void setSelectedPerson(Person person)
+    {
+        mSelectedPerson = new Person(person);
+        if (mPersonDetailListener != null) {
+            mPersonDetailListener.onFirstNameChanged(mSelectedPerson.getFirstName());
+            mPersonDetailListener.onLastNameChanged(mSelectedPerson.getLastName());
+        }
+    }
+
+    public void newPerson() {
+        setSelectedPerson(new Person());
+    }
+
+    public Person getSelectedPerson() {
+        return mSelectedPerson;
+    }
+
+    public void savePerson() {
+        Observable<Boolean> action = (mSelectedPerson.getId() == 0) ? mController.addPerson(mSelectedPerson) : mController.updatePerson(mSelectedPerson);
+
+        action.observeOn(mSchedulers.main())
                 .subscribe(new RxSubscriberBase<Boolean>() {
                     @Override
                     public void onNext(Boolean success) {
@@ -85,36 +95,21 @@ public class ManagePersonsViewModel {
                 });
     }
 
-    public void setFirstName(String firstName) {
-        mFirstName = firstName;
-    }
+    public void deletePerson() {
+        if (mSelectedPerson.getId() != 0) {
+            Observable<Boolean> action = mController.deletePerson(mSelectedPerson);
 
-    public String getFirstName() {
-        return mFirstName;
-    }
-
-    public void setLastName(String lastName) {
-        mLastName = lastName;
-    }
-
-    public String getLastName() {
-        return mLastName;
-    }
-
-    public void setGender(Gender gender) {
-        this.mGender = gender;
-    }
-
-    public Gender getGender() {
-        return mGender;
-    }
-
-    public void setDateOfBirth(Calendar dateOfBirth) {
-        this.mDateOfBirth = dateOfBirth;
-    }
-
-    public Calendar getDateOfBirth() {
-        return mDateOfBirth;
+            action.observeOn(mSchedulers.main())
+                    .subscribe(new RxSubscriberBase<Boolean>() {
+                        @Override
+                        public void onNext(Boolean success) {
+                            if (success)
+                            {
+                                newPerson();
+                            }
+                        }
+                    });
+        }
     }
 
     public interface PersonDetailListener {

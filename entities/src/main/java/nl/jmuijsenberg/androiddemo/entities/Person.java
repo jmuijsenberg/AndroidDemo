@@ -12,6 +12,14 @@ public class Person {
     public Person() {
     }
 
+    public Person(Person person) {
+        mId = person.mId;
+        mFirstName = person.mFirstName;
+        mLastName = person.mLastName;
+        mGender = person.mGender;
+        mDateOfBirth = person.mDateOfBirth;
+    }
+
     public Person(String firstName,
                   String lastName,
                   Gender gender,
