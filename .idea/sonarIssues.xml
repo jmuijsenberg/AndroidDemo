@@ -104,6 +104,11 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/RecyclerViewAdapterBase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/binding/DataBinding.java">
           <value>
             <set>
