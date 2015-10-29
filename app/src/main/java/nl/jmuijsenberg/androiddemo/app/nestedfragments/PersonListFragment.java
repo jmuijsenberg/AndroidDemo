@@ -93,18 +93,18 @@ public class PersonListFragment extends Fragment implements ManagePersonsViewMod
     }
 
     @OnClick(R.id.addButton)
-    public void onAdd(Button button) {
+    public void onAdd() {
         mManagePersonsViewModel.newPerson();
     }
 
     @OnClick(R.id.deleteButton)
-    public void onDelete(Button button) {
+    public void onDelete() {
         mManagePersonsViewModel.deletePerson();
     }
 
     @Override
     public void onException(Throwable e) {
-        ExceptionDialogFragment dialog = ExceptionDialogFragment.newInstance(e.getMessage(), e.getStackTrace().toString());
+        ExceptionDialogFragment dialog = ExceptionDialogFragment.newInstance(e);
         dialog.show(getChildFragmentManager(), "exception");
     }
 }

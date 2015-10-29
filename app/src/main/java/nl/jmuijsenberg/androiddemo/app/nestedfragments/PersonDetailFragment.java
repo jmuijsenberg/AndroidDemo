@@ -19,7 +19,6 @@ import butterknife.OnTextChanged;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
-import nl.jmuijsenberg.androiddemo.app.dialogs.LoginDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
@@ -142,7 +141,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
 
     @Override
     public void onException(Throwable e) {
-        ExceptionDialogFragment dialog = ExceptionDialogFragment.newInstance(e.getMessage(), e.getStackTrace().toString());
+        ExceptionDialogFragment dialog = ExceptionDialogFragment.newInstance(e);
         dialog.show(getChildFragmentManager(), "exception");
     }
 }

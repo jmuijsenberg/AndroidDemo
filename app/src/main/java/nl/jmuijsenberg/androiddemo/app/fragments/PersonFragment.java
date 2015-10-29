@@ -1,7 +1,6 @@
 package nl.jmuijsenberg.androiddemo.app.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -14,7 +13,6 @@ import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonDetailFragment;
 import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonListFragment;
-import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
 

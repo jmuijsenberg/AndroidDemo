@@ -2,16 +2,13 @@ package nl.jmuijsenberg.androiddemo.repository.sqlite;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import com.squareup.sqlbrite.BriteDatabase;
 import com.squareup.sqlbrite.SqlBrite;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
-import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.repository.Repository;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;

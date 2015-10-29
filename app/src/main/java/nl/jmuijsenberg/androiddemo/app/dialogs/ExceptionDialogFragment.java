@@ -15,12 +15,10 @@ public class ExceptionDialogFragment  extends DialogFragment {
     public ExceptionDialogFragment() {
     }
 
-    public static ExceptionDialogFragment newInstance(String exceptionMessage,
-                                                         String exceptionStackTrace) {
+    public static ExceptionDialogFragment newInstance(Throwable e) {
         ExceptionDialogFragment fragment = new ExceptionDialogFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_EXCEPTION_MESSAGE, exceptionMessage);
-        args.putString(ARG_EXCEPTION_STACKTRACE, exceptionStackTrace);
+        args.putString(ARG_EXCEPTION_MESSAGE, e.getMessage());
         fragment.setArguments(args);
         return fragment;
     }
@@ -34,7 +32,6 @@ public class ExceptionDialogFragment  extends DialogFragment {
 
         if (getArguments() != null) {
             title = getString(getArguments().getInt(ARG_EXCEPTION_MESSAGE));
-            message = getString(getArguments().getInt(ARG_EXCEPTION_STACKTRACE));
         }
 
         builder.setTitle(title)
