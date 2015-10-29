@@ -17,13 +17,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.adapters.PersonAdapter;
+import nl.jmuijsenberg.androiddemo.app.adapters.RecyclerViewAdapterBase;
 import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
 
-public class PersonListFragment extends Fragment implements PersonAdapter.OnClickListener, ManagePersonsViewModel.PersonListListener {
+public class PersonListFragment extends Fragment implements ManagePersonsViewModel.PersonListListener {
     private static String TAG = "PersonListFragment";
     PersonAdapter mAdapter;
     LinearLayoutManager mLayoutManager;
@@ -54,7 +55,12 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
         mLayoutManager = new LinearLayoutManager(getActivity());
         mPersonList.setLayoutManager(mLayoutManager);
 
-        mAdapter = new PersonAdapter(this);
+        mAdapter = new PersonAdapter(new RecyclerViewAdapterBase.OnSelectionChangedListener<Person>() {
+            @Override
+            public void onSelectionChanged(Person person) {
+                mManagePersonsViewModel.setSelectedPerson(person);
+            }
+        });
         mPersonList.setAdapter(mAdapter);
 
         return view;
@@ -79,11 +85,6 @@ public class PersonListFragment extends Fragment implements PersonAdapter.OnClic
         super.onDetach();
         mManagePersonsViewModel.detachListView();
         mManagePersonsViewModel = null;
-    }
-
-    @Override
-    public void onPersonClick(Person person) {
-        mManagePersonsViewModel.setSelectedPerson(person);
     }
 
     @Override

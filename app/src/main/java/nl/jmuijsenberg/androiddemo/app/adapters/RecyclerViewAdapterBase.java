@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewAdapterBase.RecyclerViewHolderBase> extends RecyclerView.Adapter<VH> {
+public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewHolderBase> extends RecyclerView.Adapter<VH> {
     RecyclerViewAdapterBase.OnSelectionChangedListener mClickListener;
     private List<T> mItemList;
     private T mSelectedItem = null;
@@ -96,13 +96,7 @@ public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewAdapterB
         void onSelectionChanged(T item);
     }
 
-    public abstract class RecyclerViewHolderBase<T> extends RecyclerView.ViewHolder {
-        public RecyclerViewHolderBase(View v, View.OnClickListener clickListener) {
-            super(v);
-            v.setOnClickListener(clickListener);
-        }
 
-        // Implement update views based on item properties in derived class
-        public abstract void setItem(T item);
-    }
 }
+
+

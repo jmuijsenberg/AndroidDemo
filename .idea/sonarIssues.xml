@@ -85,26 +85,20 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/PersonAdapter.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="3bbe1096-3418-44a6-8612-55247c79301d" />
-                <option name="message" value="7 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
-                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="ec197dd0-aa9f-4f04-8551-7788346f3fdc" />
-                <option name="line" value="7" />
-                <option name="message" value="Remove this unused import 'android.widget.RelativeLayout'." />
-                <option name="ruleKey" value="squid:UselessImportCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-            </set>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/PersonAdapter2.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/RecyclerViewAdapterBase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/RecyclerViewHolderBase.java">
           <value>
             <set />
           </value>
