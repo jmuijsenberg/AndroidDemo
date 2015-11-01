@@ -2,15 +2,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/selector_person_list">
+    android:background="@drawable/selector_student_list">
 
     <TextView
-        android:id="@+id/personFullName"
+        android:id="@+id/studentFullName"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/personDateOfBirth"
+        android:id="@+id/studentDateOfBirth"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

@@ -20,7 +20,7 @@ public abstract class RecyclerViewAdapterBase<T, V extends RecyclerViewHolderBas
         mItemList = new ArrayList<>();
     }
 
-    public void updatePersonList(List<T> itemList) {
+    public void updateList(List<T> itemList) {
         mItemList = itemList;
         notifyDataSetChanged();
     }

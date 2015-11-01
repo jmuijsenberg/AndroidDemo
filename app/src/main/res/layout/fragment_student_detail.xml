@@ -7,13 +7,13 @@
     <TableRow>
 
         <TextView
-            android:id="@+id/personFirstNameLabel"
+            android:id="@+id/studentFirstNameLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="First name" />
 
         <EditText
-            android:id="@+id/personFirstNameValue"
+            android:id="@+id/studentFirstNameValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </TableRow>
@@ -21,13 +21,13 @@
     <TableRow>
 
         <TextView
-            android:id="@+id/personLastNameLabel"
+            android:id="@+id/studentLastNameLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last name" />
 
         <EditText
-            android:id="@+id/personLastNameValue"
+            android:id="@+id/studentLastNameValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </TableRow>
@@ -35,13 +35,13 @@
     <TableRow>
 
         <TextView
-            android:id="@+id/personDateOfBirthLabel"
+            android:id="@+id/studentDateOfBirthLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last name" />
 
         <TextView
-            android:id="@+id/personDateOfBirthValue"
+            android:id="@+id/studentDateOfBirthValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="20 Jan 2001" />
@@ -50,13 +50,13 @@
     <TableRow>
 
         <TextView
-            android:id="@+id/personEmailLabel"
+            android:id="@+id/studentEmailLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Last name" />
 
         <EditText
-            android:id="@+id/personEmailValue"
+            android:id="@+id/studentEmailValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />

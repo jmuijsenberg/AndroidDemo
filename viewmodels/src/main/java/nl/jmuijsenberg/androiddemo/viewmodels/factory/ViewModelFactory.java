@@ -2,7 +2,7 @@ package nl.jmuijsenberg.androiddemo.viewmodels.factory;
 
 import nl.jmuijsenberg.androiddemo.control.ControllerFactory;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
-import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.students.ManageStudentsViewModel;
 
 public class ViewModelFactory {
     private ControllerFactory mControllerFactory;
@@ -14,7 +14,7 @@ public class ViewModelFactory {
         mSchedulers = schedulers;
     }
 
-    public ManagePersonsViewModel getManagePersonsViewModel() {
-        return new ManagePersonsViewModel(mControllerFactory.getManagePersonsController(), mSchedulers);
+    public ManageStudentsViewModel getManageStudentsViewModel() {
+        return new ManageStudentsViewModel(mControllerFactory.getManagePersonsController(), mSchedulers);
     }
 }

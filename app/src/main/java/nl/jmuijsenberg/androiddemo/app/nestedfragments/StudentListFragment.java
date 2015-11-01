@@ -16,29 +16,29 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.adapters.PersonAdapter;
 import nl.jmuijsenberg.androiddemo.app.adapters.RecyclerViewAdapterBase;
+import nl.jmuijsenberg.androiddemo.app.adapters.StudentListAdapter;
 import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
-import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
-import nl.jmuijsenberg.androiddemo.entities.Person;
+import nl.jmuijsenberg.androiddemo.app.fragments.StudentFragment;
+import nl.jmuijsenberg.androiddemo.entities.Student;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
-import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.students.ManageStudentsViewModel;
 
-public class PersonListFragment extends Fragment implements ManagePersonsViewModel.PersonListListener {
+public class StudentListFragment extends Fragment implements ManageStudentsViewModel.StudentListListener {
     private static String TAG = "PersonListFragment";
-    PersonAdapter mAdapter;
+    StudentListAdapter mAdapter;
     LinearLayoutManager mLayoutManager;
-    private ManagePersonsViewModel mManagePersonsViewModel;
+    private ManageStudentsViewModel mManageStudentsViewModel;
 
-    @Bind(R.id.personList)
-    RecyclerView mPersonList;
+    @Bind(R.id.studentList)
+    RecyclerView mStudentList;
 
     @Bind(R.id.addButton)
     Button mAddButton;
     @Bind(R.id.deleteButton)
     Button mDeleteButton;
 
-    public PersonListFragment() {
+    public StudentListFragment() {
     }
 
     @Override
@@ -49,19 +49,19 @@ public class PersonListFragment extends Fragment implements ManagePersonsViewMod
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_person_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_list, container, false);
         ButterKnife.bind(this, view);
 
         mLayoutManager = new LinearLayoutManager(getActivity());
-        mPersonList.setLayoutManager(mLayoutManager);
+        mStudentList.setLayoutManager(mLayoutManager);
 
-        mAdapter = new PersonAdapter(new RecyclerViewAdapterBase.OnSelectionChangedListener<Person>() {
+        mAdapter = new StudentListAdapter(new RecyclerViewAdapterBase.OnSelectionChangedListener<Student>() {
             @Override
-            public void onSelectionChanged(Person person) {
-                mManagePersonsViewModel.setSelectedPerson(person);
+            public void onSelectionChanged(Student student) {
+                mManageStudentsViewModel.setSelectedStudent(student);
             }
         });
-        mPersonList.setAdapter(mAdapter);
+        mStudentList.setAdapter(mAdapter);
 
         return view;
     }
@@ -71,9 +71,9 @@ public class PersonListFragment extends Fragment implements ManagePersonsViewMod
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            PersonFragment parentFragment = (PersonFragment) getParentFragment();
-            mManagePersonsViewModel = parentFragment.getManagePersonsViewModel();
-            mManagePersonsViewModel.attachListView(this);
+            StudentFragment parentFragment = (StudentFragment) getParentFragment();
+            mManageStudentsViewModel = parentFragment.getManageStudentsViewModel();
+            mManageStudentsViewModel.attachListView(this);
         } catch (ClassCastException e) {
             Logger.e(TAG, e, "illegal cast");
             throw new Error(e);
@@ -83,23 +83,23 @@ public class PersonListFragment extends Fragment implements ManagePersonsViewMod
     @Override
     public void onDetach() {
         super.onDetach();
-        mManagePersonsViewModel.detachListView();
-        mManagePersonsViewModel = null;
+        mManageStudentsViewModel.detachListView();
+        mManageStudentsViewModel = null;
     }
 
     @Override
-    public void onListChanged(List<Person> persons) {
-        mAdapter.updatePersonList(persons);
+    public void onListChanged(List<Student> students) {
+        mAdapter.updateList(students);
     }
 
     @OnClick(R.id.addButton)
     public void onAdd() {
-        mManagePersonsViewModel.newPerson();
+        mManageStudentsViewModel.newStudent();
     }
 
     @OnClick(R.id.deleteButton)
     public void onDelete() {
-        mManagePersonsViewModel.deletePerson();
+        mManageStudentsViewModel.deleteStudent();
     }
 
     @Override

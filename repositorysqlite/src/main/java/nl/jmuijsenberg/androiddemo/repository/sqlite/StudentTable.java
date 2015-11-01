@@ -56,7 +56,7 @@ public class StudentTable  extends DatabaseTable<Student> {
         values.put(COLUMN_FIRSTNAME, student.getFirstName());
         values.put(COLUMN_LASTNAME, student.getLastName());
         values.put(COLUMN_DOB, student.getDateOfBirth());
-        values.put(COLUMN_GENDER, student.getGender().getValue());
+        values.put(COLUMN_GENDER, (student.getGender() != null) ? student.getGender().getValue() : null);
         return values;
     }
 
@@ -67,7 +67,7 @@ public class StudentTable  extends DatabaseTable<Student> {
         student.setFirstName(getString(cursor, COLUMN_FIRSTNAME));
         student.setLastName(getString(cursor, COLUMN_LASTNAME));
         student.setDateOfBirth(getNullableLong(cursor, COLUMN_DOB));
-        student.setGender(Gender.getGender(getNullableInt(cursor, COLUMN_GENDER)));
+        student.setGender(getNullableGender(cursor, COLUMN_GENDER));
         return student;
     }
 }

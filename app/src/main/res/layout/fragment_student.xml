@@ -2,19 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment">
+    tools:context="nl.jmuijsenberg.androiddemo.app.fragments.StudentFragment">
 
     <!--    You cannot inflate a layout into a fragment when that layout includes a fragment.
             Nested fragments are only supported when added to a fragment dynamically.
             http://developer.android.com/about/versions/android-4.2.html#NestedFragments-->
     <FrameLayout
-        android:id="@+id/personListFrame"
+        android:id="@+id/studentListFrame"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <FrameLayout
-        android:id="@+id/personDetailFrame"
+        android:id="@+id/studentDetailFrame"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />

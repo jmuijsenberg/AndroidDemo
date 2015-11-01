@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
-public class PersonTest {
+public class StudentTest {
     @Before
     public void before() {
     }
@@ -17,8 +17,8 @@ public class PersonTest {
 
     @Test
     public void testConstructor() {
-        Person person = new Person();
+        Student student = new Student();
 
-        assertNotNull(person);
+        assertNotNull(student);
     }
 }

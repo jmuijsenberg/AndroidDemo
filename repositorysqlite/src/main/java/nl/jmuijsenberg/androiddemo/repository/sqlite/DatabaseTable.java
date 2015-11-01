@@ -9,6 +9,7 @@ import com.squareup.sqlbrite.SqlBrite;
 import java.util.ArrayList;
 import java.util.List;
 
+import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
 import rx.Observable;
 import rx.Subscriber;
@@ -94,6 +95,12 @@ public abstract class DatabaseTable<T> {
     {
         int columnIndex = cursor.getColumnIndexOrThrow(columnName);
         return (!cursor.isNull(columnIndex)) ? cursor.getInt(columnIndex) : null;
+    }
+
+    protected Gender getNullableGender(Cursor cursor, String columnName)
+    {
+        int columnIndex = cursor.getColumnIndexOrThrow(columnName);
+        return (!cursor.isNull(columnIndex)) ? Gender.getGender(cursor.getInt(columnIndex)) : null;
     }
 
     protected String getString(Cursor cursor, String columnName)

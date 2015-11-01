@@ -11,20 +11,20 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
-import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonDetailFragment;
-import nl.jmuijsenberg.androiddemo.app.nestedfragments.PersonListFragment;
+import nl.jmuijsenberg.androiddemo.app.nestedfragments.StudentDetailFragment;
+import nl.jmuijsenberg.androiddemo.app.nestedfragments.StudentListFragment;
 import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
-import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.students.ManageStudentsViewModel;
 
-public class PersonFragment extends Fragment {
-    private ManagePersonsViewModel mManagePersonsViewModel;
+public class StudentFragment extends Fragment {
+    private ManageStudentsViewModel mManageStudentsViewModel;
 
-    public PersonFragment() {
+    public StudentFragment() {
         // Required empty public constructor
     }
 
-    public static PersonFragment newInstance() {
-        return new PersonFragment();
+    public static StudentFragment newInstance() {
+        return new StudentFragment();
     }
 
     @Override
@@ -35,15 +35,15 @@ public class PersonFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment1, container, false);
+        View view = inflater.inflate(R.layout.fragment_student, container, false);
         ButterKnife.bind(this, view);
 
         ViewModelFactory viewModelFactory = ((ApplicationExtension) getContext().getApplicationContext()).getViewModelFactory();
-        mManagePersonsViewModel = viewModelFactory.getManagePersonsViewModel();
+        mManageStudentsViewModel = viewModelFactory.getManageStudentsViewModel();
 
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.add(R.id.personListFrame, new PersonListFragment(), "tag1");
-        transaction.add(R.id.personDetailFrame, new PersonDetailFragment(), "tag2");
+        transaction.add(R.id.studentListFrame, new StudentListFragment(), "tag1");
+        transaction.add(R.id.studentDetailFrame, new StudentDetailFragment(), "tag2");
         transaction.commit();
         return view;
     }
@@ -65,7 +65,7 @@ public class PersonFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    public ManagePersonsViewModel getManagePersonsViewModel() {
-        return mManagePersonsViewModel;
+    public ManageStudentsViewModel getManageStudentsViewModel() {
+        return mManageStudentsViewModel;
     }
 }

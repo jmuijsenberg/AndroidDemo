@@ -6,7 +6,7 @@ import android.test.RenamingDelegatingContext;
 
 import java.util.List;
 
-import nl.jmuijsenberg.androiddemo.entities.Person;
+import nl.jmuijsenberg.androiddemo.entities.Student;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxJvmTestSchedulers;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
 import rx.observers.TestSubscriber;
@@ -45,87 +45,87 @@ public class RepositorySqliteTest extends ApplicationTestCase<Application> {
 
     public void testInitialEmpty()
     {
-        List<Person> persons = getPersonsFromDatabase();
-        assertEquals(0, persons.size());
+        List<Student> students = getStudentsFromDatabase();
+        assertEquals(0, students.size());
     }
 
     public void testAddUpdateDelete()
     {
-        List<Person> personsInitial = getPersonsFromDatabase();
-        assertEquals(0, personsInitial.size());
+        List<Student> studentsInitial = getStudentsFromDatabase();
+        assertEquals(0, studentsInitial.size());
 
-        Person person1 = new Person();
-        person1.setFirstName(FIRST_NAME1);
-        person1.setLastName(LAST_NAME1);
-        addPersonToDatabase(person1);
+        Student student1 = new Student();
+        student1.setFirstName(FIRST_NAME1);
+        student1.setLastName(LAST_NAME1);
+        addStudentToDatabase(student1);
 
-        List<Person> personsAfterFirstAdd = getPersonsFromDatabase();
-        assertEquals(1, personsAfterFirstAdd.size());
-        assertEquals(FIRST_NAME1, personsAfterFirstAdd.get(0).getFirstName());
-        assertEquals(LAST_NAME1, personsAfterFirstAdd.get(0).getLastName());
+        List<Student> studentsAfterFirstAdd = getStudentsFromDatabase();
+        assertEquals(1, studentsAfterFirstAdd.size());
+        assertEquals(FIRST_NAME1, studentsAfterFirstAdd.get(0).getFirstName());
+        assertEquals(LAST_NAME1, studentsAfterFirstAdd.get(0).getLastName());
 
-        Person person2 = new Person();
-        person2.setFirstName(FIRST_NAME2);
-        person2.setLastName(LAST_NAME2);
-        addPersonToDatabase(person2);
+        Student student2 = new Student();
+        student2.setFirstName(FIRST_NAME2);
+        student2.setLastName(LAST_NAME2);
+        addStudentToDatabase(student2);
 
-        List<Person> personsAfterSecondAdd = getPersonsFromDatabase();
-        assertEquals(2, personsAfterSecondAdd.size());
-        assertEquals(FIRST_NAME1, personsAfterSecondAdd.get(0).getFirstName());
-        assertEquals(LAST_NAME1, personsAfterSecondAdd.get(0).getLastName());
-        assertEquals(FIRST_NAME2, personsAfterSecondAdd.get(1).getFirstName());
-        assertEquals(LAST_NAME2, personsAfterSecondAdd.get(1).getLastName());
+        List<Student> studentsAfterSecondAdd = getStudentsFromDatabase();
+        assertEquals(2, studentsAfterSecondAdd.size());
+        assertEquals(FIRST_NAME1, studentsAfterSecondAdd.get(0).getFirstName());
+        assertEquals(LAST_NAME1, studentsAfterSecondAdd.get(0).getLastName());
+        assertEquals(FIRST_NAME2, studentsAfterSecondAdd.get(1).getFirstName());
+        assertEquals(LAST_NAME2, studentsAfterSecondAdd.get(1).getLastName());
 
-        personsAfterSecondAdd.get(0).setFirstName(FIRST_NAME3);
-        personsAfterSecondAdd.get(0).setLastName(LAST_NAME3);
-        updatePerson(personsAfterSecondAdd.get(0));
+        studentsAfterSecondAdd.get(0).setFirstName(FIRST_NAME3);
+        studentsAfterSecondAdd.get(0).setLastName(LAST_NAME3);
+        updateStudent(studentsAfterSecondAdd.get(0));
 
-        List<Person> personsAfterUpdate = getPersonsFromDatabase();
-        assertEquals(2, personsAfterUpdate.size());
-        assertEquals(FIRST_NAME3, personsAfterUpdate.get(0).getFirstName());
-        assertEquals(LAST_NAME3, personsAfterUpdate.get(0).getLastName());
-        assertEquals(FIRST_NAME2, personsAfterUpdate.get(1).getFirstName());
-        assertEquals(LAST_NAME2, personsAfterUpdate.get(1).getLastName());
+        List<Student> studentsAfterUpdate = getStudentsFromDatabase();
+        assertEquals(2, studentsAfterUpdate.size());
+        assertEquals(FIRST_NAME3, studentsAfterUpdate.get(0).getFirstName());
+        assertEquals(LAST_NAME3, studentsAfterUpdate.get(0).getLastName());
+        assertEquals(FIRST_NAME2, studentsAfterUpdate.get(1).getFirstName());
+        assertEquals(LAST_NAME2, studentsAfterUpdate.get(1).getLastName());
 
-        deletePerson(personsAfterSecondAdd.get(1));
+        deleteStudent(studentsAfterSecondAdd.get(1));
 
-        List<Person> personsAfterDelete = getPersonsFromDatabase();
-        assertEquals(1, personsAfterDelete.size());
-        assertEquals(FIRST_NAME3, personsAfterSecondAdd.get(0).getFirstName());
-        assertEquals(LAST_NAME3, personsAfterSecondAdd.get(0).getLastName());
+        List<Student> studentsAfterDelete = getStudentsFromDatabase();
+        assertEquals(1, studentsAfterDelete.size());
+        assertEquals(FIRST_NAME3, studentsAfterSecondAdd.get(0).getFirstName());
+        assertEquals(LAST_NAME3, studentsAfterSecondAdd.get(0).getLastName());
     }
 
-    private List<Person> getPersonsFromDatabase()
+    private List<Student> getStudentsFromDatabase()
     {
-        TestSubscriber<List<Person>> testSubscriber = new TestSubscriber<>();
-        mRepository.getPersons().subscribe(testSubscriber);
+        TestSubscriber<List<Student>> testSubscriber = new TestSubscriber<>();
+        mRepository.getStudents().subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValueCount(1);
         return testSubscriber.getOnNextEvents().get(0);
     }
 
-    private void addPersonToDatabase(Person person)
+    private void addStudentToDatabase(Student student)
     {
         TestSubscriber<Boolean> testSubscriber = new TestSubscriber<>();
-        mRepository.addPerson(person).subscribe(testSubscriber);
+        mRepository.addStudent(student).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValueCount(1);
         Boolean success = testSubscriber.getOnNextEvents().get(0);
         assertTrue(success);
     }
 
-    private void deletePerson(Person person) {
+    private void deleteStudent(Student student) {
         TestSubscriber<Boolean> testSubscriber = new TestSubscriber<>();
-        mRepository.deletePerson(person).subscribe(testSubscriber);
+        mRepository.deleteStudent(student).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValueCount(1);
         Boolean success = testSubscriber.getOnNextEvents().get(0);
         assertTrue(success);
     }
 
-    private void updatePerson(Person person) {
+    private void updateStudent(Student student) {
         TestSubscriber<Boolean> testSubscriber = new TestSubscriber<>();
-        mRepository.updatePerson(person).subscribe(testSubscriber);
+        mRepository.updateStudent(student).subscribe(testSubscriber);
         testSubscriber.assertNoErrors();
         testSubscriber.assertValueCount(1);
         Boolean success = testSubscriber.getOnNextEvents().get(0);

@@ -19,29 +19,29 @@ import butterknife.OnTextChanged;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.ExceptionDialogFragment;
-import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
+import nl.jmuijsenberg.androiddemo.app.fragments.StudentFragment;
 import nl.jmuijsenberg.androiddemo.util.android.datetime.DateTime;
 import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
-import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.students.ManageStudentsViewModel;
 
-public class PersonDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener, ManagePersonsViewModel.PersonDetailListener{
-    private static String TAG = "PersonDetailFragment";
+public class StudentDetailFragment extends Fragment implements DatePickerDialog.OnDateSetListener, ManageStudentsViewModel.StudentDetailListener{
+    private static String TAG = "StudentDetailFragment";
     private static String FIRSTNAME = "FirstName";
 
-    @Bind(R.id.personFirstNameValue)
+    @Bind(R.id.studentFirstNameValue)
     EditText mFirstNameText;
-    @Bind(R.id.personLastNameValue)
+    @Bind(R.id.studentLastNameValue)
     EditText mLastNameText;
-    @Bind(R.id.personDateOfBirthValue)
+    @Bind(R.id.studentDateOfBirthValue)
     TextView mDateOfBirthText;
     @Bind(R.id.saveButton)
     Button mSaveButton;
     @Bind(R.id.cancelButton)
     Button mCancelButton;
 
-    private ManagePersonsViewModel mManagePersonsViewModel;
+    private ManageStudentsViewModel mManageStudentsViewModel;
 
-    public PersonDetailFragment() {
+    public StudentDetailFragment() {
     }
 
     @Override
@@ -52,7 +52,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_person_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_detail, container, false);
         ButterKnife.bind(this, view);
 
         return view;
@@ -63,9 +63,9 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            PersonFragment parentFragment = (PersonFragment) getParentFragment();
-            mManagePersonsViewModel = parentFragment.getManagePersonsViewModel();
-            mManagePersonsViewModel.attachDetailView(this);
+            StudentFragment parentFragment = (StudentFragment) getParentFragment();
+            mManageStudentsViewModel = parentFragment.getManageStudentsViewModel();
+            mManageStudentsViewModel.attachDetailView(this);
         } catch (ClassCastException e) {
             Logger.e(TAG, e, "illegal cast");
             throw new Error(e);
@@ -84,21 +84,21 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
     @Override
     public void onDetach() {
         super.onDetach();
-        mManagePersonsViewModel.detachDetailView();
-        mManagePersonsViewModel = null;
+        mManageStudentsViewModel.detachDetailView();
+        mManageStudentsViewModel = null;
     }
 
-    @OnTextChanged(R.id.personFirstNameValue)
+    @OnTextChanged(R.id.studentFirstNameValue)
     public void onFirstNameTextChanged(CharSequence text) {
-        mManagePersonsViewModel.getSelectedPerson().setFirstName(text.toString());
+        mManageStudentsViewModel.getSelectedStudent().setFirstName(text.toString());
     }
 
-    @OnTextChanged(R.id.personLastNameValue)
+    @OnTextChanged(R.id.studentLastNameValue)
     public void onLastNameTextChanged(CharSequence text) {
-        mManagePersonsViewModel.getSelectedPerson().setLastName(text.toString());
+        mManageStudentsViewModel.getSelectedStudent().setLastName(text.toString());
     }
 
-    @OnClick(R.id.personDateOfBirthValue)
+    @OnClick(R.id.studentDateOfBirthValue)
     public void onDateOfBirthSelect(TextView textView) {
         DatePickerDialogFragment dialog = new DatePickerDialogFragment();
         dialog.show(getChildFragmentManager(), "datePicker");
@@ -111,7 +111,7 @@ public class PersonDetailFragment extends Fragment implements DatePickerDialog.O
 
     @OnClick(R.id.saveButton)
     public void onSave(Button button) {
-        mManagePersonsViewModel.savePerson();
+        mManageStudentsViewModel.saveStudent();
     }
 
     @OnClick(R.id.cancelButton)

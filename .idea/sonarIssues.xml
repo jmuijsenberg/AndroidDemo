@@ -105,15 +105,12 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/RecyclerViewAdapterBase.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="d353ea3c-6424-4e1b-a18d-ee948f377f64" />
-                <option name="message" value="9 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
-                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/adapters/StudentLIstAdapter.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/binding/DataBinding.java">
@@ -292,6 +289,11 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/fragments/StudentFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/nestedfragments/PersonDetailFragment.java">
           <value>
             <set>
@@ -360,7 +362,37 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/nestedfragments/StudentDetailFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/nestedfragments/StudentListFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_fragment1.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_detail.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_student_list.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/student_list_item.xml">
           <value>
             <set />
           </value>
@@ -391,6 +423,11 @@
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ManageStudentsController.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/control/src/test/java/nl/jmuijsenberg/androiddemo/control/PersonManagementController.java">
@@ -424,31 +461,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/entities/src/main/java/nl/jmuijsenberg/androiddemo/entities/Gender.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="ab158a0e-eea9-4ff9-9c9b-246652824712" />
-                <option name="message" value="3 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
-                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="9a9a69ad-c7a5-4c75-ac58-445f2dc8d030" />
-                <option name="line" value="12" />
-                <option name="message" value="Move this closing curly brace to the next line." />
-                <option name="ruleKey" value="squid:RightCurlyBraceStartLineCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="e558e759-4978-4924-afa5-97f596395e64" />
-                <option name="line" value="8" />
-                <option name="message" value="Move this closing curly brace to the next line." />
-                <option name="ruleKey" value="squid:RightCurlyBraceStartLineCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/entities/src/main/java/nl/jmuijsenberg/androiddemo/entities/Person.java">
@@ -491,6 +504,21 @@
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/entities/src/test/java/nl/jmuijsenberg/androiddemo/entities/StudentTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repository/src/main/java/nl/jmuijsenberg/androiddemo/repository/Repository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/repositorysqlite/src/androidTest/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqliteTest.java">
+          <value>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/CourseTable.java">
@@ -556,15 +584,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/DatabaseTable.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="4502ed96-63cd-449b-a7d3-6173c1a9dbcb" />
-                <option name="message" value="3 more branches need to be covered by unit tests to reach the minimum threshold of 65.0% branch coverage." />
-                <option name="ruleKey" value="common-java:InsufficientBranchCoverage" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/DatabaseTableBase.java">
@@ -613,32 +633,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/RepositorySqlite.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="c76d39f9-082b-4186-87fa-093ff6ac9596" />
-                <option name="line" value="20" />
-                <option name="message" value="Remove this unused &quot;persons&quot; private field." />
-                <option name="ruleKey" value="squid:S1068" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="cef71ee3-16c0-4199-be0d-97acd6d00b2e" />
-                <option name="line" value="14" />
-                <option name="message" value="Remove this unused import 'rx.functions.Func1'." />
-                <option name="ruleKey" value="squid:UselessImportCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="85492569-83dd-4058-8569-a0aac233995d" />
-                <option name="line" value="20" />
-                <option name="message" value="Remove this unused &quot;mContext&quot; private field." />
-                <option name="ruleKey" value="squid:S1068" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/Sql.java">
@@ -673,15 +668,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/StudentTable.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="b9e4e7cd-d782-4110-9377-21a361f44514" />
-                <option name="message" value="1 duplicated blocks of code must be removed." />
-                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/repositorysqlite/src/main/java/nl/jmuijsenberg/androiddemo/repository/sqlite/sqlbrite/DataManager.java">
@@ -882,6 +869,11 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/factory/ViewModelFactory.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/persons/ManagePersonsViewModel.java">
           <value>
             <set>
@@ -936,6 +928,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/persons/PersonViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/students/ManagePersonsViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/students/ManageStudentsViewModel.java">
           <value>
             <set />
           </value>
