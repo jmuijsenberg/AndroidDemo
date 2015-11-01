@@ -6,10 +6,11 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import nl.jmuijsenberg.androiddemo.app.MainActivity;
+import nl.jmuijsenberg.androiddemo.app.activities.CourseOverviewActivity;
 
-public class StepDefinitions   extends ActivityInstrumentationTestCase2<MainActivity> {
+public class StepDefinitions   extends ActivityInstrumentationTestCase2<CourseOverviewActivity> {
     public StepDefinitions() {
-        super(MainActivity.class);
+        super(CourseOverviewActivity.class);
     }
 
     @Given("^The user has started the application$")
@@ -26,7 +27,7 @@ public class StepDefinitions   extends ActivityInstrumentationTestCase2<MainActi
     }
 
     @Override
-    public MainActivity getActivity() {
+    public CourseOverviewActivity getActivity() {
         return super.getActivity();
     }
 }

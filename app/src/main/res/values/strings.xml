@@ -26,4 +26,16 @@
         <item>Female</item>
         <item>Unknown</item>
     </string-array>
+    <string name="title_activity_course_overview">CourseOverviewActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_course_edit">CourseEditActivity</string>
+    <string name="title_activity_student_overview">StudentOverviewActivity</string>
+    <string name="title_activity_student_edit">StudentEditActivity</string>
+    <string name="title_activity_course_enrollment">CourseEnrollmentActivity</string>
+    <string name="title_activity_online_course">OnlineCourseActivity</string>
+    <string name="title_activity_video_course">VideoCourseActivity</string>
+    <string name="title_activity_slide_course">SlideCourseActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

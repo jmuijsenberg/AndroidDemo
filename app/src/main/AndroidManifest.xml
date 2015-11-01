@@ -9,14 +9,49 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light" >
         <activity
-            android:name=".app.MainActivity"
-            android:label="@string/title_activity_main2"
+            android:name=".app.activities.CourseOverviewActivity"
+            android:label="@string/title_activity_course_overview"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.activities.CourseEditActivity"
+            android:label="@string/title_activity_course_edit"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".app.activities.StudentOverviewActivity"
+            android:label="@string/title_activity_student_overview"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".app.activities.StudentEditActivity"
+            android:label="@string/title_activity_student_edit"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".app.activities.CourseEnrollmentActivity"
+            android:label="@string/title_activity_course_enrollment"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".app.activities.OnlineCourseActivity"
+            android:label="@string/title_activity_online_course"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".app.activities.VideoCourseActivity"
+            android:label="@string/title_activity_video_course"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".app.activities.PresentationCourseActivity"
+            android:label="@string/title_activity_slide_course"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
     </application>
 
