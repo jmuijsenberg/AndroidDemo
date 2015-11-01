@@ -16,7 +16,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.beginTransaction();
         try {
-            db.execSQL(Database.PersonTable.CREATE);
+            db.execSQL(PersonTable.CREATE_TABLE);
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
@@ -25,5 +25,6 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL(PersonTable.DROP_TABLE);
     }
 }
