@@ -17,8 +17,6 @@ import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 import nl.jmuijsenberg.androiddemo.viewmodels.persons.ManagePersonsViewModel;
 
 public class PersonFragment extends Fragment {
-    private static String TAG = "PersonFragment";
-
     private ManagePersonsViewModel mManagePersonsViewModel;
 
     public PersonFragment() {

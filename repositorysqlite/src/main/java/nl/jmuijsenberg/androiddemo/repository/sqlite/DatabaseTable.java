@@ -72,9 +72,41 @@ public abstract class DatabaseTable<T> {
         }).subscribeOn(mSchedulers.io());
     }
 
+    protected Long getLong(Cursor cursor, String columnName)
+    {
+        int columnIndex = cursor.getColumnIndexOrThrow(columnName);
+        return cursor.getLong(columnIndex);
+    }
+
+    protected Long getNullableLong(Cursor cursor, String columnName)
+    {
+        int columnIndex = cursor.getColumnIndexOrThrow(columnName);
+        return (!cursor.isNull(columnIndex)) ? cursor.getLong(columnIndex) : null;
+    }
+
+    protected int getInt(Cursor cursor, String columnName)
+    {
+        int columnIndex = cursor.getColumnIndexOrThrow(columnName);
+        return cursor.getInt(columnIndex);
+    }
+
+    protected Integer getNullableInt(Cursor cursor, String columnName)
+    {
+        int columnIndex = cursor.getColumnIndexOrThrow(columnName);
+        return (!cursor.isNull(columnIndex)) ? cursor.getInt(columnIndex) : null;
+    }
+
+    protected String getString(Cursor cursor, String columnName)
+    {
+        int columnIndex = cursor.getColumnIndexOrThrow(columnName);
+        return cursor.getString(columnIndex);
+    }
+
     protected abstract String getTableName();
     protected abstract String getDefaultWhereClause();
     protected abstract String[] getDefaultWhereArgs(T item);
     protected abstract ContentValues toContentValues(T item);
     protected abstract T parseCursor(Cursor cursor);
+
+
 }

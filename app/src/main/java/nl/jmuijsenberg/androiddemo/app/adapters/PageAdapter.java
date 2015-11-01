@@ -28,8 +28,10 @@ public class PageAdapter extends FragmentStatePagerAdapter {
             case 5:
                 return Fragment2.newInstance();
             default:
-                return PersonFragment.newInstance();
+                assert(false);
         }
+
+        return null;
     }
 
     @Override
@@ -47,6 +49,8 @@ public class PageAdapter extends FragmentStatePagerAdapter {
                 return "Tab Five";
             case 5:
                 return "Tab Six";
+            default:
+                assert(false);
         }
 
         return null;

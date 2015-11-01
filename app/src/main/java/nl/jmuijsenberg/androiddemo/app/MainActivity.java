@@ -1,8 +1,6 @@
 package nl.jmuijsenberg.androiddemo.app;
 
 import android.app.DatePickerDialog;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.PagerTabStrip;
@@ -14,14 +12,11 @@ import android.view.MenuItem;
 import android.widget.DatePicker;
 
 import butterknife.Bind;
-import butterknife.BindDrawable;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
 import nl.jmuijsenberg.androiddemo.app.adapters.PageAdapter;
 import nl.jmuijsenberg.androiddemo.app.dialogs.LoginDialogFragment;
-import nl.jmuijsenberg.androiddemo.app.fragments.Fragment2;
-import nl.jmuijsenberg.androiddemo.app.fragments.PersonFragment;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, DatePickerDialog.OnDateSetListener {
     @Bind(R.id.fab)

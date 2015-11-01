@@ -1,7 +1,6 @@
 package nl.jmuijsenberg.androiddemo.repository.sqlite;
 
 import android.content.Context;
-import android.database.Cursor;
 
 import com.squareup.sqlbrite.BriteDatabase;
 import com.squareup.sqlbrite.SqlBrite;
@@ -13,21 +12,16 @@ import nl.jmuijsenberg.androiddemo.entities.Person;
 import nl.jmuijsenberg.androiddemo.repository.Repository;
 import nl.jmuijsenberg.androiddemo.util.java.rxjava.RxSchedulers;
 import rx.Observable;
-import rx.Subscriber;
-import rx.functions.Func1;
 
 public class RepositorySqlite implements Repository {
     private DatabaseOpenHelper mDbOpenHelper;
     private SqlBrite mSqlBrite;
     private BriteDatabase mBriteDatabase;
-    private List<Person> persons = new ArrayList<>();
-    private Context mContext;
     private RxSchedulers mSchedulers;
 
     private PersonTable mPersonTable;
 
     public RepositorySqlite(Context context, RxSchedulers schedulers) {
-        mContext = context;
         mSchedulers = schedulers;
 
         mDbOpenHelper = new DatabaseOpenHelper(context);

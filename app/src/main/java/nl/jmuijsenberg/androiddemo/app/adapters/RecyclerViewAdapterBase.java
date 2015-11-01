@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewHolderBase> extends RecyclerView.Adapter<VH> {
+public abstract class RecyclerViewAdapterBase<T, V extends RecyclerViewHolderBase> extends RecyclerView.Adapter<V> {
     RecyclerViewAdapterBase.OnSelectionChangedListener mClickListener;
     private List<T> mItemList;
     private T mSelectedItem = null;
@@ -35,7 +35,7 @@ public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewHolderBa
     }
 
     @Override
-    public void onBindViewHolder(VH viewHolder, int i) {
+    public void onBindViewHolder(V viewHolder, int i) {
         T item = mItemList.get(i);
         viewHolder.itemView.setTag(item);
         viewHolder.setItem(item);
@@ -48,7 +48,7 @@ public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewHolderBa
     }
 
     @Override
-    public VH onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public V onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
                                       .inflate(mItemLayoutResourceId, viewGroup, false);
 
@@ -62,7 +62,7 @@ public abstract class RecyclerViewAdapterBase<T, VH extends RecyclerViewHolderBa
     }
 
     // Implement construction of view holder in derived class
-    protected abstract VH createViewHolder(View v, View.OnClickListener clickListener);
+    protected abstract V createViewHolder(View v, View.OnClickListener clickListener);
 
     private int setSelectedItem(T selectedItem) {
         int oldSelectedIndex = -1;

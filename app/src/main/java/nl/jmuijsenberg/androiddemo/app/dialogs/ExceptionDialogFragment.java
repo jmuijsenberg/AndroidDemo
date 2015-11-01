@@ -10,7 +10,6 @@ import nl.jmuijsenberg.androiddemo.R;
 
 public class ExceptionDialogFragment  extends DialogFragment {
     private static final String ARG_EXCEPTION_MESSAGE = "message";
-    private static final String ARG_EXCEPTION_STACKTRACE = "stacktrace";
 
     public ExceptionDialogFragment() {
     }

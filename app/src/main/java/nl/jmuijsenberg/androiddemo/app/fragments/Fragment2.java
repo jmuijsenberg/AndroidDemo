@@ -3,7 +3,6 @@ package nl.jmuijsenberg.androiddemo.app.fragments;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,11 +21,8 @@ import nl.jmuijsenberg.androiddemo.app.dialogs.ConfirmationDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.DatePickerDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.GenderSelectDialogFragment;
 import nl.jmuijsenberg.androiddemo.app.dialogs.TimePickerDialogFragment;
-import nl.jmuijsenberg.androiddemo.util.java.logging.Logger;
 
 public class Fragment2 extends Fragment implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
-    private static String TAG = "Fragment2";
-
     @Bind(R.id.textView1)
     TextView textView1;
     @Bind(R.id.textView2)

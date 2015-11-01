@@ -1,27 +1,27 @@
 package nl.jmuijsenberg.androiddemo.entities;
 
-public class Person {
+public class Student {
     private long mId;
     private String mFirstName;
     private String mLastName;
     private Gender mGender;
     private Long mDateOfBirth;
 
-    public Person() {
+    public Student() {
     }
 
-    public Person(Person person) {
-        mId = person.mId;
-        mFirstName = person.mFirstName;
-        mLastName = person.mLastName;
-        mGender = person.mGender;
-        mDateOfBirth = person.mDateOfBirth;
+    public Student(Student student) {
+        mId = student.mId;
+        mFirstName = student.mFirstName;
+        mLastName = student.mLastName;
+        mGender = student.mGender;
+        mDateOfBirth = student.mDateOfBirth;
     }
 
-    public Person(String firstName,
+    public Student(String firstName,
                   String lastName,
                   Gender gender,
-                  Long dateOfBirth) {
+                   Long dateOfBirth) {
         mFirstName = firstName;
         mLastName = lastName;
         mGender = gender;
