@@ -7,23 +7,29 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
-        <item name="android:timePickerDialogTheme">@style/MyTimePickerDialogTheme</item>
+        <item name="android:datePickerDialogTheme">@style/AppTheme.MyDatePickerDialogTheme</item>
+        <item name="android:timePickerDialogTheme">@style/AppTheme.MyTimePickerDialogTheme</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@color/green</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/blue</item>
+    </style>
+
+    <style name="AppTheme.MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="MyTimePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+    <style name="AppTheme.MyTimePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:colorAccent">@color/colorAccent</item>
     </style>
-
 </resources>
 

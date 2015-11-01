@@ -5,12 +5,11 @@ import android.test.ActivityInstrumentationTestCase2;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import nl.jmuijsenberg.androiddemo.app.MainActivity;
-import nl.jmuijsenberg.androiddemo.app.activities.CourseOverviewActivity;
+import nl.jmuijsenberg.androiddemo.app.activities.NavigationDrawerActivity;
 
-public class StepDefinitions   extends ActivityInstrumentationTestCase2<CourseOverviewActivity> {
+public class StepDefinitions   extends ActivityInstrumentationTestCase2<NavigationDrawerActivity> {
     public StepDefinitions() {
-        super(CourseOverviewActivity.class);
+        super(NavigationDrawerActivity.class);
     }
 
     @Given("^The user has started the application$")
@@ -27,7 +26,7 @@ public class StepDefinitions   extends ActivityInstrumentationTestCase2<CourseOv
     }
 
     @Override
-    public CourseOverviewActivity getActivity() {
+    public NavigationDrawerActivity getActivity() {
         return super.getActivity();
     }
 }
