@@ -1,14 +1,14 @@
 package nl.jmuijsenberg.androiddemo.app.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,13 +69,32 @@ public class CourseOverviewActivity extends AppCompatActivity {
         mAdapter.updateList(courses);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.course_overview, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+            case R.id.action_enroll:
+                startActivity(StudentOverviewActivity.getCallingIntent(this));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     @OnClick(R.id.fab)
     public void addCourse() {
         startActivity(CourseEditActivity.getCallingIntent(this));
     }
 
-    private void editCourse(final Course course)
-    {
+    private void editCourse(final Course course) {
         startActivity(CourseEditActivity.getCallingIntent(this, course));
     }
 }

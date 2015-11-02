@@ -1,5 +1,7 @@
 package nl.jmuijsenberg.androiddemo.app.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +12,11 @@ import android.view.View;
 import nl.jmuijsenberg.androiddemo.R;
 
 public class StudentOverviewActivity extends AppCompatActivity {
+
+    public static Intent getCallingIntent(Context context) {
+        Intent intent = new Intent(context, StudentOverviewActivity.class);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
