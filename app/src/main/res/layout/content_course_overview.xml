@@ -9,5 +9,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_course_overview"
     tools:context="nl.jmuijsenberg.androiddemo.app.activities.CourseOverviewActivity">
-
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/courseList" />
 </RelativeLayout>

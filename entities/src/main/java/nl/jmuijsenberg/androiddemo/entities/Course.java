@@ -1,6 +1,8 @@
 package nl.jmuijsenberg.androiddemo.entities;
 
-public class Course {
+import java.io.Serializable;
+
+public class Course implements Serializable {
     private long mId;
     private String mCode;
     private String mTitle;

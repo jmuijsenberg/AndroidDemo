@@ -10,4 +10,86 @@
     tools:showIn="@layout/activity_course_edit"
     tools:context="nl.jmuijsenberg.androiddemo.app.activities.CourseEditActivity">
 
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:stretchColumns="0,1">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/courseTitleLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title" />
+            <EditText
+                android:id="@+id/courseTitleValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/courseDescriptionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description" />
+            <EditText
+                android:id="@+id/courseDescriptionValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/courseLocationLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location" />
+            <EditText
+                android:id="@+id/courseLocationValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Location"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/coursePostalCodeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Postal code" />
+            <EditText
+                android:id="@+id/coursePostalCodeValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Postal code"/>
+        </TableRow>
+
+        <TableRow>
+            <View />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/courseSaveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="save" />
+
+                <Button
+                    android:id="@+id/courseCancelSaveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="cancel" />
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
 </RelativeLayout>

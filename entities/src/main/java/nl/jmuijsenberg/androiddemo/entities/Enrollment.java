@@ -1,6 +1,8 @@
 package nl.jmuijsenberg.androiddemo.entities;
 
-public class Enrollment {
+import java.io.Serializable;
+
+public class Enrollment implements Serializable {
     private long mId;
     private long mStudentId;
     private long mCourseId;
