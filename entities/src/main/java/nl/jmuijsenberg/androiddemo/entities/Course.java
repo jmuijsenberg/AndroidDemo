@@ -12,6 +12,20 @@ public class Course implements Serializable {
     private String mPostalCode;
     private String mHousenumber;
 
+    public Course() {
+    }
+
+    public Course(Course course) {
+        mId = course.mId;
+        mCode = course.mCode;
+        mTitle = course.mTitle;
+        mDescription = course.mDescription;
+        mDate = course.mDate;
+        mLocation = course.mLocation;
+        mPostalCode = course.mPostalCode;
+        mHousenumber = course.mHousenumber;
+    }
+
     public long getId() {
         return mId;
     }

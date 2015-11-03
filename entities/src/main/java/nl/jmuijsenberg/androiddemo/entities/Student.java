@@ -20,16 +20,6 @@ public class Student implements Serializable {
         mDateOfBirth = student.mDateOfBirth;
     }
 
-    public Student(String firstName,
-                  String lastName,
-                  Gender gender,
-                   Long dateOfBirth) {
-        mFirstName = firstName;
-        mLastName = lastName;
-        mGender = gender;
-        mDateOfBirth = dateOfBirth;
-    }
-
     public long getId() {
         return mId;
     }

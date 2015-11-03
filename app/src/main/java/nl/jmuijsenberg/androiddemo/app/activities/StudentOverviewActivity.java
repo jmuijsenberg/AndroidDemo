@@ -16,23 +16,23 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
-import nl.jmuijsenberg.androiddemo.app.adapters.CourseListAdapter;
+import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.adapters.RecyclerViewAdapterBase;
 import nl.jmuijsenberg.androiddemo.app.adapters.StudentListAdapter;
-import nl.jmuijsenberg.androiddemo.entities.Course;
 import nl.jmuijsenberg.androiddemo.entities.Gender;
 import nl.jmuijsenberg.androiddemo.entities.Student;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
+import nl.jmuijsenberg.androiddemo.viewmodels.students.StudentOverviewViewModel;
 
-public class StudentOverviewActivity extends AppCompatActivity {
+public class StudentOverviewActivity extends AppCompatActivity implements StudentOverviewViewModel.StudentOverviewListener {
     private StudentListAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
+    private StudentOverviewViewModel mViewModel;
 
     @Bind(R.id.fab)
     public FloatingActionButton mFloatingActionButton;
-
     @Bind(R.id.toolbar)
     public Toolbar mToolbar;
-
     @Bind(R.id.studentList)
     public RecyclerView mStudentRecyclerView;
 
@@ -60,20 +60,15 @@ public class StudentOverviewActivity extends AppCompatActivity {
         });
         mStudentRecyclerView.setAdapter(mAdapter);
 
-        List<Student> students = new ArrayList<>();
-        Student student1 = new Student();
-        student1.setFirstName("Johan");
-        student1.setLastName("vdM");
-        student1.setGender(Gender.MALE);
-        students.add(student1);
+        ViewModelFactory viewModelFactory = ((ApplicationExtension) getApplicationContext()).getViewModelFactory();
+        mViewModel = viewModelFactory.getStudentOverviewViewModel();
+        mViewModel.attachView(this);
+    }
 
-        Student student2 = new Student();
-        student2.setFirstName("Johan");
-        student2.setLastName("vdM");
-        student2.setGender(Gender.MALE);
-        students.add(student2);
-
-        mAdapter.updateList(students);
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mViewModel.detachView();
     }
 
     @OnClick(R.id.fab)
@@ -83,5 +78,15 @@ public class StudentOverviewActivity extends AppCompatActivity {
 
     private void editStudent(final Student student) {
         startActivity(StudentEditActivity.getCallingIntent(this, student));
+    }
+
+    @Override
+    public void onListChanged(List<Student> students) {
+        mAdapter.updateList(students);
+    }
+
+    @Override
+    public void onException(Throwable e) {
+
     }
 }

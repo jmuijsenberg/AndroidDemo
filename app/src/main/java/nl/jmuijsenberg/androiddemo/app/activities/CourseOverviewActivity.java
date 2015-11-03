@@ -16,20 +16,23 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import nl.jmuijsenberg.androiddemo.R;
+import nl.jmuijsenberg.androiddemo.app.ApplicationExtension;
 import nl.jmuijsenberg.androiddemo.app.adapters.CourseListAdapter;
 import nl.jmuijsenberg.androiddemo.app.adapters.RecyclerViewAdapterBase;
 import nl.jmuijsenberg.androiddemo.entities.Course;
+import nl.jmuijsenberg.androiddemo.viewmodels.courses.CourseEditViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.courses.CourseOverviewViewModel;
+import nl.jmuijsenberg.androiddemo.viewmodels.factory.ViewModelFactory;
 
-public class CourseOverviewActivity extends AppCompatActivity {
+public class CourseOverviewActivity extends AppCompatActivity implements CourseOverviewViewModel.CourseOverviewListener {
     private CourseListAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
+    private CourseOverviewViewModel mViewModel;
 
     @Bind(R.id.fab)
     public FloatingActionButton mFloatingActionButton;
-
     @Bind(R.id.toolbar)
     public Toolbar mToolbar;
-
     @Bind(R.id.courseList)
     public RecyclerView mCourseRecyclerView;
 
@@ -51,22 +54,18 @@ public class CourseOverviewActivity extends AppCompatActivity {
                 editCourse(course);
             }
         });
+
         mCourseRecyclerView.setAdapter(mAdapter);
 
-        List<Course> courses = new ArrayList<>();
-        Course course1 = new Course();
-        course1.setTitle("Course1");
-        course1.setDescription("Description1");
-        course1.setLocation("Verschoorstraat");
-        course1.setPostalCode("5612SH");
-        courses.add(course1);
+        ViewModelFactory viewModelFactory = ((ApplicationExtension) getApplicationContext()).getViewModelFactory();
+        mViewModel = viewModelFactory.getCourseOverviewViewModel();
+        mViewModel.attachView(this);
+    }
 
-        Course course2 = new Course();
-        course2.setTitle("Course2");
-        course2.setDescription("Description2");
-        courses.add(course2);
-
-        mAdapter.updateList(courses);
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mViewModel.detachView();
     }
 
     @Override
@@ -96,5 +95,15 @@ public class CourseOverviewActivity extends AppCompatActivity {
 
     private void editCourse(final Course course) {
         startActivity(CourseEditActivity.getCallingIntent(this, course));
+    }
+
+    @Override
+    public void onListChanged(List<Course> courses) {
+        mAdapter.updateList(courses);
+    }
+
+    @Override
+    public void onException(Throwable e) {
+
     }
 }
