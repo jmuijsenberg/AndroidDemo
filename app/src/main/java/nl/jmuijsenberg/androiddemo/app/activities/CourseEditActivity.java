@@ -49,7 +49,7 @@ public class CourseEditActivity extends AppCompatActivity {
 
     public static Intent getCallingIntent(Context context, Course course) {
         Intent intent = new Intent(context, CourseEditActivity.class);
-        intent.putExtra("Course", (Serializable) course);
+        intent.putExtra(INTENT_COURSE_PARAMETER, (Serializable) course);
         return intent;
     }
 
@@ -73,13 +73,5 @@ public class CourseEditActivity extends AppCompatActivity {
                 mPostalCodeEditText.setText(course.getPostalCode());
             }
         }
-
-        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 }

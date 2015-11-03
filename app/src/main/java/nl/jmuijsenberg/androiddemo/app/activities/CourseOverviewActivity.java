@@ -31,7 +31,7 @@ public class CourseOverviewActivity extends AppCompatActivity {
     public Toolbar mToolbar;
 
     @Bind(R.id.courseList)
-    public RecyclerView mCourseListView;
+    public RecyclerView mCourseRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class CourseOverviewActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
         mLayoutManager = new LinearLayoutManager(this);
-        mCourseListView.setLayoutManager(mLayoutManager);
+        mCourseRecyclerView.setLayoutManager(mLayoutManager);
 
         mAdapter = new CourseListAdapter(new RecyclerViewAdapterBase.OnSelectionChangedListener<Course>() {
             @Override
@@ -51,7 +51,7 @@ public class CourseOverviewActivity extends AppCompatActivity {
                 editCourse(course);
             }
         });
-        mCourseListView.setAdapter(mAdapter);
+        mCourseRecyclerView.setAdapter(mAdapter);
 
         List<Course> courses = new ArrayList<>();
         Course course1 = new Course();

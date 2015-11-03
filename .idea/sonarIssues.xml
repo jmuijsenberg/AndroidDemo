@@ -114,6 +114,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/activities/StudentEditActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/nl/jmuijsenberg/androiddemo/app/activities/StudentOverviewActivity.java">
           <value>
             <set />
@@ -482,6 +487,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/content_student_edit.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/content_student_overview.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/course_list_item.xml">
           <value>
             <set />
@@ -620,17 +635,17 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="db8401ee-3e6a-461f-aea3-1b41758e9667" />
-                <option name="line" value="12" />
-                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
-                <option name="ruleKey" value="squid:S1186" />
+                <option name="key" value="f9b5af19-26bd-44e4-98f9-3da8ea0a87da" />
+                <option name="message" value="1 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="f9b5af19-26bd-44e4-98f9-3da8ea0a87da" />
-                <option name="message" value="1 duplicated blocks of code must be removed." />
-                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="key" value="db8401ee-3e6a-461f-aea3-1b41758e9667" />
+                <option name="line" value="12" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
