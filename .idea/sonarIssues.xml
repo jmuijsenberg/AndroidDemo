@@ -556,6 +556,11 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ManageCoursesController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/control/src/main/java/nl/jmuijsenberg/androiddemo/control/ManagePersonsController.java">
           <value>
             <set>

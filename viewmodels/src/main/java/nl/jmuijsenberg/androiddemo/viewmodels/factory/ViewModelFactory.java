@@ -15,6 +15,6 @@ public class ViewModelFactory {
     }
 
     public ManageStudentsViewModel getManageStudentsViewModel() {
-        return new ManageStudentsViewModel(mControllerFactory.getManagePersonsController(), mSchedulers);
+        return new ManageStudentsViewModel(mControllerFactory.getManageStudentsController(), mSchedulers);
     }
 }

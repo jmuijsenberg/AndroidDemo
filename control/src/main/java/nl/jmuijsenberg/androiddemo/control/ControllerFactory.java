@@ -16,7 +16,11 @@ public class ControllerFactory {
         mSchedulers = schedulers;
     }
 
-    public ManageStudentsController getManagePersonsController() {
+    public ManageCoursesController getManageCoursesController() {
+        return new ManageCoursesController(mRepository, mSchedulers);
+    }
+
+    public ManageStudentsController getManageStudentsController() {
         return new ManageStudentsController(mRepository, mSchedulers);
     }
 }
