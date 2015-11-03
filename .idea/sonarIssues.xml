@@ -1019,6 +1019,16 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/courses/CourseEditViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/courses/CourseOverviewViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/factory/ViewModelFactory.java">
           <value>
             <set />
@@ -1088,6 +1098,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/students/ManageStudentsViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/students/StudentEditViewModel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/viewmodels/src/main/java/nl/jmuijsenberg/androiddemo/viewmodels/students/StudentOverviewViewModel.java">
           <value>
             <set />
           </value>
